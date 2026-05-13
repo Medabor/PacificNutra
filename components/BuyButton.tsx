@@ -26,15 +26,10 @@ export default function BuyButton({ slug }: { slug: string }) {
 
   return (
     <div className="flex flex-col">
-      <button
-        type="button"
-        onClick={onClick}
-        disabled={loading}
-        className="rounded-full bg-coral-500 px-6 py-3 font-medium text-white shadow-sm transition hover:bg-coral-600 disabled:opacity-50"
-      >
-        {loading ? "Loading…" : "Buy now"}
+      <button type="button" onClick={onClick} disabled={loading} className="btn-clay">
+        {loading ? "Loading…" : "Buy the cookbook"}
       </button>
-      {error && <p className="mt-2 text-sm text-coral-600">{error}</p>}
+      {error && <p className="mt-2 text-sm text-clay-700">{error}</p>}
     </div>
   );
 }

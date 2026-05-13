@@ -4,12 +4,42 @@
 
 @layer base {
   html {
-    font-family: var(--font-inter), system-ui, sans-serif;
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
   }
   body {
-    @apply bg-sand-50 text-ocean-950 antialiased;
+    @apply bg-cream-50 text-kalo-950 antialiased;
   }
   h1, h2, h3, h4 {
     @apply font-serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+  }
+  h1 {
+    font-variation-settings: "SOFT" 30, "WONK" 0;
+  }
+  ::selection {
+    @apply bg-clay-300 text-kalo-950;
+  }
+}
+
+@layer components {
+  .btn-clay {
+    @apply rounded-full bg-clay-500 px-6 py-3 font-medium text-cream-50 transition;
+    box-shadow:
+      inset 0 -2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+  .btn-clay:hover {
+    @apply bg-clay-600;
+  }
+  .btn-clay:disabled {
+    @apply opacity-50;
+  }
+  .input-cream {
+    @apply rounded-full border border-cream-200 bg-cream-50 px-5 py-3 text-kalo-950 placeholder:text-kalo-400 focus:border-clay-400 focus:outline-none focus:ring-1 focus:ring-clay-400/40;
+  }
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.22em] text-clay-600;
   }
 }

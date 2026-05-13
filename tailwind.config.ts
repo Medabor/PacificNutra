@@ -9,41 +9,67 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ocean: {
-          50: "#f0f7fa",
-          100: "#daecf2",
-          200: "#b6d8e3",
-          300: "#86bccd",
-          400: "#549ab2",
-          500: "#3a7e98",
-          600: "#306580",
-          700: "#2a536a",
-          800: "#264658",
-          900: "#233c4c",
-          950: "#142532",
+        // Deep taro: text + dark surfaces
+        kalo: {
+          50: "#F5F1EC",
+          100: "#E5DCD0",
+          200: "#C9B8A4",
+          400: "#7A6655",
+          800: "#3A2E25",
+          900: "#2A2118",
+          950: "#1F1A17",
         },
-        sand: {
-          50: "#fbf8f3",
-          100: "#f4eedf",
-          200: "#e8dbb9",
-          300: "#dac28b",
-          400: "#cba75f",
-          500: "#bf9244",
-          600: "#a87936",
-          700: "#895d2e",
-          800: "#714b2c",
-          900: "#5e3f29",
+        // Coconut cream: backgrounds + cards
+        cream: {
+          50: "#FAF6EE",
+          100: "#F1E9D8",
+          200: "#E4D5B7",
+          300: "#D2BE93",
         },
-        coral: {
-          400: "#f08a73",
-          500: "#e96a4d",
-          600: "#d54e30",
+        // Terracotta: primary CTA + accent
+        clay: {
+          200: "#F1C6B5",
+          300: "#E4A38C",
+          400: "#CF7A5F",
+          500: "#B8553A",
+          600: "#9C4128",
+          700: "#7D3220",
         },
+        // Taro leaf: secondary accent
+        forest: {
+          400: "#658A72",
+          500: "#4A7359",
+          600: "#3B5D47",
+          700: "#2F4F3A",
+          800: "#243C2D",
+        },
+        // Single deep accent for footers and overlays
+        "ocean-deep": "#1C3942",
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', "Georgia", "serif"],
-        sans: ['"Inter"', "system-ui", "sans-serif"],
+        serif: ['var(--font-fraunces)', "Georgia", "serif"],
+        sans: ['var(--font-manrope)', "system-ui", "sans-serif"],
       },
+      typography: ({ theme }: { theme: (key: string) => string }) => ({
+        kalo: {
+          css: {
+            "--tw-prose-body": theme("colors.kalo[800]"),
+            "--tw-prose-headings": theme("colors.kalo[950]"),
+            "--tw-prose-lead": theme("colors.kalo[800]"),
+            "--tw-prose-links": theme("colors.clay[600]"),
+            "--tw-prose-bold": theme("colors.kalo[950]"),
+            "--tw-prose-counters": theme("colors.kalo[400]"),
+            "--tw-prose-bullets": theme("colors.clay[400]"),
+            "--tw-prose-hr": theme("colors.cream[200]"),
+            "--tw-prose-quotes": theme("colors.kalo[900]"),
+            "--tw-prose-quote-borders": theme("colors.clay[300]"),
+            "--tw-prose-captions": theme("colors.kalo[400]"),
+            "--tw-prose-code": theme("colors.kalo[950]"),
+            "--tw-prose-pre-code": theme("colors.cream[50]"),
+            "--tw-prose-pre-bg": theme("colors.kalo[950]"),
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],

@@ -13,10 +13,11 @@ export default async function LibraryPage() {
   if (!user?.email) {
     return (
       <div className="mx-auto max-w-md px-6 py-20">
-        <h1 className="font-serif text-3xl text-ocean-950">Your library</h1>
-        <p className="mt-3 text-ocean-700">
-          Sign in with the email you used at checkout. We&apos;ll send you a
-          one-time magic link.
+        <p className="eyebrow">My Library</p>
+        <h1 className="mt-2 font-serif text-4xl text-kalo-950">Sign in.</h1>
+        <p className="mt-3 text-kalo-800">
+          Use the email you used at checkout. We&apos;ll send you a one-time
+          magic link.
         </p>
         <div className="mt-8">
           <SignInForm />
@@ -39,13 +40,14 @@ export default async function LibraryPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-20">
-      <h1 className="font-serif text-3xl text-ocean-950">Your library</h1>
-      <p className="mt-2 text-ocean-700">Signed in as {user.email}</p>
+      <p className="eyebrow">My Library</p>
+      <h1 className="mt-2 font-serif text-4xl text-kalo-950">Your cookbooks.</h1>
+      <p className="mt-2 text-kalo-800">Signed in as {user.email}</p>
       {purchased.length === 0 ? (
-        <div className="mt-12 rounded-2xl border border-ocean-100 bg-white p-8 text-center">
-          <p className="text-ocean-700">
-            No purchases yet. {" "}
-            <Link href="/shop" className="text-coral-600 underline">
+        <div className="mt-12 rounded-2xl bg-cream-100 p-8 text-center">
+          <p className="text-kalo-800">
+            No purchases yet.{" "}
+            <Link href="/shop" className="text-clay-600 underline">
               Browse the shop
             </Link>{" "}
             to get your first cookbook.
@@ -77,20 +79,19 @@ async function DownloadCard({
     .createSignedUrl(filePath, 60 * 10);
 
   return (
-    <div className="flex items-center justify-between rounded-2xl border border-ocean-100 bg-white p-6">
+    <div className="flex items-center justify-between rounded-2xl bg-cream-100 p-6">
       <div>
-        <p className="text-xs uppercase tracking-wider text-coral-600">{slug}</p>
-        <p className="mt-1 font-serif text-xl text-ocean-950">{title}</p>
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
+          {slug}
+        </p>
+        <p className="mt-1 font-serif text-xl text-kalo-950">{title}</p>
       </div>
       {data?.signedUrl ? (
-        <a
-          href={data.signedUrl}
-          className="rounded-full bg-coral-500 px-5 py-2 font-medium text-white hover:bg-coral-600"
-        >
+        <a href={data.signedUrl} className="btn-clay">
           Download PDF
         </a>
       ) : (
-        <span className="text-sm text-coral-600">
+        <span className="text-sm text-clay-700">
           {error?.message ?? "File not available yet"}
         </span>
       )}

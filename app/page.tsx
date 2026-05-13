@@ -1,5 +1,8 @@
 import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
+import LeafDivider from "@/components/LeafDivider";
+import Photo from "@/components/Photo";
+import BrandPanel from "@/components/BrandPanel";
 import { getAllProducts } from "@/lib/products";
 import { getAllPosts } from "@/lib/posts";
 
@@ -9,28 +12,29 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ocean-50 via-sand-50 to-sand-50" />
-        <div className="mx-auto max-w-5xl px-6 py-24 text-center sm:py-32">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-coral-600">
-            Pacific Nutra
+      {/* Hero — full-bleed art panel with overlay copy */}
+      <section className="relative">
+        <div className="absolute inset-0 -z-10">
+          <BrandPanel variant="ocean" ratio="21/9" rounded={false} />
+          <div className="absolute inset-0 bg-kalo-950/55" />
+        </div>
+        <div className="mx-auto max-w-5xl px-6 py-28 sm:py-40 text-center text-cream-50">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-clay-300">
+            Pacific Nutra · Field Notes & Recipes
           </p>
-          <h1 className="font-serif text-5xl leading-tight text-ocean-950 sm:text-6xl">
-            Ancestral Polynesian foods,
+          <h1 className="mt-6 font-serif text-5xl sm:text-7xl leading-[1.05] tracking-tight">
+            Taro. Breadfruit. Poi.
             <br />
-            <span className="italic text-ocean-700">reframed for modern wellness.</span>
+            <span className="italic text-cream-100/95">Older than wellness.</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-ocean-800">
-            Taro, breadfruit, poke, poi, kalo — the foods that kept Pacific Islanders
-            healthy for centuries are some of the world&apos;s most overlooked superfoods.
-            We translate them for the modern kitchen.
+          <p className="mx-auto mt-8 max-w-2xl text-lg text-cream-50/90">
+            The foods that kept Pacific Islanders healthy for three thousand
+            years — translated for the modern kitchen.
           </p>
           <div className="mx-auto mt-10 max-w-xl">
-            <EmailCapture inline source="hero" cta="Send my free recipe" />
-            <p className="mt-3 text-xs text-ocean-600">
-              Join the list and we&apos;ll email you a free recipe from our upcoming
-              cookbook. No spam — unsubscribe any time.
+            <EmailCapture inline source="hero" cta="Send the first recipe" />
+            <p className="mt-3 text-xs text-cream-100/70">
+              One short email a week. Always a recipe. Never a pitch.
             </p>
           </div>
         </div>
@@ -38,77 +42,90 @@ export default function HomePage() {
 
       {/* Featured product */}
       {featured && (
-        <section className="mx-auto max-w-5xl px-6 py-20">
-          <div className="grid gap-10 rounded-3xl bg-ocean-950 p-10 text-sand-50 sm:grid-cols-2 sm:p-14">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.2em] text-coral-400">
-                New release
-              </p>
-              <h2 className="mt-3 font-serif text-4xl text-sand-50">{featured.title}</h2>
-              <p className="mt-4 text-sand-200">{featured.tagline}</p>
-              <ul className="mt-6 space-y-2 text-sm text-sand-200">
+        <section className="mx-auto max-w-6xl px-6 pt-24">
+          <div className="grid items-center gap-12 rounded-3xl bg-cream-100 p-8 sm:grid-cols-5 sm:p-14">
+            <div className="sm:col-span-3">
+              <p className="eyebrow">New · Pre-launch</p>
+              <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-kalo-950">
+                {featured.title}
+              </h2>
+              <p className="mt-4 text-lg text-kalo-800">{featured.tagline}</p>
+              <ul className="mt-6 space-y-2 text-sm text-kalo-800">
                 {featured.bullets.map((b) => (
-                  <li key={b}>— {b}</li>
+                  <li key={b} className="flex gap-3">
+                    <span className="text-clay-500">✦</span>
+                    <span>{b}</span>
+                  </li>
                 ))}
               </ul>
-              <div className="mt-8 flex items-center gap-4">
-                <Link
-                  href={`/shop/${featured.slug}`}
-                  className="rounded-full bg-coral-500 px-6 py-3 font-medium text-white hover:bg-coral-600"
-                >
-                  Get the cookbook — ${(featured.priceCents / 100).toFixed(0)}
+              <div className="mt-8 flex flex-wrap items-center gap-5">
+                <Link href={`/shop/${featured.slug}`} className="btn-clay">
+                  Read more — ${(featured.priceCents / 100).toFixed(0)}
                 </Link>
-                <Link href="/shop" className="text-sm underline text-sand-200 hover:text-coral-400">
-                  See all products
+                <Link
+                  href="/shop"
+                  className="text-sm font-medium text-kalo-800 underline-offset-4 hover:underline hover:text-clay-600"
+                >
+                  See all guides →
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-center">
-              <div className="aspect-[3/4] w-full max-w-xs rounded-2xl bg-gradient-to-br from-coral-400 via-sand-300 to-ocean-300 shadow-2xl ring-1 ring-sand-100/20 flex items-center justify-center">
-                <span className="font-serif text-2xl text-ocean-950 px-6 text-center">
-                  {featured.title}
-                </span>
-              </div>
+            <div className="sm:col-span-2">
+              <Photo slot="productPacificPlate" ratio="3/4" />
             </div>
           </div>
         </section>
       )}
 
+      <LeafDivider />
+
       {/* Recent stories */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
+      <section className="mx-auto max-w-6xl px-6 pt-12">
         <div className="mb-10 flex items-end justify-between">
-          <h2 className="font-serif text-3xl text-ocean-950">From the journal</h2>
-          <Link href="/blog" className="text-sm text-ocean-700 hover:text-coral-500">
-            All stories →
+          <div>
+            <p className="eyebrow">Field Notes</p>
+            <h2 className="mt-2 font-serif text-4xl text-kalo-950">From the journal</h2>
+          </div>
+          <Link href="/blog" className="text-sm text-kalo-800 hover:text-clay-600">
+            All notes →
           </Link>
         </div>
         <div className="grid gap-8 sm:grid-cols-3">
-          {recentPosts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group block rounded-2xl border border-ocean-100 bg-white p-6 transition hover:border-coral-300 hover:shadow-md"
-            >
-              <p className="text-xs uppercase tracking-wider text-coral-600">
-                {post.category}
-              </p>
-              <h3 className="mt-2 font-serif text-xl text-ocean-950 group-hover:text-coral-600">
-                {post.title}
-              </h3>
-              <p className="mt-3 text-sm text-ocean-700">{post.excerpt}</p>
-            </Link>
-          ))}
+          {recentPosts.map((post, idx) => {
+            const slots = ["postPolynesianDiet", "postBreadfruit", "postPoi"] as const;
+            return (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block overflow-hidden rounded-2xl bg-cream-100 transition hover:-translate-y-1"
+              >
+                <Photo slot={slots[idx] ?? "postPolynesianDiet"} ratio="4/3" rounded={false} />
+                <div className="p-6">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
+                    {post.category}
+                  </p>
+                  <h3 className="mt-2 font-serif text-2xl text-kalo-950 group-hover:text-clay-600">
+                    {post.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-kalo-800">{post.excerpt}</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
+      <LeafDivider />
+
       {/* Bottom email capture */}
-      <section className="mx-auto max-w-3xl px-6 py-20 text-center">
-        <h2 className="font-serif text-3xl text-ocean-950">
-          A weekly recipe rooted in the Pacific.
+      <section className="mx-auto max-w-3xl px-6 py-16 text-center">
+        <p className="eyebrow">The Newsletter</p>
+        <h2 className="mt-3 font-serif text-4xl text-kalo-950">
+          One recipe. One short letter. Every Sunday.
         </h2>
-        <p className="mt-3 text-ocean-700">
-          One short email, every Sunday. A traditional Polynesian recipe rebuilt for a
-          modern kitchen, plus the story of where it came from.
+        <p className="mt-3 text-kalo-800">
+          A traditional Polynesian recipe rebuilt for a modern kitchen, plus
+          the story of where it came from. Nothing else.
         </p>
         <div className="mt-8">
           <EmailCapture inline source="bottom" cta="Subscribe" />

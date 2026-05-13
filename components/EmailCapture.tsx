@@ -11,7 +11,7 @@ type Props = {
 
 export default function EmailCapture({
   source = "landing",
-  cta = "Get the recipes",
+  cta = "Send the first recipe",
   placeholder = "you@example.com",
   inline = false,
 }: Props) {
@@ -32,7 +32,7 @@ export default function EmailCapture({
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong");
       setStatus("ok");
-      setMessage("Check your inbox — your first recipe is on the way.");
+      setMessage("Check your inbox — the first recipe is on its way.");
       setEmail("");
     } catch (err) {
       setStatus("err");
@@ -51,19 +51,15 @@ export default function EmailCapture({
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder={placeholder}
-        className="flex-1 rounded-full border border-ocean-200 bg-white px-5 py-3 text-ocean-950 placeholder:text-ocean-400 focus:border-ocean-500 focus:outline-none"
+        className="input-cream flex-1"
         disabled={status === "loading"}
       />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="rounded-full bg-coral-500 px-6 py-3 font-medium text-white shadow-sm transition hover:bg-coral-600 disabled:opacity-50"
-      >
+      <button type="submit" disabled={status === "loading"} className="btn-clay">
         {status === "loading" ? "Sending…" : cta}
       </button>
       {message && (
         <p
-          className={`text-sm ${status === "ok" ? "text-ocean-700" : "text-coral-600"}`}
+          className={`text-sm ${status === "ok" ? "text-forest-700" : "text-clay-700"}`}
           role="status"
         >
           {message}

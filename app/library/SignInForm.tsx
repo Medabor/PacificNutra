@@ -40,18 +40,16 @@ export default function SignInForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="you@example.com"
-        className="rounded-full border border-ocean-200 bg-white px-5 py-3 text-ocean-950 placeholder:text-ocean-400 focus:border-ocean-500 focus:outline-none"
+        className="input-cream"
         disabled={status === "loading"}
       />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="rounded-full bg-coral-500 px-6 py-3 font-medium text-white shadow-sm transition hover:bg-coral-600 disabled:opacity-50"
-      >
+      <button type="submit" disabled={status === "loading"} className="btn-clay">
         {status === "loading" ? "Sending…" : "Email me a sign-in link"}
       </button>
       {message && (
-        <p className={`text-sm ${status === "ok" ? "text-ocean-700" : "text-coral-600"}`}>
+        <p
+          className={`text-sm ${status === "ok" ? "text-forest-700" : "text-clay-700"}`}
+        >
           {message}
         </p>
       )}
