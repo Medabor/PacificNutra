@@ -123,27 +123,111 @@ certbot --nginx -d pacificnutra.com -d www.pacificnutra.com
 
 To deploy updates: `git pull && npm ci && npm run build && pm2 reload pacificnutra`.
 
-### Option B — Hostinger shared hosting with Node.js Selector
+### Option B — Hostinger Business shared hosting (Node.js Selector)
 
-If you only have shared hosting (Premium/Business), Hostinger's hPanel
-exposes a **Node.js** section that runs an app per domain:
+This is the path for **Business / Premium / Cloud Web Hosting** plans that
+expose hPanel&apos;s **Node.js** section. Hostinger uses Passenger under the
+hood and lets you run up to 50 Node apps on Business plans, so this can
+sit alongside other apps (e.g. ringtolead, ecospruce) without issue.
 
-1. In hPanel → **Advanced → Node.js**, create a new app:
-   - **Node.js version:** 20.x
-   - **Application root:** `domains/pacificnutra.com/public_html`
-   - **Application URL:** `pacificnutra.com`
-   - **Application startup file:** `node_modules/next/dist/bin/next start`
-2. Upload the repo via Git (hPanel → Git) or SFTP.
-3. In the Node.js panel, click **Run NPM Install**, then add a custom
-   command: `npm run build`.
-4. Add all env vars in the Node.js panel under **Environment variables**.
-5. Restart the app.
+This project ships a `server.js` at the project root specifically for
+this setup — Passenger launches `server.js`, which boots Next in
+production mode on the port Passenger provides.
 
-Caveats on shared hosting:
-- Middleware works, but background jobs / long-running tasks do not.
-- You can&apos;t install system packages, so don&apos;t add deps that need
-  native compilation beyond what npm provides.
-- If you outgrow it, the VPS path above is a clean migration.
+#### 1. Push the repo to a Git host
+
+Hostinger pulls from Git. GitHub / GitLab / Bitbucket all work.
+
+#### 2. Create the Node app in hPanel
+
+hPanel → **Advanced → Node.js → Create application**:
+
+| Field | Value |
+|---|---|
+| **Node.js version** | `20.x` (or latest LTS available) |
+| **Application mode** | `Production` |
+| **Application root** | `domains/pacificnutra.com/public_html` (or wherever you want it on disk; doesn&apos;t have to be public_html) |
+| **Application URL** | `pacificnutra.com` |
+| **Application startup file** | `server.js` |
+
+#### 3. Pull the code in
+
+In hPanel → **Files → Git**, add a new repository:
+- **Repository URL:** your Git URL
+- **Branch:** `main` (or whatever your default is)
+- **Directory:** the same path you used for **Application root** above
+
+You can also use the **Auto Deploy** webhook hPanel generates so future
+`git push` calls update the site automatically.
+
+#### 4. Install deps and build
+
+Back in **Node.js → your app**:
+1. Click **Run NPM Install** — installs all dependencies into the app dir.
+2. Click **Run JS Script** and run the `build` script (this executes
+   `npm run build`, producing the `.next/` directory).
+
+If the Run-JS-Script button doesn&apos;t expose `build`, SSH in and run
+`npm run build` manually from the app directory.
+
+#### 5. Set environment variables
+
+Still in **Node.js → your app**, scroll to **Environment variables** and
+add every key from `.env.local.example` with its production value:
+
+```
+NEXT_PUBLIC_SITE_URL=https://pacificnutra.com
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+STRIPE_SECRET_KEY=...
+STRIPE_WEBHOOK_SECRET=...                  # add this after step 7
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=...
+STRIPE_PRICE_THE_PACIFIC_PLATE=...         # optional
+BEEHIIV_API_KEY=...                        # optional
+BEEHIIV_PUBLICATION_ID=...                 # optional
+```
+
+#### 6. Restart the app
+
+Click **Restart** in the Node.js panel. Your site should be live at
+`pacificnutra.com`.
+
+#### 7. Stripe webhook
+
+In Stripe Dashboard → **Developers → Webhooks → Add endpoint**:
+- **Endpoint URL:** `https://pacificnutra.com/api/stripe-webhook`
+- **Events:** `checkout.session.completed`
+
+Copy the signing secret into the `STRIPE_WEBHOOK_SECRET` env var in
+hPanel, restart the app.
+
+#### Updating the site later
+
+Easiest flow:
+
+```bash
+git push origin main
+```
+
+…then in hPanel → Node.js → your app, click **Run NPM Install** (only if
+dependencies changed) → **Run JS Script: build** → **Restart**.
+
+If you set up the Git auto-deploy webhook, you only need to click
+**Run JS Script: build → Restart**.
+
+#### Caveats on Business shared hosting
+
+- Each app gets a slice of the shared RAM. Next.js production servers sit
+  around 150–300 MB — fine alongside two other small Node apps.
+- No system-level packages. Anything that needs `apt-get` won&apos;t work.
+- Long-running background jobs / cron-style schedulers from inside Node
+  aren&apos;t reliable; use hPanel&apos;s **Cron Jobs** section to hit an
+  HTTP endpoint instead if you need scheduled work.
+- Outbound HTTPS to Supabase / Stripe / Beehiiv all works normally.
+- When you outgrow shared hosting (typically once you&apos;re getting steady
+  traffic or want background jobs), Option A above is a clean migration —
+  same `server.js`, same env vars, just running under PM2 on a VPS.
 
 ### Stripe webhook (do this once, after the site is live)
 

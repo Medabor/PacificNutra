@@ -6,8 +6,7 @@ module.exports = {
   apps: [
     {
       name: "pacificnutra",
-      script: "node_modules/next/dist/bin/next",
-      args: "start -p 3000",
+      script: "server.js",
       cwd: __dirname,
       instances: 1,
       exec_mode: "fork",
