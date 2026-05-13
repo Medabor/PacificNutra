@@ -49,17 +49,110 @@ stripe listen --forward-to localhost:3000/api/stripe-webhook
 # Copy the whsec_... value into STRIPE_WEBHOOK_SECRET
 ```
 
-### Deploy to Vercel
+## Deployment
+
+This site is built to self-host on **any Node.js host** — Hostinger VPS,
+Hostinger shared hosting with Node.js Selector, DigitalOcean, Railway,
+Render, etc. We avoid Vercel because its free tier prohibits commercial
+use.
+
+Production builds use `output: "standalone"` (see `next.config.mjs`),
+which produces a self-contained server bundle in `.next/standalone/`
+with only the runtime dependencies needed to start the app.
+
+### Option A — Hostinger VPS (recommended)
+
+The cheapest Hostinger VPS plan (KVM 1, ~$5/mo) is enough to run this
+site comfortably. You get root SSH access, which makes everything easy.
 
 ```bash
-# After connecting the repo to Vercel:
-# 1. Set all env vars in Vercel project settings
-# 2. Point pacificnutra.com DNS to Vercel
-# 3. In Stripe Dashboard, create a webhook endpoint pointing to
-#    https://pacificnutra.com/api/stripe-webhook
-# 4. Subscribe it to checkout.session.completed
-# 5. Copy the production webhook secret into Vercel env vars
+# 1. SSH into the VPS
+ssh root@your-vps-ip
+
+# 2. Install Node 20+ and PM2
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+apt-get install -y nodejs nginx
+npm install -g pm2
+
+# 3. Clone the repo and install deps
+cd /var/www
+git clone <your-repo-url> pacificnutra
+cd pacificnutra
+npm ci
+
+# 4. Create .env.local with your production values
+nano .env.local   # copy from .env.local.example, fill in real keys
+
+# 5. Build and start
+npm run build
+pm2 start ecosystem.config.cjs
+pm2 save
+pm2 startup       # follow the printed instructions to enable on boot
 ```
+
+Then put Nginx in front of it as a reverse proxy with SSL:
+
+```nginx
+# /etc/nginx/sites-available/pacificnutra
+server {
+  listen 80;
+  server_name pacificnutra.com www.pacificnutra.com;
+
+  # Stripe sends large webhook payloads; raise the limit a bit.
+  client_max_body_size 2m;
+
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
+```
+
+```bash
+ln -s /etc/nginx/sites-available/pacificnutra /etc/nginx/sites-enabled/
+nginx -t && systemctl reload nginx
+
+# Get free SSL via Let's Encrypt
+apt-get install -y certbot python3-certbot-nginx
+certbot --nginx -d pacificnutra.com -d www.pacificnutra.com
+```
+
+To deploy updates: `git pull && npm ci && npm run build && pm2 reload pacificnutra`.
+
+### Option B — Hostinger shared hosting with Node.js Selector
+
+If you only have shared hosting (Premium/Business), Hostinger's hPanel
+exposes a **Node.js** section that runs an app per domain:
+
+1. In hPanel → **Advanced → Node.js**, create a new app:
+   - **Node.js version:** 20.x
+   - **Application root:** `domains/pacificnutra.com/public_html`
+   - **Application URL:** `pacificnutra.com`
+   - **Application startup file:** `node_modules/next/dist/bin/next start`
+2. Upload the repo via Git (hPanel → Git) or SFTP.
+3. In the Node.js panel, click **Run NPM Install**, then add a custom
+   command: `npm run build`.
+4. Add all env vars in the Node.js panel under **Environment variables**.
+5. Restart the app.
+
+Caveats on shared hosting:
+- Middleware works, but background jobs / long-running tasks do not.
+- You can&apos;t install system packages, so don&apos;t add deps that need
+  native compilation beyond what npm provides.
+- If you outgrow it, the VPS path above is a clean migration.
+
+### Stripe webhook (do this once, after the site is live)
+
+1. In Stripe Dashboard → **Developers → Webhooks → Add endpoint**:
+   - **Endpoint URL:** `https://pacificnutra.com/api/stripe-webhook`
+   - **Events:** `checkout.session.completed`
+2. Copy the **Signing secret** (`whsec_...`) into your production
+   `.env.local` as `STRIPE_WEBHOOK_SECRET`, then restart the app
+   (`pm2 reload pacificnutra` on VPS).
 
 ## Project structure
 
