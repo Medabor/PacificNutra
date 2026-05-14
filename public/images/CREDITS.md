@@ -33,7 +33,18 @@ a courtesy.
 | `postBreadfruit` | `post-breadfruit.jpg` | 1200×675 | [breadfruit](https://unsplash.com/s/photos/breadfruit) / [ulu hawaii](https://unsplash.com/s/photos/ulu) |
 | `postPoi` | `post-poi.jpg` | 1200×675 | [taro root](https://unsplash.com/s/photos/taro-root) / [poi hawaii](https://unsplash.com/s/photos/poi) |
 
-## Photo credits (fill in as you add images)
+## Currently wired
+
+| Slot | File | Source |
+|---|---|---|
+| `homeHero` | `polynesian-img1.jpg` | User upload |
+| `aboutHero` | `Polynian-img4.jpg` | User upload |
+| `productPacificPlate` | `polyneian-img2.jpg` | User upload |
+| `postPolynesianDiet` | `Polynesian-img5.jpg` | User upload |
+| `postBreadfruit` | `Polynian-img3.jpg` | User upload |
+| `postPoi` | (BrandPanel `poi` SVG art) | — |
+
+## Photo credits (fill in as you add Unsplash images)
 
 <!--
 Format:
