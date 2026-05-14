@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LeafMark from "@/components/LeafMark";
+import WaveMark from "@/components/WaveMark";
 
 const links = [
   { href: "/blog", label: "Field Notes" },
@@ -12,9 +12,7 @@ export default function Nav() {
     <header className="sticky top-0 z-30 border-b border-cream-200/70 bg-cream-50/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3 text-kalo-950">
-          <span className="text-clay-500">
-            <LeafMark size={28} />
-          </span>
+          <WaveMark size={36} />
           <span className="font-serif text-xl tracking-tight">
             Pacific <span className="italic font-medium text-clay-600">Nutra</span>
           </span>

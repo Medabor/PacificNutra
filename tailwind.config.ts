@@ -26,14 +26,15 @@ const config: Config = {
           200: "#E4D5B7",
           300: "#D2BE93",
         },
-        // Terracotta: primary CTA + accent
+        // Terracotta: primary CTA + accent. Punchier than v1 (was
+        // #B8553A) — reads more decisive on cream backgrounds.
         clay: {
-          200: "#F1C6B5",
-          300: "#E4A38C",
-          400: "#CF7A5F",
-          500: "#B8553A",
-          600: "#9C4128",
-          700: "#7D3220",
+          200: "#F4CABA",
+          300: "#EBA48B",
+          400: "#DD7E5C",
+          500: "#D55A38",
+          600: "#B8442A",
+          700: "#90331F",
         },
         // Taro leaf: secondary accent
         forest: {

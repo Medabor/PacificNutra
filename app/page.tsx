@@ -40,9 +40,69 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why this matters — four editorial cards, no SaaS tinted-icon grid */}
+      <section className="mx-auto max-w-6xl px-6 pt-24">
+        <div className="max-w-2xl">
+          <p className="eyebrow">Why this, why now</p>
+          <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-kalo-950 leading-[1.1]">
+            Three thousand years of practice. Two generations of evidence.
+          </h2>
+          <p className="mt-5 text-lg text-kalo-800">
+            Pacific Islanders ate this way long before "longevity" was a
+            wellness category. We&apos;re not selling a fad — we&apos;re
+            documenting what a population actually ate, why it worked, and
+            how to put it on your table this week.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2">
+          {[
+            {
+              n: "01",
+              title: "Documented, not theorized.",
+              body:
+                "Pacific Islander populations have some of the cleanest dietary records in the world — ethnographers, traders, and physicians documented the pre-contact diet in detail, and we have medical evidence from both sides of the Western dietary transition.",
+            },
+            {
+              n: "02",
+              title: "Real food. Not pills.",
+              body:
+                "Taro, breadfruit, fish, leafy greens, coconut. Five categories of whole food, eaten in roughly traditional proportions. No supplements, no protein powders, no proprietary blends.",
+            },
+            {
+              n: "03",
+              title: "Tested in a real kitchen.",
+              body:
+                "Every recipe we publish has been cooked from groceries you can actually buy. Where ingredients are hard to source, we name the substitution and the trade-off it makes.",
+            },
+            {
+              n: "04",
+              title: "Respectful, not appropriative.",
+              body:
+                "We're a guide, not a representative of Polynesian culture. We name regions specifically — Hawaii, Samoa, Tonga, Tahiti — credit practitioners, and welcome corrections.",
+            },
+          ].map((card) => (
+            <div key={card.n} className="flex gap-5">
+              <span className="font-serif text-2xl text-clay-500 leading-none pt-1">
+                {card.n}
+              </span>
+              <div>
+                <h3 className="font-serif text-2xl text-kalo-950">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-kalo-800 leading-relaxed">
+                  {card.body}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <LeafDivider />
+
       {/* Featured product */}
       {featured && (
-        <section className="mx-auto max-w-6xl px-6 pt-24">
+        <section className="mx-auto max-w-6xl px-6 pt-12">
           <div className="grid items-center gap-12 rounded-3xl bg-cream-100 p-8 sm:grid-cols-5 sm:p-14">
             <div className="sm:col-span-3">
               <p className="eyebrow">New · Pre-launch</p>
