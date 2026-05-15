@@ -1,7 +1,3 @@
-// Renders whatever the photo registry returns for a given slot — either
-// a SVG art panel (default) or a real <Image> (once you swap entries in
-// lib/photos.ts).
-
 import Image from "next/image";
 import BrandPanel from "@/components/BrandPanel";
 import { getPhoto, type PhotoSlotKey } from "@/lib/photos";
@@ -12,10 +8,45 @@ type Props = {
   className?: string;
   rounded?: boolean;
   priority?: boolean;
+  /**
+   * When true, the photo fills its closest positioned ancestor (caller
+   * provides `position: relative | absolute`). Aspect ratio is ignored.
+   * Use this for full-bleed hero sections.
+   */
+  fill?: boolean;
 };
 
-export default function Photo({ slot, ratio = "16/9", className, rounded = true, priority }: Props) {
+export default function Photo({
+  slot,
+  ratio = "16/9",
+  className,
+  rounded = true,
+  priority,
+  fill,
+}: Props) {
   const photo = getPhoto(slot);
+
+  if (fill) {
+    if (photo.kind === "panel") {
+      return (
+        <div className={className} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+          <BrandPanel variant={photo.variant} ratio={ratio} rounded={false} />
+        </div>
+      );
+    }
+    return (
+      <Image
+        src={photo.src}
+        alt={photo.alt}
+        fill
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
+        priority={priority}
+        className={className}
+      />
+    );
+  }
+
   if (photo.kind === "panel") {
     return (
       <BrandPanel

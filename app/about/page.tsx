@@ -7,14 +7,12 @@ export const metadata = { title: "About" };
 export default function AboutPage() {
   return (
     <>
-      <section className="relative">
-        <div className="absolute inset-0 -z-10">
-          <Photo slot="aboutHero" ratio="21/9" rounded={false} priority />
-          <div className="absolute inset-0 bg-kalo-950/45" />
-        </div>
-        <div className="mx-auto max-w-3xl px-6 py-28 text-center text-cream-50">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-clay-300">About</p>
-          <h1 className="mt-4 font-serif text-5xl sm:text-6xl leading-[1.05]">
+      <section className="relative isolate overflow-hidden">
+        <Photo slot="aboutHero" fill priority />
+        <div className="absolute inset-0 bg-gradient-to-b from-kalo-950/55 via-kalo-950/40 to-kalo-950/55" />
+        <div className="relative mx-auto max-w-3xl px-6 py-32 text-center text-cream-50">
+          <p className="text-xs font-medium uppercase tracking-[0.32em] text-clay-300">About</p>
+          <h1 className="mt-6 font-serif text-5xl sm:text-6xl leading-[1.05]">
             Rebuilding the Pacific pantry,
             <br />
             <span className="italic">one recipe at a time.</span>

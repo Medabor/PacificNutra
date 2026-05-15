@@ -2,7 +2,6 @@ import Link from "next/link";
 import EmailCapture from "@/components/EmailCapture";
 import LeafDivider from "@/components/LeafDivider";
 import Photo from "@/components/Photo";
-import BrandPanel from "@/components/BrandPanel";
 import { getAllProducts } from "@/lib/products";
 import { getAllPosts } from "@/lib/posts";
 
@@ -12,29 +11,29 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero — full-bleed photo (or art panel fallback) with overlay copy */}
-      <section className="relative">
-        <div className="absolute inset-0 -z-10">
-          <Photo slot="homeHero" ratio="21/9" rounded={false} priority />
-          <div className="absolute inset-0 bg-kalo-950/55" />
-        </div>
-        <div className="mx-auto max-w-5xl px-6 py-28 sm:py-40 text-center text-cream-50">
-          <p className="text-xs font-medium uppercase tracking-[0.28em] text-clay-300">
-            Pacific Nutra · Field Notes & Recipes
+      {/* Hero — full-bleed photo. Fills the section regardless of content
+          height; no aspect-ratio cropping the overlay band. */}
+      <section className="relative isolate overflow-hidden">
+        <Photo slot="homeHero" fill priority />
+        <div className="absolute inset-0 bg-gradient-to-b from-kalo-950/70 via-kalo-950/55 to-kalo-950/70" />
+        <div className="relative mx-auto max-w-5xl px-6 py-32 sm:py-48 text-center text-cream-50">
+          <p className="text-xs font-medium uppercase tracking-[0.32em] text-clay-300">
+            Pacific Nutra
           </p>
-          <h1 className="mt-6 font-serif text-5xl sm:text-7xl leading-[1.05] tracking-tight">
-            Taro. Breadfruit. Poi.
+          <h1 className="mt-8 font-serif text-5xl sm:text-7xl leading-[1.02] tracking-tight">
+            The diet that fed the Pacific
             <br />
-            <span className="italic text-cream-100/95">Older than wellness.</span>
+            <span className="italic text-clay-300">for three thousand years.</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-cream-50/90">
-            The foods that kept Pacific Islanders healthy for three thousand
-            years — translated for the modern kitchen.
+          <p className="mx-auto mt-8 max-w-xl text-lg leading-relaxed text-cream-50/95">
+            Taro. Breadfruit. Poi. Coconut. Fresh fish. The foods of the
+            longest-lived people on the planet — translated for the modern
+            kitchen, with the receipts.
           </p>
-          <div className="mx-auto mt-10 max-w-xl">
+          <div className="mx-auto mt-12 max-w-xl">
             <EmailCapture inline source="hero" cta="Send the first recipe" />
-            <p className="mt-3 text-xs text-cream-100/70">
-              One short email a week. Always a recipe. Never a pitch.
+            <p className="mt-4 text-xs uppercase tracking-[0.2em] text-cream-100/75">
+              One short email a week · Always a recipe · Never a pitch
             </p>
           </div>
         </div>

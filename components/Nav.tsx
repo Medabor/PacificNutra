@@ -4,6 +4,7 @@ import WaveMark from "@/components/WaveMark";
 const links = [
   { href: "/blog", label: "Field Notes" },
   { href: "/shop", label: "Shop" },
+  { href: "/affiliate", label: "Pantry" },
   { href: "/about", label: "About" },
 ];
 
