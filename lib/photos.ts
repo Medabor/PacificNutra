@@ -4,6 +4,11 @@
 //
 // To swap an entry, change `kind: "panel"` to `kind: "image"` (or the
 // reverse) and edit the `src` / `variant`.
+//
+// Unused photos (kept in public/images/ for future blog posts):
+//   - Polynian-img3.jpg  (rice + egg bowl)
+//   - Polynian-img4.jpg  (carved pineapple centerpiece)
+//   - Polynesian-img5.jpg (pineapple shrimp fried rice)
 
 import type { ComponentProps } from "react";
 import BrandPanel from "@/components/BrandPanel";
@@ -17,17 +22,17 @@ export type PhotoSlot =
 const slots = {
   homeHero: {
     kind: "image",
-    src: "/images/polynesian-img1.jpg",
-    alt: "Overhead Polynesian table spread on a woven raffia tablecloth — cast-iron skillet with seasoned greens and protein, rice noodles, slaw, and dipping sauce",
-    width: 5519,
-    height: 4139,
+    src: "/images/Polynesian-img9.jpg",
+    alt: "Two Hawaiian nēnē geese stand in a taro field with the Kauai mountains rising in the background",
+    width: 2000,
+    height: 1335,
   },
   aboutHero: {
     kind: "image",
-    src: "/images/Polynian-img4.jpg",
-    alt: "A carved pineapple table centerpiece with pandanus leaves, surrounded by plates of food in soft warm light",
-    width: 6000,
-    height: 4000,
+    src: "/images/Polynesian-img8.jpg",
+    alt: "A sunflower field in front of the Koʻolau mountain range on Oahu",
+    width: 2000,
+    height: 1333,
   },
   productPacificPlate: {
     kind: "image",
@@ -38,21 +43,25 @@ const slots = {
   },
   postPolynesianDiet: {
     kind: "image",
-    src: "/images/Polynesian-img5.jpg",
-    alt: "Pineapple shrimp fried rice — yellow rice and prawn served inside a halved pineapple",
-    width: 6000,
-    height: 4000,
+    src: "/images/polynesian-img1.jpg",
+    alt: "Overhead Polynesian table spread on a woven raffia tablecloth — cast-iron skillet with seasoned greens and protein, rice noodles, slaw, and dipping sauce",
+    width: 5519,
+    height: 4139,
   },
   postBreadfruit: {
     kind: "image",
-    src: "/images/Polynian-img3.jpg",
-    alt: "Close-up of a wholesome bowl with wild rice, soft-boiled egg, mixed vegetables, and a side of broth",
-    width: 2909,
-    height: 2195,
+    src: "/images/Polynesian-img7.jpg",
+    alt: "Traditional Pacific seafood wrapped in banana leaf — squid and greens dressed in a herb sauce",
+    width: 2000,
+    height: 905,
   },
-  // No real taro / poi photo on hand yet — the BrandPanel "poi" art is
-  // thematically perfect (clay pottery rings) for this post.
-  postPoi: { kind: "panel", variant: "poi" },
+  postPoi: {
+    kind: "image",
+    src: "/images/Polynesian-img6.jpg",
+    alt: "Balinese-style fruit and flower offerings on a woven raffia table, framed by large kalo (taro) leaves in a tropical garden",
+    width: 1170,
+    height: 2080,
+  },
 } as const satisfies Record<string, PhotoSlot>;
 
 export type PhotoSlotKey = keyof typeof slots;

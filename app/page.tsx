@@ -12,10 +12,10 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero — full-bleed art panel with overlay copy */}
+      {/* Hero — full-bleed photo (or art panel fallback) with overlay copy */}
       <section className="relative">
         <div className="absolute inset-0 -z-10">
-          <BrandPanel variant="ocean" ratio="21/9" rounded={false} />
+          <Photo slot="homeHero" ratio="21/9" rounded={false} priority />
           <div className="absolute inset-0 bg-kalo-950/55" />
         </div>
         <div className="mx-auto max-w-5xl px-6 py-28 sm:py-40 text-center text-cream-50">

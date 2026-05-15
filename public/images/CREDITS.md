@@ -37,12 +37,18 @@ a courtesy.
 
 | Slot | File | Source |
 |---|---|---|
-| `homeHero` | `polynesian-img1.jpg` | User upload |
-| `aboutHero` | `Polynian-img4.jpg` | User upload |
-| `productPacificPlate` | `polyneian-img2.jpg` | User upload |
-| `postPolynesianDiet` | `Polynesian-img5.jpg` | User upload |
-| `postBreadfruit` | `Polynian-img3.jpg` | User upload |
-| `postPoi` | (BrandPanel `poi` SVG art) | — |
+| `homeHero` | `Polynesian-img9.jpg` | User upload — nēnē in taro field |
+| `aboutHero` | `Polynesian-img8.jpg` | User upload — sunflower field + Koʻolau |
+| `productPacificPlate` | `polyneian-img2.jpg` | User upload — plated Polynesian dish |
+| `postPolynesianDiet` | `polynesian-img1.jpg` | User upload — overhead spread |
+| `postBreadfruit` | `Polynesian-img7.jpg` | User upload — banana-leaf wrapped seafood |
+| `postPoi` | `Polynesian-img6.jpg` | User upload — offerings with kalo leaves |
+
+## Available for future posts (in `public/images/`, not wired)
+
+- `Polynian-img3.jpg` — rice + egg + salad bowl
+- `Polynian-img4.jpg` — carved pineapple centerpiece
+- `Polynesian-img5.jpg` — pineapple shrimp fried rice
 
 ## Photo credits (fill in as you add Unsplash images)
 
