@@ -25,7 +25,13 @@ export async function POST(req: Request) {
   }
 
   if (event.type === "checkout.session.completed") {
-    const session = event.data.object as Stripe.Checkout.Session;
+    // The webhook endpoint is pinned to an old Stripe API version, whose
+    // payload omits customer_details. Re-fetch via the SDK (modern version)
+    // so the customer email is always present.
+    const eventSession = event.data.object as Stripe.Checkout.Session;
+    const session = await getStripe().checkout.sessions.retrieve(
+      eventSession.id,
+    );
     const slug = session.metadata?.product_slug;
     const email = session.customer_details?.email ?? session.customer_email;
     const product = slug ? getProductBySlug(slug) : undefined;
