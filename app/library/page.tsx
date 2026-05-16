@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { createSupabaseServerClient, createSupabaseServiceClient } from "@/lib/supabase/server";
 import { getProductBySlug } from "@/lib/products";
-import SignInForm from "./SignInForm";
+import SignInForm from "@/components/SignInForm";
 
 export const metadata = { title: "Library" };
 export const dynamic = "force-dynamic";
@@ -20,7 +20,7 @@ export default async function LibraryPage() {
           magic link.
         </p>
         <div className="mt-8">
-          <SignInForm />
+          <SignInForm redirectPath="/library" />
         </div>
       </div>
     );

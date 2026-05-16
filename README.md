@@ -177,6 +177,7 @@ add every key from `.env.local.example` with its production value:
 
 ```
 NEXT_PUBLIC_SITE_URL=https://pacificnutra.com
+ADMIN_EMAIL=...                            # the email allowed into /admin
 NEXT_PUBLIC_SUPABASE_URL=...
 NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 SUPABASE_SERVICE_ROLE_KEY=...
@@ -187,6 +188,14 @@ STRIPE_PRICE_THE_PACIFIC_PLATE=...         # optional
 BEEHIIV_API_KEY=...                        # optional
 BEEHIIV_PUBLICATION_ID=...                 # optional
 ```
+
+### Admin dashboard
+
+Visit `/admin` and sign in with a Supabase magic link. Only the address
+set in `ADMIN_EMAIL` sees the dashboard (subscribers, orders, revenue);
+anyone else gets a "not authorized" message. The route is `noindex` so
+search engines won't list it — it's intentionally not linked from the
+nav or footer, so bookmark it.
 
 #### 6. Restart the app
 

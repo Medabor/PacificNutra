@@ -3,7 +3,16 @@
 import { useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
-export default function SignInForm() {
+type Props = {
+  /** Path the magic link returns to, e.g. "/library" or "/admin". */
+  redirectPath?: string;
+  buttonLabel?: string;
+};
+
+export default function SignInForm({
+  redirectPath = "/library",
+  buttonLabel = "Email me a sign-in link",
+}: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "err">("idle");
   const [message, setMessage] = useState("");
@@ -19,7 +28,7 @@ export default function SignInForm() {
         options: {
           emailRedirectTo:
             typeof window !== "undefined"
-              ? `${window.location.origin}/library`
+              ? `${window.location.origin}${redirectPath}`
               : undefined,
         },
       });
@@ -44,7 +53,7 @@ export default function SignInForm() {
         disabled={status === "loading"}
       />
       <button type="submit" disabled={status === "loading"} className="btn-clay">
-        {status === "loading" ? "Sending…" : "Email me a sign-in link"}
+        {status === "loading" ? "Sending…" : buttonLabel}
       </button>
       {message && (
         <p
