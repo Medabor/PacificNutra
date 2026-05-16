@@ -11,13 +11,26 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 
 - **Framework:** Next.js (App Router) + TypeScript + Tailwind CSS
 - **Database / auth / storage:** Supabase
-- **Payments:** Stripe (Checkout + webhook)
+- **Payments:** Stripe (Checkout + webhook), in **Live mode**
 - **Email:** Beehiiv (newsletter, optional) and Resend (transactional, optional)
 - **Hosting:** Hostinger Node.js app. **Auto-deploys on every push** to the
-  branch below — no manual deploy step.
+  branch below — no manual deploy step. App runs behind a reverse proxy, so
+  `NEXT_PUBLIC_SITE_URL` must be set explicitly (the request origin resolves
+  to an internal `localhost` address otherwise).
 - **Repo:** `medabor/pacificnutra`
 - **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — develop,
   commit, and push here.
+
+## Domain plan
+
+- Real domain: **`pacificnutra.com`** — the decision is to connect this domain
+  now and keep building on it (zero traffic, so low risk), rather than ship on
+  staging and cut over later.
+- Staging domain `https://staging.pacificnutra.com` exists but is **not** the
+  target — all config (env var, Supabase, Stripe) should point at
+  `pacificnutra.com`.
+- The whole site is **`noindex`** while building (see below). The site must
+  not be shared/marketed until the ebook is finished and uploaded.
 
 ## Routes
 
@@ -47,7 +60,7 @@ Schema in `supabase/migrations/0001_init.sql`:
 - Private storage bucket `ebooks` (signed URLs handed out for downloads).
 - RLS is on; server code uses the service-role key, which bypasses RLS.
 
-## Environment variables (set in Hostinger → Node.js → Environment variables)
+## Environment variables (Hostinger → Node.js → Environment variables)
 
 ```
 NEXT_PUBLIC_SITE_URL=https://pacificnutra.com
@@ -55,9 +68,9 @@ ADMIN_EMAIL=                              # the email allowed into /admin
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
-STRIPE_SECRET_KEY=
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-STRIPE_WEBHOOK_SECRET=
+STRIPE_SECRET_KEY=                        # sk_live_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=       # pk_live_...
+STRIPE_WEBHOOK_SECRET=                    # whsec_...
 STRIPE_PRICE_THE_PACIFIC_PLATE=           # optional
 BEEHIIV_API_KEY=                          # optional
 BEEHIIV_PUBLICATION_ID=                   # optional
@@ -65,33 +78,50 @@ RESEND_API_KEY=                           # optional
 ```
 
 Var names are read literally by the code — they must match exactly,
-including the `NEXT_PUBLIC_` prefix where shown.
+including the `NEXT_PUBLIC_` prefix where shown. Changing env vars requires
+an app restart in Hostinger.
 
 ## Setup status
 
-**Supabase — done.** Project created, migration run, Auth URL Configuration
-set (Site URL + `/library` and `/admin` redirect URLs), env vars in Hostinger.
+**Supabase — done.** Project created, migration run, env vars in Hostinger.
+Auth → URL Configuration: Site URL and `/library` + `/admin` redirect URLs
+should all use `https://pacificnutra.com`.
 
 **Stripe — done, pending live verification.** Live mode. Webhook destination
-"PacificNutra" created → endpoint `https://pacificnutra.com/api/stripe-webhook`,
-API version `2026-04-22.dahlia`, listening to `checkout.session.completed`.
-Live keys + webhook signing secret added to Hostinger.
+"PacificNutra" → endpoint `https://pacificnutra.com/api/stripe-webhook`,
+API version `2026-04-22.dahlia`, event `checkout.session.completed`. Live
+keys + webhook signing secret added to Hostinger. The webhook route
+re-fetches the Checkout Session via the SDK so the buyer email is reliable
+regardless of the endpoint's API version.
 
-The webhook route re-fetches the Checkout Session via the Stripe SDK so the
-buyer email is reliable regardless of the endpoint's API version.
+**Test purchase — partial.** A live test purchase was completed using a
+100%-off promo code; the payment shows in Stripe. But the webhook delivery
+failed (the site/domain wasn't reachable at the time), so the order was
+**not** recorded in Supabase. Needs a resend / re-test once the domain and
+`NEXT_PUBLIC_SITE_URL` are correct.
+
+**noindex — active.** `app/layout.tsx` has a site-wide
+`robots: { index: false, follow: false }` with a comment marking it for
+removal at launch.
 
 ## Outstanding / next steps
 
-1. **Confirm Stripe payouts** — verify a bank account is linked
-   (Stripe → Settings → Payouts) so funds actually pay out.
-2. **Live test purchase** — buy The Pacific Plate ($24) with a real card,
-   verify: Stripe payment succeeded, webhook delivery succeeded, a `paid`
-   row in Supabase `orders`, and the order shows on `/admin`. Then refund.
-3. **Upload the ebook PDF** to the Supabase `ebooks` bucket as
+1. **Connect `pacificnutra.com`** in Hostinger/DNS (currently the site is
+   reached via the staging domain).
+2. **Add `NEXT_PUBLIC_SITE_URL=https://pacificnutra.com`** in Hostinger (it
+   was missing — this caused the broken post-checkout redirect). Restart.
+3. **Confirm Stripe payouts** — a bank account must be linked
+   (Stripe → Settings → Payouts) for funds to pay out.
+4. **Fix the failed test order** — in the Stripe webhook's Event deliveries
+   tab, resend the failed `checkout.session.completed`, or run a fresh test
+   purchase. Verify a `paid` row appears in Supabase `orders` and on `/admin`.
+5. **Upload the ebook PDF** to the Supabase `ebooks` bucket as
    `the-pacific-plate-v1.pdf` (otherwise the library download 404s).
-4. **Finish ebook content** (Section 2 was outstanding).
-5. **Sample-chapter download** and **SEO plumbing** (sitemap/robots) were
-   noted as open items.
+6. **Finish ebook content** (Section 2 was outstanding).
+7. **Sample-chapter download** and **SEO plumbing** (sitemap/robots) — open
+   items.
+8. **At launch:** remove the `robots` line in `app/layout.tsx` so the site
+   becomes indexable.
 
 ## Deployment
 
