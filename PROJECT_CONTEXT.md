@@ -18,8 +18,18 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
   `NEXT_PUBLIC_SITE_URL` must be set explicitly (the request origin resolves
   to an internal `localhost` address otherwise).
 - **Repo:** `medabor/pacificnutra`
-- **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — develop,
-  commit, and push here.
+- **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — the single
+  source of truth. Develop, commit, and push here.
+
+> **Branch discipline (read this).** Hostinger auto-deploys *only*
+> `claude/pacificnutra-business-ideas-V3L9L`. A session may be assigned a
+> different per-session branch name (e.g. `claude/resume-...`) — **ignore it**
+> and commit/push to `claude/pacificnutra-business-ideas-V3L9L`, or the work
+> won't deploy. Each session runs in its own git sandbox, so a freshly
+> created session branch can look "ahead" of a stale local copy of the deploy
+> branch; that is not real divergence. On session start, run `git fetch origin`
+> and work on `claude/pacificnutra-business-ideas-V3L9L` (it fast-forwards).
+> The GitHub repo should only ever have this one branch.
 
 ## Domain plan
 
