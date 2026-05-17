@@ -84,7 +84,7 @@ you've probably eaten in some form already.
   occasional honey raid.
 - **Dairy.** Polynesia is one of the few traditional cultures with no
   history of dairy consumption.
-- **Seed oils.** Cooking fat was coconut, pork fat, and fish oil.
+- **Seed oils.** Cooking fat was coconut and fish oil.
 
 You will notice we have not removed these things from this book either,
 because this is a cookbook for the world you live in, not the one you
@@ -106,7 +106,7 @@ The thirty recipes are organized in six sections:
 4. **Coconut** — five recipes. Coconut rice, haupia, toasted
    coconut chips, coconut-poached fish.
 5. **One-pot meals** — five recipes that combine the pillars.
-   Kalua-style pork, coconut curry with taro, four kinds of poke
+   Shoyu chicken, coconut curry with taro, four kinds of poke
    bowl.
 6. **Sweet** — four recipes. Haupia, banana lumpia, shave ice,
    mochi.
@@ -121,8 +121,8 @@ Each recipe includes:
   the book
 
 Total cooking time across the book sits between 20 minutes (a poke
-bowl, a haupia) and three hours (a kalua pork). Most recipes are in
-the 30–45 minute range.
+bowl, a haupia) and a little over an hour (slow-simmered octopus).
+Most recipes are in the 30–45 minute range.
 
 ## A short note on sourcing
 
@@ -262,7 +262,7 @@ sets up like a paste.
 ### What to plate it with
 
 A perfect companion to **2.5 whole grilled fish with banana leaf**
-or **5.1 kalua-style pork**. Also good with **3.4 ginger-garlic
+or **5.1 shoyu chicken**. Also good with **3.4 ginger-garlic
 bok choy** for an all-vegetable plate.
 
 ---
@@ -665,7 +665,7 @@ kitchens actually do on a busy day.
 ### What to plate it with
 
 Lomi salmon is built to sit beside rich things. The classic plate
-is a scoop of lomi salmon, **5.1 kalua-style pork**, and a
+is a scoop of lomi salmon, **5.1 shoyu chicken**, and a
 starch. It is also superb with **1.4 cassava fries with garlic
 and lime** — use it almost as a dipping relish.
 
@@ -904,11 +904,11 @@ this working document. Outline follows.
 
 ## Section 5 · One-pot meals (5 recipes)
 
-- 5.1 Kalua-style pork (oven method)
+- 5.1 Shoyu chicken
 - 5.2 Chicken adobo (Filipino-Pacific crossover)
 - 5.3 Coconut curry with taro
 - 5.4 Poke bowl, four ways
-- 5.5 Spam musubi, rebuilt
+- 5.5 Furikake salmon musubi
 
 ## Section 6 · Sweet (4 recipes)
 

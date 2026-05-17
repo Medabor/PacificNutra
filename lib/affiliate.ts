@@ -28,7 +28,7 @@ const products: AffiliateProduct[] = [
     name: "Lodge 12\" cast iron skillet",
     category: "Tools",
     blurb:
-      "A single heavy pan that handles every cooking method in the Pacific Plate: searing fish, roasting breadfruit wedges, finishing kalua-style pork.",
+      "A single heavy pan that handles every cooking method in the Pacific Plate: searing fish, roasting breadfruit wedges, braising shoyu chicken.",
     why:
       "The skillet you see on our home page hero is this one. We've used it for four years and it's still the most-used pan in the kitchen.",
     // image: "/images/affiliate/...jpg",  // add real photo here

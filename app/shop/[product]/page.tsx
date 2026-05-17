@@ -52,7 +52,7 @@ const SECTIONS = [
     title: "One-Pot Meals",
     count: 5,
     teaser:
-      "Kalua-style pork (oven method) · Chicken adobo · Coconut curry with taro · Poke bowl, four ways · Spam musubi, rebuilt",
+      "Shoyu chicken · Chicken adobo · Coconut curry with taro · Poke bowl, four ways · Furikake salmon musubi",
   },
   {
     n: "06",

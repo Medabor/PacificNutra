@@ -65,6 +65,11 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 - Manuscript draft: `content/ebook/the-pacific-plate.md`. Intro + Sections 1–2
   (11 recipes) fully written; Sections 3–6 (19 recipes) still outline-only.
   The `/sample` route renders the intro + Section 1 from this file.
+- **Content rule — no pork, no alcohol** anywhere on the site (recipes, blog,
+  copy). Section 5 was re-outlined accordingly: kalua pork → Shoyu chicken,
+  Spam musubi → Furikake salmon musubi. Keep Sections 3–6 pork- and
+  alcohol-free when drafting (watch for rum in desserts, mirin/wine in
+  braises).
 
 ## Database (Supabase)
 
