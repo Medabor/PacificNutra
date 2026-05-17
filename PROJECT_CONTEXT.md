@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-05-16.
+Snapshot for resuming work in a new session. Last updated: 2026-05-17.
 
 ## What this is
 
@@ -50,6 +50,7 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 | `/about`, `/affiliate`, `/privacy`, `/refund`, `/terms` | Static pages |
 | `/blog`, `/blog/[slug]` | Blog |
 | `/shop`, `/shop/[product]` | Product listing + detail |
+| `/sample` | Free sample — renders the intro + Section 1 of the ebook manuscript in-browser, with a buy CTA |
 | `/library` | Customer ebook library — Supabase magic-link auth |
 | `/admin` | Subscribers/orders/revenue dashboard — magic-link auth, gated to `ADMIN_EMAIL`, `noindex`, unlinked from nav/footer |
 | `/api/checkout` | Creates a Stripe Checkout session |
@@ -61,6 +62,9 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 - **The Pacific Plate** — slug `the-pacific-plate`, price $24.00 (`2400` cents).
 - Defined in `lib/products.ts`.
 - Ebook PDF expected in Supabase Storage at `ebooks/the-pacific-plate-v1.pdf`.
+- Manuscript draft: `content/ebook/the-pacific-plate.md`. Intro + Sections 1–2
+  (11 recipes) fully written; Sections 3–6 (19 recipes) still outline-only.
+  The `/sample` route renders the intro + Section 1 from this file.
 
 ## Database (Supabase)
 
@@ -110,27 +114,34 @@ failed (the site/domain wasn't reachable at the time), so the order was
 **not** recorded in Supabase. Needs a resend / re-test once the domain and
 `NEXT_PUBLIC_SITE_URL` are correct.
 
-**noindex — active.** `app/layout.tsx` has a site-wide
-`robots: { index: false, follow: false }` with a comment marking it for
-removal at launch.
+**noindex — active.** Two coordinated crawl blocks while building:
+`app/layout.tsx` has a site-wide `robots: { index: false, follow: false }`,
+and `app/robots.ts` serves `Disallow: /`. Both carry a comment marking them
+for the launch toggle.
+
+**SEO plumbing — done.** `app/sitemap.ts` (lists all public routes, posts,
+and products) and `app/robots.ts` are in place.
 
 ## Outstanding / next steps
 
-1. **Connect `pacificnutra.com`** in Hostinger/DNS (currently the site is
-   reached via the staging domain).
-2. **Add `NEXT_PUBLIC_SITE_URL=https://pacificnutra.com`** in Hostinger (it
-   was missing — this caused the broken post-checkout redirect). Restart.
-3. **Confirm Stripe payouts** — a bank account must be linked
-   (Stripe → Settings → Payouts) for funds to pay out.
-4. **Fix the failed test order** — in the Stripe webhook's Event deliveries
-   tab, resend the failed `checkout.session.completed`, or run a fresh test
-   purchase. Verify a `paid` row appears in Supabase `orders` and on `/admin`.
+1. ~~Connect `pacificnutra.com` in Hostinger/DNS.~~ **Done.**
+2. ~~Add `NEXT_PUBLIC_SITE_URL=https://pacificnutra.com` in Hostinger.~~
+   **Done.**
+3. **Confirm Stripe payouts** — verify a bank account is linked
+   (Stripe → Settings → Payouts) for funds to pay out. Still to check.
+4. **Verify the test order recorded.** A real order was placed and shows in
+   Stripe; confirm a `paid` row also appears in Supabase `orders` and on
+   `/admin` (i.e. the webhook delivered successfully).
 5. **Upload the ebook PDF** to the Supabase `ebooks` bucket as
    `the-pacific-plate-v1.pdf` (otherwise the library download 404s).
-6. **Finish ebook content** (Section 2 was outstanding).
-7. **Sample-chapter download** and **SEO plumbing** (sitemap/robots) — open
-   items.
-8. **At launch:** remove the `robots` line in `app/layout.tsx` so the site
+   Blocked on item 6 — the manuscript must be finished first.
+6. **Finish ebook content.** Intro + Sections 1–2 are written; Sections 3–6
+   (19 recipes) are still outline-only in
+   `content/ebook/the-pacific-plate.md`.
+7. ~~Sample-chapter page and SEO plumbing (sitemap/robots).~~ **Done** —
+   `/sample` route + `sitemap.ts` + `robots.ts`.
+8. **At launch:** remove the `robots` line in `app/layout.tsx` *and* flip
+   `app/robots.ts` to the launch rule (both noted in-file) so the site
    becomes indexable.
 
 ## Deployment

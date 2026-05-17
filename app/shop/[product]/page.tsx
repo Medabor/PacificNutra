@@ -145,6 +145,14 @@ export default async function ProductPage({ params }: Props) {
                 ✓ <Link href="/refund" className="underline hover:text-clay-600">30-day refund</Link>
               </span>
             </div>
+            <p className="mt-5 text-sm">
+              <Link
+                href="/sample"
+                className="font-medium text-clay-600 underline-offset-4 hover:underline"
+              >
+                Read the first chapter free →
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -250,7 +258,13 @@ export default async function ProductPage({ params }: Props) {
             <BuyButton slug={p.slug} />
           </div>
           <p className="mt-4 text-xs text-cream-100/60">
-            Instant download · 30-day refund
+            Instant download · 30-day refund ·{" "}
+            <Link
+              href="/sample"
+              className="underline underline-offset-2 hover:text-cream-50"
+            >
+              read a sample
+            </Link>
           </p>
         </div>
       </section>

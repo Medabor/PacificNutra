@@ -3,7 +3,7 @@ title: "The Pacific Plate"
 subtitle: "30 Polynesian recipes for the modern kitchen"
 author: "Pacific Nutra"
 edition: "First edition · 2026"
-status: "Draft — intro + Section 1 complete. Sections 2–6 outlined."
+status: "Draft — intro + Sections 1–2 complete. Sections 3–6 outlined."
 ---
 
 # The Pacific Plate
@@ -452,19 +452,439 @@ the roots-and-tubers recipes you just learned reappear in Section
 
 ---
 
-# Sections 2–6 · Outline
+# Section 2 · From the Sea
 
-The remaining 25 recipes are written but not yet drafted into this
-working document. Outline follows.
+> *No traditional people on earth ate more seafood, per head, than
+> the Polynesians. An island is a small piece of land surrounded by
+> an enormous larder, and the Pacific Islander read the reef, the
+> lagoon, and the open ocean the way a farmer reads a field. The
+> six recipes that follow run from the simplest thing you can do
+> with a perfect piece of fish — cube it, salt it, eat it — to a
+> whole fish wrapped in a leaf and laid over fire.*
 
-## Section 2 · From the sea (6 recipes)
+A note before you start: every raw-fish recipe in this section
+lives or dies on the fish itself. Read the box below once, then
+see the sourcing guide at the back of the book.
 
-- 2.1 Ahi poke — the classic
-- 2.2 Salmon poke — the modern version
-- 2.3 Lomi salmon
-- 2.4 Coconut-ginger shrimp
-- 2.5 Whole grilled fish in banana leaf
-- 2.6 Octopus with chili-lime
+**Buying fish for raw preparations.** "Sushi-grade" and "sashimi-
+grade" are marketing terms, not regulated ones. What you actually
+want is fish a reputable counter is willing to sell you for raw
+eating, and that has been frozen at some point — the FDA
+recommends freezing for any wild fish eaten raw, to kill
+parasites. Tuna is lower-risk, but freezing is still standard.
+Ask the person behind the counter directly: "Is this safe to eat
+raw?" A good fishmonger gives a straight answer. Buy it the day
+you will eat it, keep it cold on the way home, and cube it
+straight from the refrigerator.
+
+---
+
+## 2.1 · Ahi poke — the classic
+
+> *Poke* (POH-kay) means simply "to cut crosswise into pieces" in
+> Hawaiian. Before refrigerators, before soy sauce, before the
+> mainland poke-bowl shop, poke was reef fish or tuna cut at the
+> shoreline and seasoned with exactly what the shoreline offered:
+> sea salt, a tear of seaweed, the crushed roasted nut of the
+> kukui tree. This is that poke. It has four real ingredients and
+> it is still, after everything, the best one.
+
+**Serves 4 as an appetizer, 2 as a main**
+**Time:** 15 minutes
+
+### Ingredients
+
+- 1 lb ahi tuna (yellowfin or bigeye), sushi-grade, cut into
+  ¾-inch cubes
+- 1 tsp Hawaiian sea salt, or flaky sea salt
+- ½ small sweet onion (Maui, Vidalia, or similar), slivered thin
+- 2 scallions, sliced thin
+- 2 tbsp fresh ogo (limu) seaweed, rinsed and roughly chopped —
+  optional but traditional
+- 1 tbsp inamona (roasted, crushed kukui nut) — optional; see note
+- 1 small Hawaiian chili, minced, or ¼ tsp red pepper flakes
+- 1 tsp toasted sesame oil — optional
+
+**Note on raw fish:** see the box at the top of this section.
+Cube the fish cold and keep the finished poke cold — set the bowl
+over ice if it will sit out at all.
+
+**Note on inamona:** the roasted kukui (candlenut) gives
+traditional poke its faint, savory bitterness. It is genuinely
+hard to source on the mainland. Macadamia nuts, lightly toasted
+and crushed with a pinch of salt, are the standard substitute and
+are very good. Leave it out entirely and the poke is still poke.
+
+### Method
+
+1. Put the cubed tuna in a chilled mixing bowl.
+2. Add the salt, onion, scallions, ogo, inamona, and chili. Add
+   the sesame oil if using.
+3. Fold everything together gently with your hands or a spoon —
+   you want to coat the fish, not mash it. Three or four turns.
+4. Let it sit 10 minutes in the refrigerator, so the salt draws a
+   little moisture from the fish and the onion softens.
+5. Taste, adjust the salt, and serve cold. Poke does not keep —
+   eat it the day you make it, ideally within a few hours.
+
+### Modern variation
+
+The version most people now picture when they hear "poke" is
+shoyu poke, which arrived with Japanese plantation workers in the
+late 1800s and never left. To make it, skip the plain salt and
+instead fold the fish with 2 tbsp coconut aminos (or soy sauce),
+1 tbsp toasted sesame oil, 1 tsp grated ginger, and 1 tsp toasted
+sesame seeds. It is excellent. It is also, now, traditional —
+traditions move.
+
+### What to plate it with
+
+Poke wants a starch under it or beside it. Spoon it over **1.5
+ʻulu "rice" with coconut and scallion**, or serve it next to
+**1.4 cassava fries with garlic and lime** — cold, clean fish
+against a hot, crisp fry is one of the best pairings in the book.
+
+---
+
+## 2.2 · Salmon poke — the modern version
+
+> There is no traditional Polynesian salmon dish, because there is
+> no salmon in the tropical Pacific. Salmon poke is a modern,
+> mainland invention — and a genuinely good one. Salmon's higher
+> fat content carries a soy-and-sesame dressing beautifully, and
+> in much of the country it is easier to buy in reliable raw-
+> quality condition than tuna. We include it honestly, as exactly
+> what it is.
+
+**Serves 4 as an appetizer, 2 as a main**
+**Time:** 20 minutes
+
+### Ingredients
+
+- 1 lb salmon, sushi-grade, skin removed, cut into ¾-inch cubes
+- 3 tbsp coconut aminos, or soy sauce
+- 1 tbsp toasted sesame oil
+- 1 tbsp rice vinegar
+- 1 tsp grated fresh ginger
+- 1 clove garlic, grated
+- 2 scallions, sliced thin
+- ½ ripe avocado, diced
+- ½ cup cucumber, diced small (Persian or English)
+- 1 tsp toasted sesame seeds
+- Optional: 1 tsp chili crisp, or ¼ tsp red pepper flakes
+
+**Note on raw fish:** see the box at the top of this section.
+Farmed Atlantic salmon is the lower-parasite-risk choice here and
+is what most poke counters use; it should still have been frozen
+at some point. Ask the counter.
+
+### Method
+
+1. In a mixing bowl, whisk together the coconut aminos, sesame
+   oil, rice vinegar, ginger, and garlic.
+2. Add the cubed salmon and the scallions. Fold gently to coat.
+   Marinate 10 minutes in the refrigerator — no longer, or the
+   acid will start to "cook" and firm the surface of the fish.
+3. Just before serving, fold in the avocado and cucumber as
+   gently as you can — they are there for texture and should stay
+   intact.
+4. Scatter the sesame seeds, and the chili crisp if using, over
+   the top. Serve cold.
+
+### Modern variation
+
+If raw fish is a hard no for someone at the table, this recipe
+converts cleanly. Use the same dressing as a glaze: sear 1-inch
+salmon cubes in a hot pan 1 minute per side, let them cool to
+just-warm, then toss with the dressing, avocado, and cucumber.
+Flaked hot-smoked salmon also works and needs no cooking at all —
+cut the coconut aminos to 2 tbsp, since that fish is already
+salty.
+
+### What to plate it with
+
+This is the recipe to build a poke bowl on. A scoop of **4.2
+coconut rice**, this salmon, a handful of greens, and you have the
+template the entire mainland poke industry runs on. See **5.4
+poke bowl, four ways** for the full assembly.
+
+---
+
+## 2.3 · Lomi salmon
+
+> *Lomi* means to massage, to knead, to work something gently with
+> the hands — and lomi salmon is salted salmon worked together
+> with tomato and onion until it becomes a cold, bright, almost
+> salsa-like relish. Like shoyu poke, it is a post-contact dish:
+> the salt salmon came off New England trading ships, the tomato
+> arrived with the missionaries. Two centuries later it sits on
+> every lūʻau table in Hawaiʻi, in a small scoop, served very
+> cold. It is a side dish, a condiment, and a small miracle.
+
+**Serves 6 as a side**
+**Time:** 30 minutes active, plus 2 hours curing
+
+### Ingredients
+
+- ½ lb salmon fillet, sushi-grade, skin removed
+- 2 tbsp Hawaiian or kosher salt, for curing
+- 3 ripe tomatoes, seeded and finely diced
+- ½ sweet onion, finely diced
+- 4 scallions, sliced thin
+- Freshly ground black pepper
+- A few ice cubes, for serving
+
+### Method
+
+1. **Cure the salmon.** Bury the fillet in the 2 tbsp salt in a
+   small dish, cover, and refrigerate 2 hours (up to 4 for a
+   firmer, saltier result). The salt draws out moisture and firms
+   the flesh.
+2. Rinse the salt off thoroughly under cold water and pat the
+   fillet very dry. Taste a tiny piece — it should be pleasantly
+   salty, not harsh. If it is too salty, soak it in cold water 15
+   minutes and pat dry again.
+3. Dice the cured salmon into ¼-inch pieces — smaller than poke.
+4. In a bowl, combine the salmon, tomatoes, onion, and scallions.
+   With your hands, *lomi* it: gently squeeze and fold the mixture
+   8 to 10 times, just enough to break the tomato down a little
+   and marry everything. Do not purée it.
+5. Chill hard, at least 1 hour. Serve very cold — traditionally
+   with a couple of ice cubes folded through right before it goes
+   to the table. Add black pepper to taste.
+
+### Modern variation
+
+Skip the curing entirely by starting with cold-smoked salmon
+(lox), or good-quality smoked salmon — it is already cured and
+ready to dice. Use the same weight, omit the curing salt, and
+season the finished dish with a pinch of salt only if it needs
+it. This is the 20-minute version, and it is what most Hawaiʻi
+kitchens actually do on a busy day.
+
+### What to plate it with
+
+Lomi salmon is built to sit beside rich things. The classic plate
+is a scoop of lomi salmon, **5.1 kalua-style pork**, and a
+starch. It is also superb with **1.4 cassava fries with garlic
+and lime** — use it almost as a dipping relish.
+
+---
+
+## 2.4 · Coconut-ginger shrimp
+
+> The shrimp trucks parked on Oʻahu's North Shore made garlic
+> shrimp famous, but the older, gentler island treatment is this
+> one: shrimp poached in coconut milk loosened with ginger,
+> garlic, and chili. It comes together in one pan in under half an
+> hour and works as a main, as a topping, or as something you eat
+> straight from the pan while standing up.
+
+**Serves 4**
+**Time:** 25 minutes
+
+### Ingredients
+
+- 1 lb large shrimp (16/20 count), peeled and deveined
+- 2 tbsp coconut oil
+- 4 cloves garlic, minced
+- 2 tbsp grated fresh ginger
+- 1 Hawaiian chili, minced, or 1 tsp red pepper flakes
+- 1 can (14 oz) full-fat coconut milk
+- 1 tbsp coconut aminos
+- Juice of 1 lime
+- ¼ cup cilantro, roughly chopped
+- 1 tsp kosher salt
+
+### Method
+
+1. Pat the shrimp dry and season with a pinch of the salt.
+2. Warm the coconut oil in a large skillet over medium-high heat.
+   Sear the shrimp in a single layer, about 1 minute per side,
+   until just pink and curled. They will finish cooking later —
+   pull them now, onto a plate.
+3. Lower the heat to medium. In the same pan, cook the garlic,
+   ginger, and chili 1 minute, stirring, until fragrant — don't
+   let the garlic brown.
+4. Pour in the coconut milk and the coconut aminos. Bring to a
+   gentle simmer and let it reduce 6 to 8 minutes, stirring now
+   and then, until it thickens enough to coat the back of a spoon.
+5. Return the shrimp and any resting juices to the pan. Simmer 1
+   to 2 minutes, just to warm through and finish cooking.
+6. Off the heat, stir in the lime juice and most of the cilantro.
+   Taste for salt. Scatter the remaining cilantro over the top.
+
+### Modern variation
+
+Boneless chicken thigh, cut into 1-inch pieces, makes this a
+heartier meal — brown it in step 2, and give it 8 to 10 minutes
+simmering in the sauce at step 4 before the point where you would
+have returned the shrimp. Chunks of firm white fish also work and
+need only 3 to 4 minutes in the sauce.
+
+### What to plate it with
+
+This recipe was written to be spooned over things. Ladle it onto
+**1.3 sweet potato and ginger soup** for a heartier bowl, over
+**1.5 ʻulu "rice" with coconut and scallion**, or over **4.2
+coconut rice**. On its own, it wants only a starch and a green.
+
+---
+
+## 2.5 · Whole grilled fish in banana leaf
+
+> A whole fish is the centerpiece the Pacific kitchen reaches for,
+> and wrapping it in a banana or tī leaf before it meets the fire
+> is the oldest trick there is: the leaf steams the fish in its
+> own moisture, keeps it from sticking and tearing, and perfumes
+> it faintly green. It looks like a great deal of work and is in
+> fact very little. The hardest part is buying the fish.
+
+**Serves 4**
+**Time:** 50 minutes (20 active)
+
+### Ingredients
+
+- 1 whole fish, 2 to 3 lbs — snapper, branzino, or sea bass —
+  scaled, gutted, and cleaned (have the counter do this)
+- 2 to 3 banana leaves, thawed if frozen — or a double layer of
+  foil
+- 2-inch piece fresh ginger, julienned
+- 4 cloves garlic, sliced
+- 4 scallions, halved lengthwise
+- 1 lime — half sliced into rounds, half kept for juice
+- 2 tbsp coconut oil, melted
+- 1 tsp Hawaiian or kosher salt
+- ½ tsp freshly ground black pepper
+- Optional: 1 stalk lemongrass (bruised), a handful of cilantro
+
+### Method
+
+1. Heat a grill to medium (about 375°F). If you are using banana
+   leaves, pass each one briefly over a flame or hot burner until
+   it turns glossy and pliable — this keeps it from cracking when
+   you fold it.
+2. Pat the fish dry inside and out. Cut 3 diagonal slashes
+   through the skin on each side, down to the bone — this helps
+   it cook evenly and lets the seasoning in.
+3. Rub the fish all over, and inside the slashes, with the melted
+   coconut oil, salt, and pepper. Stuff the cavity with the
+   ginger, garlic, scallions, lime rounds, and lemongrass if
+   using.
+4. Lay the fish on the banana leaves and wrap it into a snug
+   parcel, tucking the ends under. Tie with kitchen twine if it
+   wants to open. (With foil: wrap in a double layer, sealed but
+   not tight.)
+5. Grill 12 to 15 minutes per side, lid down. The parcel will
+   char, and that is fine. The fish is done when the flesh at the
+   thickest point is opaque and pulls easily from the bone —
+   about 130°F internal.
+6. Rest the parcel 5 minutes, then open it at the table. Squeeze
+   the reserved lime over the fish and scatter the cilantro.
+
+### Modern variation
+
+No grill, or no banana leaves: this works in the oven. Wrap the
+seasoned fish in parchment, then foil, set it on a sheet pan, and
+bake at 400°F for 30 to 40 minutes depending on size. You lose
+the smoke but keep everything else. Fillets work too — wrap
+skin-on fillets the same way and cut the cooking time to 12 to 15
+minutes total.
+
+### What to plate it with
+
+A whole fish wants a soft, rich starch beside it: **1.2 taro mash
+with brown butter and chives** is the pairing this book was built
+toward. Add a green — **3.4 ginger-garlic bok choy** — and a bowl
+of **4.2 coconut rice**, and you have a full table.
+
+---
+
+## 2.6 · Octopus with chili-lime
+
+> Octopus — *heʻe* in Hawaiian, *tako* on the menu — is reef food,
+> speared and gathered across the Pacific for as long as people
+> have lived there. It has one rule: it is rubbery in a brief
+> window of undercooking and tender on either side of that window,
+> so you either keep it raw-soft or cook it well past the window
+> into submission. This recipe does the second, then dresses it
+> cold and bright.
+
+**Serves 4 as an appetizer**
+**Time:** 1 hour 15 minutes (15 active)
+
+### Ingredients
+
+- 1½ to 2 lbs octopus, cleaned — fresh or frozen
+- 1 onion, halved
+- 2 bay leaves
+- 1 tsp black peppercorns
+- For the chili-lime dressing:
+  - Juice of 2 limes
+  - 1 Hawaiian chili, minced, or ½ tsp red pepper flakes
+  - 2 tbsp extra-virgin olive oil
+  - 1 clove garlic, grated
+  - 1 tsp toasted sesame oil
+  - ¼ cup cilantro, chopped
+  - 2 scallions, sliced thin
+  - ½ tsp Hawaiian or flaky sea salt
+
+**Note:** frozen octopus is not a compromise — the freeze-and-
+thaw cycle breaks down the muscle, and the cooked result is more
+tender, not less. If you buy it fresh, freezing it overnight
+first is worth doing.
+
+### Method
+
+1. Put the octopus in a large pot with the onion, bay leaves, and
+   peppercorns. Add water to cover by 2 inches. Bring to a boil,
+   then drop to the gentlest possible simmer.
+2. Simmer 45 to 60 minutes. Start checking at 45: the octopus is
+   done when a knife slides into the thickest part of a tentacle
+   with no resistance. A small octopus may be ready sooner; a
+   large one can take longer. Cook it until it is genuinely
+   tender — you cannot overcook it back into rubber from here.
+3. Let the octopus cool in its cooking liquid 15 minutes, then
+   lift it out. Slice the tentacles on a sharp diagonal into
+   bite-sized pieces.
+4. Whisk together all the dressing ingredients.
+5. Toss the octopus with the dressing. Serve at room temperature
+   or chilled. For a smokier version, sear the dressed pieces in
+   a screaming-hot skillet, or over the grill, for 1 to 2 minutes
+   until the edges char, then toss with a little more dressing.
+
+### Modern variation
+
+Pre-cooked octopus — sold vacuum-sealed at Asian and
+Mediterranean markets, often labelled Spanish *pulpo* — turns
+this into a 10-minute recipe: skip steps 1 through 3 and go
+straight to slicing and dressing. Squid is the fast substitute if
+octopus is nowhere to be found, but reverse the rule — squid
+cooks in about 2 minutes flat and turns rubbery if you go longer.
+
+### What to plate it with
+
+Octopus with chili-lime is an appetizer, and it wants something
+crisp and starchy next to it: **1.1 roasted breadfruit wedges
+with ʻAlaea salt** or **1.4 cassava fries with garlic and lime**.
+
+---
+
+## End of Section 2
+
+Six recipes, one rule learned six ways: a cuisine surrounded by
+water treats fish simply, and treats it with respect. The next
+section turns inland and downward, to the leaves — the greens
+that grew between the taro patches and got cooked, more often
+than not, in the same coconut milk you have now opened a good
+many cans of.
+
+---
+
+# Sections 3–6 · Outline
+
+The remaining 19 recipes are written but not yet drafted into
+this working document. Outline follows.
 
 ## Section 3 · Greens (5 recipes)
 
