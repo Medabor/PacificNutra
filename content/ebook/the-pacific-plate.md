@@ -3,7 +3,7 @@ title: "The Pacific Plate"
 subtitle: "30 Polynesian recipes for the modern kitchen"
 author: "Pacific Nutra"
 edition: "First edition · 2026"
-status: "Draft — intro + Sections 1–2 complete. Sections 3–6 outlined."
+status: "Complete draft — intro + all 30 recipes across 6 sections."
 ---
 
 # The Pacific Plate
@@ -881,41 +881,1229 @@ many cans of.
 
 ---
 
-# Sections 3–6 · Outline
+# Section 3 · Greens
 
-The remaining 19 recipes are written but not yet drafted into
-this working document. Outline follows.
+> *Between every taro patch and along every island stream grew
+> the leaves: the tops of the taro itself, watercress run wild in
+> the cold water, ferns uncurling in the shade. Polynesian cooks
+> treated greens much the way the rest of the world does — as the
+> thing that turns a plate of starch and protein into a meal —
+> but with one signature move. More often than not, the greens
+> went into the coconut milk.*
 
-## Section 3 · Greens (5 recipes)
+A word on the taro leaf, which appears in two of these five
+recipes: like raw taro root, raw taro leaves contain calcium
+oxalate and must be cooked thoroughly — a long cook, not a quick
+wilt — before they are safe to eat. Every recipe here that uses
+them says so again. Treat the instruction as non-negotiable.
 
-- 3.1 Coconut-creamed kalo leaves (luʻau stew)
-- 3.2 Watercress and sesame
-- 3.3 Pohole fern salad (with substitution)
-- 3.4 Ginger-garlic bok choy
-- 3.5 Taro leaf wraps
+---
 
-## Section 4 · Coconut (5 recipes)
+## 3.1 · Coconut-creamed kalo leaves (luʻau stew)
 
-- 4.1 Toasted coconut chips
-- 4.2 Coconut rice
-- 4.3 Haupia (traditional)
-- 4.4 Coconut macaroons (lower sugar)
-- 4.5 Coconut-poached white fish
+> *Luʻau* is the word for the young taro leaf, and it gave its
+> name to the feast. Slow-cooked for the better part of an hour,
+> the leaf collapses into something dark, silky, and faintly
+> mineral — the Pacific's answer to creamed spinach, but deeper.
+> This is the vegetable version; the note at the end turns it
+> into a one-bowl meal.
 
-## Section 5 · One-pot meals (5 recipes)
+**Serves 4 to 6 as a side**
+**Time:** 1 hour (15 active)
 
-- 5.1 Shoyu chicken
-- 5.2 Chicken adobo (Filipino-Pacific crossover)
-- 5.3 Coconut curry with taro
-- 5.4 Poke bowl, four ways
-- 5.5 Furikake salmon musubi
+### Ingredients
 
-## Section 6 · Sweet (4 recipes)
+- 1 lb taro (luʻau) leaves, thick stems removed — or 1.5 lbs
+  mature spinach; see the modern variation
+- 1 can (14 oz) full-fat coconut milk
+- 1 cup water or stock
+- 1 small onion, finely diced
+- 3 cloves garlic, minced
+- 1 tbsp coconut oil
+- 1 tsp Hawaiian or kosher salt, plus more to taste
+- Optional: 1 tsp grated fresh ginger
 
-- 6.1 Haupia, modern variations
-- 6.2 Banana lumpia
-- 6.3 Pineapple-ginger shave ice
-- 6.4 Mochi, basic + variations
+**Note on taro leaves:** raw taro leaves contain calcium oxalate
+and *must* be cooked through — at least 45 minutes of simmering —
+to break it down. Do not shorten the cook time, and do not taste
+the dish until it has cooked fully. Properly cooked, the leaves
+are completely safe and the irritant is gone.
+
+### Method
+
+1. Wash the taro leaves well and tear them into rough pieces,
+   discarding the thick central stems.
+2. In a large pot, warm the coconut oil over medium heat. Cook
+   the onion 4 to 5 minutes until soft, then add the garlic and
+   ginger and cook 1 minute more.
+3. Add the taro leaves, the water or stock, and the salt. The
+   pot will look overfull; the leaves cook down dramatically.
+   Bring to a simmer, cover, and cook 40 minutes, stirring
+   occasionally.
+4. Add the coconut milk. Simmer uncovered another 15 to 20
+   minutes — the leaves should be completely tender and dark, and
+   the liquid reduced to a loose cream. The leaves should have
+   simmered at least 45 minutes in total.
+5. Taste — now that it is fully cooked — and adjust the salt. The
+   stew should be soft, glossy, and a little soupy.
+
+### Modern variation
+
+Mature spinach is the honest mainland substitute. It needs no
+long cook for safety, so the dish becomes much faster: sauté the
+aromatics, add 1.5 lbs spinach and the coconut milk together, and
+simmer just 15 minutes until silky. You lose the deep, almost
+meaty quality of true luʻau leaf, but the dish is still very
+good. A handful of chopped collard greens alongside the spinach
+gets you closer to the original texture.
+
+### What to plate it with
+
+To make this the center of a meal, fold in a pound of cooked,
+shredded chicken, or **2.4 coconut-ginger shrimp**, in the last 5
+minutes — that is the classic chicken or shrimp *luʻau*. As a
+side, it belongs next to **5.1 shoyu chicken** or **2.5 whole
+grilled fish in banana leaf**, with a scoop of **4.2 coconut
+rice**.
+
+---
+
+## 3.2 · Watercress and sesame
+
+> Watercress runs wild in the cold mountain streams of Hawaiʻi,
+> and a quick sesame-dressed watercress salad — peppery, bright,
+> barely cooked — is the standard fresh green on a heavy plate
+> lunch. It takes about ten minutes, and it is the thing your
+> plate is missing.
+
+**Serves 4 as a side**
+**Time:** 10 minutes
+
+### Ingredients
+
+- 2 large bunches watercress (about 8 oz), tough lower stems
+  trimmed
+- 1 tbsp toasted sesame oil
+- 1 tbsp coconut aminos, or soy sauce
+- 1 tbsp rice vinegar
+- 1 tsp grated fresh ginger
+- 1 tsp honey or sugar
+- 1 tbsp toasted sesame seeds
+- Optional: ¼ tsp red pepper flakes
+
+### Method
+
+1. Bring a pot of water to a boil. Have a bowl of ice water
+   ready.
+2. Blanch the watercress 15 to 20 seconds — just until it turns
+   vivid green and slightly wilts. Lift it straight into the ice
+   water to stop the cooking.
+3. Drain the watercress and squeeze out as much water as you can
+   with your hands. Chop it into rough 2-inch lengths.
+4. Whisk together the sesame oil, coconut aminos, rice vinegar,
+   ginger, honey, and pepper flakes.
+5. Toss the watercress with the dressing. Pile it onto a plate
+   and scatter the sesame seeds over the top. Serve at room
+   temperature or chilled.
+
+### Modern variation
+
+No watercress? This dressing and method work just as well on
+baby spinach (blanch only 10 seconds), or on a half-and-half mix
+of spinach and arugula left raw — skip the blanch entirely for a
+crisp, peppery raw salad.
+
+### What to plate it with
+
+This is a palate-cutter; put it next to anything rich. It is the
+traditional fresh note alongside **5.4 poke bowl, four ways** and
+**2.1 ahi poke — the classic**, and it cuts the richness of
+**2.4 coconut-ginger shrimp** cleanly.
+
+---
+
+## 3.3 · Pohole fern salad
+
+> *Pohole* — the young, coiled fiddlehead of a Hawaiian fern,
+> known elsewhere in the Pacific as *warabi* — has a crisp snap
+> and a faint green-bean flavor, and on the islands it is dressed
+> with tomato and onion into a cool, crunchy salad. It is a
+> genuine treat and nearly impossible to buy on the mainland, so
+> the substitution below is the version most readers will
+> actually cook.
+
+**Serves 4 as a side**
+**Time:** 20 minutes
+
+### Ingredients
+
+- ½ lb pohole fern shoots, or fiddlehead ferns — see the note and
+  the modern variation
+- 2 ripe tomatoes, diced
+- ½ sweet onion, slivered thin
+- 1 tbsp coconut aminos, or soy sauce
+- 1 tbsp rice vinegar
+- 1 tsp toasted sesame oil
+- ½ tsp Hawaiian or flaky sea salt
+- Optional: 2 tbsp ogo (limu) seaweed, chopped
+
+**Note on ferns:** true fiddleheads — the ostrich-fern kind sold
+on the mainland in spring — *must* be cooked, a full 10-minute
+boil, before eating; raw fiddleheads can cause stomach upset.
+Pohole is milder and is often eaten barely blanched in Hawaiʻi,
+but if you are unsure which fern you have, boil it. The
+substitution below sidesteps the question entirely.
+
+### Method
+
+1. If using fiddleheads: trim the ends, rinse very well, and boil
+   10 minutes. Drain and shock in ice water. If using pohole:
+   blanch 30 seconds and shock.
+2. Cut the cooled fern shoots into 2-inch lengths.
+3. In a bowl, combine the fern, tomatoes, onion, and the ogo if
+   using.
+4. Whisk the coconut aminos, rice vinegar, sesame oil, and salt,
+   and toss it through the salad.
+5. Chill at least 20 minutes before serving — this salad is best
+   cold, and the rest lets the onion mellow.
+
+### Modern variation
+
+The reliable, year-round substitute is thin asparagus or slim
+green beans, blanched 2 minutes and shocked. You lose the curl
+and a little of the snap, but the fresh, grassy character and the
+tomato-onion treatment carry the dish. Sugar snap peas, halved on
+the diagonal and left raw, are the crispest stand-in of all.
+
+### What to plate it with
+
+A cool, crunchy salad for a hot plate: serve it beside **2.5
+whole grilled fish in banana leaf** or **5.1 shoyu chicken**.
+With **1.4 cassava fries with garlic and lime** it makes a light
+lunch on its own.
+
+---
+
+## 3.4 · Ginger-garlic bok choy
+
+> Bok choy is not a traditional Polynesian green — it arrived, as
+> so much of the modern islands' food did, with Chinese
+> plantation labor in the 1800s — but it slid into the local
+> kitchen so completely that no plate lunch feels right without a
+> fast, glossy, ginger-garlic green beside the rice. This is that
+> green, and it takes six minutes.
+
+**Serves 4 as a side**
+**Time:** 10 minutes
+
+### Ingredients
+
+- 1 lb baby bok choy, halved lengthwise (quartered if large)
+- 2 tbsp coconut oil
+- 4 cloves garlic, sliced thin
+- 1 tbsp grated fresh ginger
+- 1 tbsp coconut aminos, or soy sauce
+- 2 tbsp water
+- 1 tsp toasted sesame oil
+- Optional: 1 tsp toasted sesame seeds
+
+### Method
+
+1. Rinse the bok choy well — grit hides at the base of the
+   leaves. Pat it dry.
+2. Heat the coconut oil in a large skillet or wok over medium-
+   high until it shimmers. Add the garlic and ginger; cook 30
+   seconds, stirring constantly, just until fragrant.
+3. Add the bok choy, cut side down. Sear undisturbed 1 to 2
+   minutes, until the cut faces start to brown.
+4. Add the coconut aminos and the water. Cover and steam 2
+   minutes, until the stems are crisp-tender and the leaves have
+   wilted.
+5. Uncover, toss once, and finish off the heat with the sesame
+   oil and the sesame seeds. Serve immediately — bok choy dulls
+   if it sits.
+
+### Modern variation
+
+Any sturdy green takes well to this exact treatment. Wedges of
+Napa cabbage, halved heads of broccolini, or quartered hearts of
+romaine all work — adjust the steam time by a minute or two for
+thicker stems. Gai lan (Chinese broccoli) is the most authentic
+swap of all.
+
+### What to plate it with
+
+This is a universal side. It is named in the plating notes of
+**1.2 taro mash with brown butter and chives** and **2.5 whole
+grilled fish in banana leaf** for good reason — a glossy green
+finishes almost any plate in this book.
+
+---
+
+## 3.5 · Taro leaf wraps
+
+> Wrap a piece of fish in a few layers of taro leaf, steam the
+> bundle slowly until everything inside is silk and the leaf is
+> tender, and you have *laulau* — the great steamed parcel of the
+> Hawaiian table. This is a fish laulau: simpler and faster than
+> the all-day version, and built so the taro leaf gets the long,
+> safe cook it requires.
+
+**Serves 4**
+**Time:** 1 hour 15 minutes (20 active)
+
+### Ingredients
+
+- 16 to 20 large taro (luʻau) leaves, thick stems removed — or
+  see the modern variation
+- 1.5 lbs firm fish — black cod (sablefish), salmon, or another
+  rich fillet — cut into 4 portions
+- 1 tsp Hawaiian or kosher salt
+- 1 tbsp grated fresh ginger
+- 2 scallions, sliced
+- 1 tbsp coconut oil, melted
+- Optional: 4 ti leaves, or squares of foil, for the outer wrap
+
+**Note on taro leaves:** as in 3.1, raw taro leaves must be
+cooked thoroughly. This recipe steams them a full hour for that
+reason — do not shorten it, and do not be tempted to use only one
+or two leaves per parcel. Several layers, fully steamed, are both
+the texture of the dish and its safety.
+
+### Method
+
+1. Rinse the taro leaves and remove the thick stem and the tough
+   central vein from each.
+2. Season the fish portions with the salt, ginger, scallions,
+   and melted coconut oil.
+3. For each parcel: stack 4 to 5 taro leaves, set a portion of
+   fish in the center, and fold the leaves over to enclose it
+   completely. Wrap the bundle in a ti leaf or a square of foil
+   to hold it shut.
+4. Set the parcels in a steamer basket over simmering water.
+   Cover and steam 1 hour, checking the water level once or
+   twice and topping it up with boiling water as needed.
+5. Let the parcels rest 5 minutes. Open them carefully — there
+   will be hot steam — and serve the fish and the now-tender,
+   silky leaf together.
+
+### Modern variation
+
+Taro leaves are hard to source fresh on the mainland. Collard
+greens are the standard substitute for the wrap: sturdy, happy
+to take a long steam, and sold everywhere. Blanch the collards 30
+seconds to make them foldable, then wrap and steam as above — you
+can cut the steam to 40 minutes, since collards carry no oxalate
+and only need to become tender.
+
+### What to plate it with
+
+Laulau is traditionally a centerpiece. Serve it with **4.2
+coconut rice** and a scoop of **2.3 lomi salmon**, or with **1.2
+taro mash with brown butter and chives** for a doubly taro plate.
+
+---
+
+## End of Section 3
+
+Five greens, and a current running through them: the long, slow,
+respectful cook of the taro leaf, and the fast, glossy treatment
+of everything else. The next section pulls a single ingredient
+out of nearly every recipe so far and gives it a chapter of its
+own — the coconut.
+
+---
+
+# Section 4 · Coconut
+
+> *The coconut palm is the one plant that made Pacific voyaging
+> possible: food, drink, oil, fiber, and shelter from a single
+> trunk. It has turned up in nearly every recipe in this book so
+> far, almost always out of a can. This section gives the
+> ingredient its own five recipes — and two of them, coconut rice
+> and haupia, are the quiet workhorses the rest of the book leans
+> on.*
+
+A note on canned coconut milk, since four of these five recipes
+depend on it: buy full-fat, and buy a brand with a short
+ingredient list — coconut and water, ideally nothing else. The
+"lite" cans are mostly water and will not set, toast, or enrich
+the way these recipes need. Aroy-D and Native Forest are the
+reference brands. Shake the can well before measuring, since the
+cream separates and rises.
+
+---
+
+## 4.1 · Toasted coconut chips
+
+> Wide shavings of coconut, lightly salted and toasted until they
+> curl and turn gold, are the Pacific kitchen's answer to the
+> crouton — the crisp, sweet-savory finish scattered over soups,
+> rice bowls, and desserts. They take ten minutes and they keep
+> for two weeks.
+
+**Makes about 2 cups**
+**Time:** 15 minutes
+
+### Ingredients
+
+- 2 cups unsweetened coconut flakes (the wide "chip" cut, not
+  shredded)
+- 1 tsp coconut oil, melted
+- ¼ tsp flaky sea salt
+- Optional: 1 tsp honey or maple syrup, for a sweet version
+
+### Method
+
+1. Heat the oven to 325°F (160°C).
+2. Toss the coconut flakes with the melted coconut oil and the
+   salt. (For the sweet version, add the honey now and toss
+   well.) Spread them in a single, even layer on a baking sheet.
+3. Toast 8 to 12 minutes, stirring every 3 minutes so the edges
+   color evenly. Coconut goes from pale to golden to burnt
+   quickly — pull the tray the moment most of the flakes are an
+   even light gold. They crisp further as they cool.
+4. Cool completely on the tray. Store in an airtight jar at room
+   temperature; they stay crisp about two weeks.
+
+### Modern variation
+
+No oven, or no time: toast the flakes dry in a skillet over
+medium heat, stirring constantly, 3 to 5 minutes until golden.
+It is faster but needs your full attention — the pan gives you
+no margin. Add the oil and salt off the heat, once the flakes
+have cooled slightly.
+
+### What to plate it with
+
+These are a finishing touch, not a dish. They are called for in
+**1.3 sweet potato and ginger soup** and **1.5 ʻulu "rice" with
+coconut and scallion**, and a small handful improves nearly
+every recipe in Section 6.
+
+---
+
+## 4.2 · Coconut rice
+
+> If one recipe in this book quietly holds up the others, it is
+> this one — the soft, faintly sweet, coconut-rich rice that goes
+> under poke, beside grilled fish, and alongside every curry and
+> braise. It is barely harder than cooking plain rice, and it is
+> the difference between a plate and a meal.
+
+**Serves 4 to 6**
+**Time:** 30 minutes
+
+### Ingredients
+
+- 2 cups jasmine rice
+- 1 can (14 oz) full-fat coconut milk
+- 1 cup water
+- 1 tsp kosher salt
+- 1 tsp sugar
+- Optional: 1 pandan leaf, knotted, or a strip of lime zest
+
+### Method
+
+1. Rinse the rice in several changes of cold water until the
+   water runs nearly clear, then drain it well.
+2. Combine the rice, coconut milk, water, salt, and sugar in a
+   heavy pot with a tight lid. Add the pandan leaf or lime zest
+   if using. Stir once.
+3. Bring to a boil over medium-high heat, stirring once or twice
+   so the coconut milk does not catch on the bottom.
+4. As soon as it boils, drop the heat to low, cover, and cook
+   undisturbed 15 minutes.
+5. Off the heat, leave it covered another 10 minutes — do not
+   lift the lid. Then fluff gently with a fork and discard the
+   pandan leaf or zest. The rice should be tender and glossy,
+   never wet.
+
+### Modern variation
+
+This works in a rice cooker with no change in proportions:
+combine everything, stir, and run the standard white-rice cycle.
+For brown jasmine rice, increase the water to 1½ cups and expect
+the cook to take about 40 minutes; the result is nuttier and
+stands up well under saucy dishes.
+
+### What to plate it with
+
+Coconut rice is the most-referenced plate in the book. It is the
+bed for **2.2 salmon poke** and **5.4 poke bowl, four ways**, the
+side to **2.5 whole grilled fish in banana leaf** and **5.1 shoyu
+chicken**, and the thing you want under **5.3 coconut curry with
+taro**.
+
+---
+
+## 4.3 · Haupia (traditional)
+
+> Haupia is the coconut-milk pudding that ends a lūʻau — set firm
+> enough to cut into glistening white squares, with a clean, pure
+> coconut flavor and nothing else competing for attention.
+> Traditionally it was thickened with Polynesian arrowroot
+> (*pia*, which gave the dish its name); today it is almost
+> always cornstarch. Four ingredients, fifteen minutes of work,
+> and a couple of hours in the refrigerator.
+
+**Makes 9 squares (an 8×8-inch pan)**
+**Time:** 20 minutes active, plus 2 to 3 hours to set
+
+### Ingredients
+
+- 2 cans (14 oz each) full-fat coconut milk
+- ½ cup sugar
+- 6 tbsp cornstarch — or 6 tbsp arrowroot, for the traditional
+  thickener
+- ⅓ cup cold water
+- Pinch of salt
+
+### Method
+
+1. Lightly oil an 8×8-inch dish, or line it with parchment.
+2. In a saucepan, whisk the coconut milk, sugar, and salt
+   together. Warm over medium heat, stirring, until the sugar
+   dissolves and the mixture steams — do not let it boil yet.
+3. In a small bowl, whisk the cornstarch into the ⅓ cup of cold
+   water until completely smooth, with no lumps.
+4. Pour the slurry into the warm coconut milk in a steady
+   stream, whisking constantly. Keep whisking over medium heat 4
+   to 6 minutes as the mixture thickens — it is ready when it
+   coats the whisk heavily and a drizzle holds its shape on the
+   surface for a moment.
+5. Pour into the prepared dish, smooth the top, and cool to room
+   temperature. Refrigerate at least 2 to 3 hours, until fully
+   set and firm.
+6. Cut into squares with a knife wiped clean between cuts. Serve
+   cold.
+
+### Modern variation
+
+Arrowroot is the traditional thickener and gives a slightly
+glossier, more delicate set; use it measure-for-measure in place
+of the cornstarch, but stop cooking the moment it thickens, as
+arrowroot thins if overworked. For a firmer, sliceable haupia —
+useful if you are layering it into a pie or a cake — add an extra
+tablespoon of cornstarch.
+
+### What to plate it with
+
+Haupia is the reference coconut dessert, and **6.1 haupia, modern
+variations** builds directly on this recipe. A few **4.1 toasted
+coconut chips** scattered over each square is the only garnish it
+needs.
+
+---
+
+## 4.4 · Coconut macaroons (lower sugar)
+
+> A macaroon is, at heart, just coconut bound and baked — and most
+> recipes drown that good coconut in far more sugar than it
+> needs. This version pulls the sugar back hard and lets the
+> coconut and a little vanilla do the work. The result is chewy
+> inside, crisp and gold outside, and nothing like as sweet as
+> the ones from the tin.
+
+**Makes about 18**
+**Time:** 35 minutes
+
+### Ingredients
+
+- 3 cups unsweetened shredded coconut
+- 3 large egg whites
+- ⅓ cup honey or maple syrup
+- ½ tsp vanilla bean paste (or alcohol-free vanilla)
+- Pinch of salt
+
+### Method
+
+1. Heat the oven to 325°F (160°C) and line a baking sheet with
+   parchment.
+2. In a bowl, whisk the egg whites and salt together until loose
+   and frothy — there is no need to whip them to peaks.
+3. Stir in the honey and vanilla, then fold in the shredded
+   coconut until every strand is moistened. The mixture will be
+   thick and sticky.
+4. Scoop firmly packed tablespoons of the mixture onto the
+   sheet, pressing each into a tight mound so it holds together.
+5. Bake 18 to 22 minutes, until the tips and edges are deep
+   golden. Cool on the sheet 10 minutes before moving them — they
+   firm up as they cool.
+
+### Modern variation
+
+For a chocolate-dipped macaroon, melt ½ cup of dark chocolate and
+dip the cooled base of each one, then set them on parchment until
+the chocolate hardens. If you prefer the classic crisp-light
+texture, whip the egg whites to soft peaks before folding in the
+coconut — the macaroons will bake up airier and less dense.
+
+### What to plate it with
+
+A small sweet to end a meal, alongside coffee or tea. They sit
+naturally next to **6.3 pineapple-ginger shave ice** on a dessert
+plate, the cold and the chewy playing off each other.
+
+---
+
+## 4.5 · Coconut-poached white fish
+
+> Poaching is the gentlest thing you can do to a fish, and
+> poaching it in seasoned coconut milk is the gentlest thing the
+> Pacific kitchen knows. The fish stays meltingly tender, the
+> coconut milk becomes a light sauce, and the whole dish happens
+> in one pan in under half an hour.
+
+**Serves 4**
+**Time:** 25 minutes
+
+### Ingredients
+
+- 4 white fish fillets (about 6 oz each) — cod, halibut, snapper,
+  or mahi-mahi
+- 1 can (14 oz) full-fat coconut milk
+- 1 cup water or fish stock
+- 1 stalk lemongrass, bruised and halved (or 2 strips lime zest)
+- 1 thumb fresh ginger, sliced
+- 3 cloves garlic, smashed
+- 2 makrut lime leaves, optional
+- 1 tsp kosher salt, plus more for the fish
+- Juice of ½ lime
+- ¼ cup cilantro, chopped
+- 2 scallions, sliced
+
+### Method
+
+1. In a wide skillet or sauté pan, combine the coconut milk,
+   water, lemongrass, ginger, garlic, lime leaves, and salt.
+   Bring to a bare simmer over medium heat and let it infuse 5
+   minutes.
+2. Season the fish fillets lightly with salt. Slide them into the
+   simmering liquid in a single layer — it should come about
+   halfway up the fish.
+3. Lower the heat so the liquid barely trembles. Poach gently,
+   spooning the liquid over the tops, 6 to 9 minutes depending on
+   thickness, until the fish is opaque and flakes at a gentle
+   press.
+4. Lift the fish out carefully, onto plates or into shallow
+   bowls.
+5. Finish the poaching liquid with the lime juice, taste it for
+   salt, and spoon it over the fish. Scatter the cilantro and
+   scallions on top.
+
+### Modern variation
+
+Firm tofu makes a clean vegetarian version — use thick slabs,
+poach them 8 minutes, and handle them gently. To turn the dish
+into a heartier coconut-fish stew, add a handful of halved cherry
+tomatoes and a cup of spinach to the liquid in the last 3 minutes
+of poaching.
+
+### What to plate it with
+
+The light coconut broth wants a starch to soak into it: serve it
+over **4.2 coconut rice**, or alongside **1.2 taro mash with
+brown butter and chives**. A green — **3.4 ginger-garlic bok
+choy** — finishes the plate.
+
+---
+
+## End of Section 4
+
+Coconut, given its due: a crisp garnish, the rice under
+everything, the pudding that ends the meal, a barely-sweet
+cookie, and a poaching bath for fish. The next section gathers
+the pillars — root, fish, green, coconut — into single pots and
+single bowls: complete meals.
+
+---
+
+# Section 5 · One-Pot Meals
+
+> *Everything so far has been a component — a starch, a fish, a
+> green, a coconut preparation. This section combines them. Five
+> recipes, each a full meal from a single pot or a single bowl: a
+> braise, a tangy stew, a curry, a build-your-own poke bowl, and
+> a rebuilt rice snack. This is the section to cook from on a
+> weeknight.*
+
+---
+
+## 5.1 · Shoyu chicken
+
+> *Shoyu* is soy sauce, and shoyu chicken — chicken thighs
+> simmered down in a sweet-salty soy braise sharp with ginger and
+> garlic — is the plate-lunch standard of Hawaiʻi, the dish every
+> island family makes a little differently. It is almost entirely
+> hands-off: the pot does the work while you cook the rice.
+
+**Serves 4 to 6**
+**Time:** 50 minutes
+
+### Ingredients
+
+- 3 lbs bone-in, skin-on chicken thighs
+- ½ cup coconut aminos, or soy sauce
+- ½ cup water
+- ⅓ cup brown sugar
+- 6 cloves garlic, smashed
+- 2-inch piece fresh ginger, sliced into coins
+- 4 scallions, cut into 2-inch lengths, plus more sliced for
+  serving
+- 1 tbsp rice vinegar
+- Optional: 1 tsp red pepper flakes
+
+### Method
+
+1. In a wide pot or a deep skillet, stir together the coconut
+   aminos, water, brown sugar, garlic, ginger, the scallion
+   lengths, and the pepper flakes.
+2. Add the chicken thighs, turning them to coat. Arrange them
+   skin side up — they should sit in the liquid in roughly a
+   single layer.
+3. Bring to a boil over medium-high heat, then reduce to a
+   steady simmer. Cover and cook 30 minutes, turning the thighs
+   once halfway through.
+4. Uncover, stir in the rice vinegar, and raise the heat to
+   medium. Simmer 12 to 15 minutes more, spooning the liquid
+   over the chicken now and then, until the sauce has reduced to
+   a glossy, syrupy glaze and the chicken is fully tender.
+5. Skim any excess fat from the surface. Scatter with sliced
+   scallions and serve, with plenty of sauce, over rice.
+
+### Modern variation
+
+Boneless, skinless thighs work and cut about 10 minutes from the
+cook — but bone and skin give the sauce its body, so reduce the
+finished sauce a little longer to make up for it. For a fully
+hands-off version, cook everything in a slow cooker on low 5 to 6
+hours, then reduce the sauce on the stovetop while the chicken
+rests.
+
+### What to plate it with
+
+Shoyu chicken is built for a plate lunch: a scoop of **4.2
+coconut rice**, the chicken and its sauce, and a fresh green —
+**3.2 watercress and sesame** or **3.4 ginger-garlic bok choy**.
+It is also the partner named in **1.2 taro mash** and **2.3 lomi
+salmon**.
+
+---
+
+## 5.2 · Chicken adobo (Filipino-Pacific crossover)
+
+> Adobo — meat simmered in vinegar, soy, garlic, and bay until the
+> sauce turns deep and glossy — is the national dish of the
+> Philippines, and Filipino plantation workers carried it into
+> the Hawaiian kitchen, where it settled in for good. This is the
+> chicken version: sharp, savory, and even better the day after
+> you make it.
+
+**Serves 4**
+**Time:** 1 hour, plus marinating
+
+### Ingredients
+
+- 3 lbs bone-in chicken thighs and drumsticks
+- ½ cup cane or white vinegar
+- ⅓ cup coconut aminos, or soy sauce
+- 1 whole head of garlic, cloves peeled and smashed
+- 4 bay leaves
+- 1 tbsp whole black peppercorns
+- 1 tbsp coconut oil
+- 1 cup water
+- Optional: 1 tbsp brown sugar, to round the edges
+
+### Method
+
+1. Combine the chicken, vinegar, coconut aminos, garlic, bay
+   leaves, and peppercorns in a bowl. Marinate 30 minutes, or up
+   to overnight in the refrigerator.
+2. Lift the chicken from the marinade, reserving the marinade.
+   Pat the pieces dry.
+3. Warm the coconut oil in a heavy pot over medium-high heat.
+   Brown the chicken on both sides, in batches, 6 to 8 minutes
+   total. Set it aside.
+4. Pour in the reserved marinade and the water — stand back, as
+   the vinegar will steam sharply — and bring to a boil. Boil
+   uncovered 2 minutes; this is important, as it cooks off the
+   raw vinegar bite.
+5. Return the chicken, reduce to a simmer, cover, and cook 25
+   minutes. Uncover, add the sugar if using, and simmer 10
+   minutes more, until the sauce is reduced and glossy and the
+   chicken is tender.
+6. Discard the bay leaves. Serve over rice with plenty of sauce.
+
+### Modern variation
+
+Adobo is endlessly adjustable. For a richer, Pacific-leaning
+version, stir ½ cup of coconut milk into the sauce in the last 10
+minutes — this is *adobo sa gata*, and it is superb. For a
+vegetarian pot, replace the chicken with thick-cut mushrooms and
+chunks of potato, and cut the total simmer to 25 minutes.
+
+### What to plate it with
+
+Adobo demands plain or **4.2 coconut rice** to carry its sauce,
+and wants a crisp green alongside — **3.4 ginger-garlic bok
+choy**. Leftover adobo, shredded, is excellent in **5.4 poke
+bowl, four ways** as the cooked-protein option.
+
+---
+
+## 5.3 · Coconut curry with taro
+
+> Taro does in this curry what potato does in others — it goes
+> soft and creamy at the edges and holds its shape at the center,
+> thickening the sauce as it cooks. The result is a mild,
+> fragrant coconut curry that leans Thai in technique and Pacific
+> in its bones.
+
+**Serves 4 to 6**
+**Time:** 45 minutes
+
+### Ingredients
+
+- 1.5 lbs taro root, peeled and cut into 1-inch chunks
+- 2 tbsp coconut oil
+- 1 onion, diced
+- 4 cloves garlic, minced
+- 2 tbsp grated fresh ginger
+- 2 to 3 tbsp red or yellow curry paste
+- 2 cans (14 oz each) full-fat coconut milk
+- 1 cup vegetable or chicken stock
+- 1 tbsp coconut aminos
+- 1 red bell pepper, sliced
+- 2 cups spinach or chopped greens
+- Juice of 1 lime
+- ¼ cup cilantro, chopped
+- 1 tsp kosher salt
+
+**Note on raw taro:** as with the taro recipes in Section 1, wear
+gloves while peeling if your skin is sensitive, never taste it
+raw, and let it cook fully — the curry's simmer handles this.
+
+### Method
+
+1. Warm the coconut oil in a large pot over medium heat. Cook the
+   onion 4 to 5 minutes until soft, then add the garlic and
+   ginger and cook 1 minute more.
+2. Stir in the curry paste and cook 1 to 2 minutes, until it
+   darkens and smells fragrant.
+3. Add the taro chunks, the coconut milk, the stock, and the
+   coconut aminos. Bring to a simmer.
+4. Cover and simmer 20 minutes, then add the bell pepper and
+   simmer uncovered another 8 to 10 minutes, until the taro is
+   fully tender and the sauce has thickened.
+5. Stir in the spinach and let it wilt, 1 to 2 minutes. Finish
+   off the heat with the lime juice, salt to taste, and the
+   cilantro.
+
+### Modern variation
+
+No taro, or no time to handle it: a mix of sweet potato and white
+potato works and needs only about 15 minutes of simmering. To
+make the curry a heartier meal, add a pound of cubed chicken
+thigh along with the taro, or a pound of shrimp in the final 3
+minutes.
+
+### What to plate it with
+
+This curry wants rice under it to catch the sauce — **4.2 coconut
+rice** is the natural choice. A scatter of **4.1 toasted coconut
+chips** and a few cilantro leaves finish the bowl.
+
+---
+
+## 5.4 · Poke bowl, four ways
+
+> The poke bowl — poke and its companions arranged over a bowl of
+> rice — is less a recipe than a system. Section 2 taught you the
+> poke; this is the assembly, with four combinations that work.
+> Build one and you will not need a recipe for the next.
+
+**Serves 4**
+**Time:** 20 minutes (with poke and rice already made)
+
+### Ingredients
+
+The bowl has four layers. Pick one from each:
+
+- **The base:** **4.2 coconut rice**, warm or at room
+  temperature; or **1.5 ʻulu "rice"**; or a bed of greens for a
+  lighter bowl.
+- **The poke:** **2.1 ahi poke** or **2.2 salmon poke** — about 4
+  oz per bowl.
+- **The companions** (three or four per bowl): sliced avocado,
+  cucumber ribbons, shredded carrot, edamame, **3.2 watercress
+  and sesame**, quick-pickled onion, ogo seaweed.
+- **The finish:** **4.1 toasted coconut chips**, toasted sesame
+  seeds, sliced scallion, a drizzle of the poke's own dressing, a
+  wedge of lime.
+
+Four combinations that work:
+
+1. **The classic** — coconut rice · ahi poke · cucumber, avocado,
+   ogo · sesame seeds and scallion.
+2. **The garden** — greens base · salmon poke · watercress,
+   shredded carrot, edamame · toasted coconut and lime.
+3. **The ʻulu bowl** — ʻulu "rice" · ahi poke · avocado, pickled
+   onion · toasted coconut chips.
+4. **The cooked bowl** — coconut rice · shredded **5.2 chicken
+   adobo** in place of raw poke · cucumber, avocado, watercress ·
+   scallion and lime — for anyone who would rather skip raw fish.
+
+### Method
+
+1. Spoon the base into wide, shallow bowls.
+2. Settle the poke (or the shredded adobo) in over one side.
+3. Arrange the companions around it in their own small groups —
+   a poke bowl is partly an arrangement; keep the components
+   distinct rather than tossing them together.
+4. Scatter the finishes over everything and serve at once, while
+   the rice is warm and the poke is cold.
+
+### Modern variation
+
+For a crowd, set everything out in separate bowls and let people
+build their own — a poke-bowl bar. For meal prep, the bases and
+companions keep a couple of days refrigerated, but always cube
+and dress the poke the day you eat it (see the food-safety note
+at the top of Section 2).
+
+### What to plate it with
+
+A poke bowl is the whole meal. If you want something alongside,
+keep it light and hot to contrast the cold bowl — a small cup of
+**1.3 sweet potato and ginger soup** works well.
+
+---
+
+## 5.5 · Furikake salmon musubi
+
+> Musubi is a hand-sized block of rice with a savory topping,
+> wrapped in a band of nori — Hawaiʻi's most beloved snack,
+> usually built around a slab of fried canned meat. This is the
+> rebuild: a piece of teriyaki-glazed salmon and a heavy shower of
+> *furikake* in its place. It travels well, it keeps for a few
+> hours, and it disappears fast.
+
+**Makes 6 musubi**
+**Time:** 40 minutes
+
+### Ingredients
+
+- 3 cups cooked short-grain (sushi) rice, warm
+- 1 lb salmon fillet, skin removed, cut into 6 long blocks
+- 3 tbsp coconut aminos, or soy sauce
+- 2 tbsp brown sugar
+- 1 tbsp grated fresh ginger
+- 1 tsp toasted sesame oil
+- 2 tbsp furikake (rice seasoning), plus more for the rice
+- 3 sheets nori, halved
+- Neutral oil, for the pan
+
+**Equipment:** a musubi mold — or a clean, straight-sided
+container of similar size, or simply shape the blocks by hand.
+
+### Method
+
+1. In a small bowl, mix the coconut aminos, brown sugar, ginger,
+   and sesame oil into a glaze.
+2. Heat a film of oil in a skillet over medium-high. Cook the
+   salmon blocks 2 minutes per side, then pour in the glaze and
+   turn the salmon to coat. Simmer 1 to 2 minutes, until the
+   glaze is sticky and the salmon is just cooked through. Set
+   aside.
+3. Stir a tablespoon of furikake through the warm rice.
+4. To shape: set a halved nori sheet shiny side down. Place the
+   musubi mold on top. Press a layer of rice firmly into the
+   mold, lay a piece of glazed salmon on it, then press a second
+   layer of rice over the salmon. Lift the mold away.
+5. Sprinkle the top with more furikake, then wrap the nori up and
+   around the rice block, sealing the overlap with a few grains
+   of pressed rice or a dab of water.
+6. Serve right away, or wrap each musubi and keep at room
+   temperature a few hours for a packed lunch.
+
+### Modern variation
+
+For a no-fish version, glaze thick planks of firm tofu exactly as
+you would the salmon — press the tofu dry first so it browns.
+Teriyaki-glazed portobello slabs make another good vegetarian
+musubi. The furikake and nori carry the dish either way.
+
+### What to plate it with
+
+Musubi is a snack and a lunchbox staple — it does not need a
+plate around it. If you are making a spread, set it next to **3.4
+ginger-garlic bok choy** and a bowl of edamame.
+
+---
+
+## End of Section 5
+
+Five complete meals — and proof that the components of the first
+four sections were always heading somewhere. One section remains,
+and it is the sweet one: the coconut pudding, the fried banana,
+the island ice, and the chewy rice cake that Hawaiʻi cannot get
+enough of.
+
+---
+
+# Section 6 · Sweet
+
+> *Polynesian sweets are not the towering, sugar-loaded desserts
+> of the Western table. They are gentler — coconut, tropical
+> fruit, a little rice flour, restrained sugar — and they tend to
+> arrive cool. Four recipes close the book: the pudding, the
+> fried banana, the island ice, and the chewy rice cake.*
+
+---
+
+## 6.1 · Haupia, modern variations
+
+> **4.3 haupia** gave you the pure, traditional coconut pudding.
+> This recipe is what to do with it next. The base technique is
+> identical; what changes is one addition, stirred in at the
+> right moment — and each variation turns the same humble pudding
+> into a different dessert.
+
+**Makes 9 squares (an 8×8-inch pan)**
+**Time:** 20 minutes active, plus 2 to 3 hours to set
+
+### Ingredients
+
+Start with one full batch of **4.3 haupia (traditional)** — 2
+cans coconut milk, ½ cup sugar, 6 tbsp cornstarch, ⅓ cup water,
+pinch of salt — then choose a variation:
+
+- **Chocolate haupia:** 4 oz dark chocolate, finely chopped, plus
+  2 tbsp cocoa powder whisked in with the sugar.
+- **Mango haupia:** 1 cup very smooth mango purée; reduce the
+  slurry water to ¼ cup to keep the set firm.
+- **Coffee haupia:** 2 tbsp instant coffee or espresso powder,
+  dissolved in the slurry water.
+- **Toasted-coconut haupia:** ¾ cup **4.1 toasted coconut
+  chips** — half folded in, half saved for the top.
+
+### Method
+
+1. Make the haupia base exactly as in recipe 4.3, through the
+   point where it has thickened on the stove (the end of its
+   step 4).
+2. Stir in your chosen variation off the heat: the chopped
+   chocolate (whisk until fully melted and smooth), the mango
+   purée, the dissolved coffee, or the toasted coconut.
+3. Pour into a prepared 8×8-inch dish, smooth the top, and — for
+   the toasted-coconut version — scatter the reserved chips over
+   the surface.
+4. Cool to room temperature, then refrigerate 2 to 3 hours, until
+   firmly set. Cut into squares, wiping the knife between cuts.
+
+### Modern variation
+
+For a layered haupia, pour half a batch of plain haupia into the
+dish, let it set 30 minutes in the refrigerator until tacky, then
+pour a half batch of chocolate haupia on top — the classic
+black-and-white look, without the crust. For a lighter,
+spoonable pudding rather than a sliceable one, reduce the
+cornstarch in the base to 4 tablespoons.
+
+### What to plate it with
+
+A square of haupia is complete on its own. On a larger dessert
+plate it sits well beside **6.4 mochi** or a scoop of **6.3
+pineapple-ginger shave ice**.
+
+---
+
+## 6.2 · Banana lumpia (turon)
+
+> Filipino *turon* — a whole banana rolled in a thin wrapper with
+> a little brown sugar and fried until the sugar caramelizes into
+> a brittle, glassy shell — is one of the most popular sweets on
+> any Hawaiian plate-lunch counter. It is fast, it uses fruit
+> most people already have, and it is genuinely hard to stop
+> eating.
+
+**Makes 8**
+**Time:** 30 minutes
+
+### Ingredients
+
+- 4 ripe but firm bananas (or 8 short saba bananas, the
+  traditional choice), halved lengthwise
+- 8 lumpia or spring-roll wrappers
+- ½ cup brown sugar
+- 1 tsp ground cinnamon, optional
+- 1 small egg, beaten — or a little water — to seal
+- Coconut or neutral oil, for frying
+
+### Method
+
+1. Mix the brown sugar with the cinnamon on a small plate.
+2. Roll each banana half in the brown sugar, pressing so it
+   sticks.
+3. Set a wrapper as a diamond in front of you. Lay a sugared
+   banana half across the lower third. Fold the bottom corner
+   over it, fold in the two sides, and roll up snugly into a
+   tight cylinder. Seal the final corner with a brush of beaten
+   egg.
+4. Heat 1 inch of oil in a skillet to 350°F (175°C).
+5. Fry the rolls in batches, seam side down first, 2 to 3 minutes
+   per side, until deep golden and crisp. The sugar that escapes
+   will caramelize in the oil — that is expected.
+6. Drain on a wire rack, not on paper, so they stay crisp. Cool 5
+   minutes before eating — the inside is very hot.
+
+### Modern variation
+
+For a lighter, no-fry version, brush the rolls with melted
+coconut oil and bake at 400°F for 15 to 18 minutes, turning once,
+until golden. For a fuller dessert, tuck a few thin slices of
+ripe mango or jackfruit alongside the banana before rolling.
+
+### What to plate it with
+
+Banana lumpia is best warm, ideally against something cold: a
+scoop of **6.3 pineapple-ginger shave ice**, or a square of
+chilled **4.3 haupia**, makes it a proper dessert.
+
+---
+
+## 6.3 · Pineapple-ginger shave ice
+
+> Hawaiian shave ice is not a snow cone — the ice is shaved into a
+> fine, soft powder that drinks in syrup like fresh snow, rather
+> than crunchy pellets that shrug it off. Without the specialized
+> machine you cannot get true shave-ice texture, but a good
+> blender comes remarkably close, and this fresh pineapple-ginger
+> syrup is worlds better than the neon bottled stuff.
+
+**Serves 4**
+**Time:** 20 minutes, plus freezing time
+
+### Ingredients
+
+For the syrup:
+- 2 cups fresh pineapple, chopped
+- ⅓ cup sugar
+- ⅓ cup water
+- 1 tbsp grated fresh ginger
+- Juice of ½ lime
+
+For the ice:
+- 6 cups ice cubes, made well ahead so they are very solid
+
+### Method
+
+1. Make the syrup: combine the pineapple, sugar, water, and
+   ginger in a saucepan. Simmer 8 to 10 minutes, until the
+   pineapple is soft and the liquid is syrupy.
+2. Blend the mixture smooth, then push it through a fine sieve
+   for a clear syrup (or leave the pulp in for a fuller texture).
+   Stir in the lime juice and chill completely.
+3. Make the ice just before serving: blend the ice cubes in
+   short pulses until the texture is fine and snowy, not wet and
+   slushy — work in batches so the blender is not overloaded.
+4. Mound the shaved ice into chilled bowls or cups and pour the
+   cold syrup generously over each.
+
+### Modern variation
+
+The same syrup method works with almost any tropical fruit —
+mango, lilikoʻi (passionfruit), guava, or strawberry. Set a small
+scoop of **4.3 haupia** in the bottom of the cup before mounding
+the ice on top: that is the traditional "shave ice with a snow
+cap," and it is a genuine improvement.
+
+### What to plate it with
+
+Shave ice is the cooling counterpart to anything warm and fried —
+serve it with, or right after, **6.2 banana lumpia**. On its own,
+on a hot afternoon, it needs no company at all.
+
+---
+
+## 6.4 · Mochi, basic + variations
+
+> *Mochi* — the chewy, springy cake of pounded glutinous rice —
+> came to Hawaiʻi with Japanese immigrants and never left, and
+> "butter mochi," the islands' own baked version, is now a
+> potluck institution. This recipe gives you the simple steamed
+> mochi first, then the butter-mochi variation that Hawaiʻi made
+> its own.
+
+**Makes about 16 pieces**
+**Time:** 1 hour
+
+### Ingredients
+
+For basic steamed mochi:
+- 2 cups mochiko (glutinous / sweet rice flour)
+- 1 cup sugar
+- 1.5 cups water or coconut milk
+- Potato starch or cornstarch, for dusting
+
+For the Hawaiian butter-mochi variation:
+- 2 cups mochiko
+- 1.5 cups sugar
+- ½ cup butter, melted
+- 2 large eggs
+- 1 can (14 oz) full-fat coconut milk
+- ½ cup whole milk
+- 2 tsp baking powder
+- ½ tsp vanilla bean paste (or alcohol-free vanilla)
+
+### Method
+
+**Basic steamed mochi:**
+
+1. Whisk the mochiko and sugar together, then whisk in the water
+   or coconut milk until smooth.
+2. Pour into a lightly oiled heatproof dish and cover with foil.
+   Steam over simmering water 25 to 30 minutes, until set and
+   translucent.
+3. Cool until it can be handled. Dust a surface generously with
+   potato starch, turn the mochi out, and cut into squares with a
+   starch-dusted knife.
+
+**Hawaiian butter mochi:**
+
+1. Heat the oven to 350°F (175°C) and butter a 9×13-inch pan.
+2. Whisk the mochiko and baking powder together in one bowl. In
+   another, whisk the sugar, melted butter, eggs, coconut milk,
+   whole milk, and vanilla.
+3. Whisk the wet into the dry until completely smooth, then pour
+   into the pan.
+4. Bake 1 hour, until the top is golden and the edges pull from
+   the pan. Cool completely — at least 1 hour — before cutting,
+   or it will not slice cleanly.
+
+### Modern variation
+
+Stir ¼ cup cocoa powder into the butter-mochi batter for a
+chocolate version, or fold in ¾ cup **4.1 toasted coconut chips**
+before baking. For a filled steamed mochi, wrap each piece around
+a spoonful of sweetened red bean paste or a small cube of ripe
+mango.
+
+### What to plate it with
+
+Mochi is a hand-to-mouth sweet — wrap a few for later. On a
+dessert spread it rounds out a plate with **6.1 haupia** and
+**4.4 coconut macaroons**.
+
+---
+
+## End of Section 6
+
+Thirty recipes, six sections, one through-line: the foods that
+kept the Pacific healthy for three thousand years, cooked in a
+kitchen like yours. What follows is the back matter — where to
+buy what, what to read next, and how to reach us.
 
 ---
 

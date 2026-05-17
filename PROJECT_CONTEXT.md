@@ -62,8 +62,8 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 - **The Pacific Plate** — slug `the-pacific-plate`, price $24.00 (`2400` cents).
 - Defined in `lib/products.ts`.
 - Ebook PDF expected in Supabase Storage at `ebooks/the-pacific-plate-v1.pdf`.
-- Manuscript draft: `content/ebook/the-pacific-plate.md`. Intro + Sections 1–2
-  (11 recipes) fully written; Sections 3–6 (19 recipes) still outline-only.
+- Manuscript: `content/ebook/the-pacific-plate.md` — **complete draft**: intro
+  + all 30 recipes across 6 sections. Not yet laid out as the final PDF.
   The `/sample` route renders the intro + Section 1 from this file.
 - **Content rule — no pork, no alcohol** anywhere on the site (recipes, blog,
   copy). Section 5 was re-outlined accordingly: kalua pork → Shoyu chicken,
@@ -140,9 +140,9 @@ and products) and `app/robots.ts` are in place.
 5. **Upload the ebook PDF** to the Supabase `ebooks` bucket as
    `the-pacific-plate-v1.pdf` (otherwise the library download 404s).
    Blocked on item 6 — the manuscript must be finished first.
-6. **Finish ebook content.** Intro + Sections 1–2 are written; Sections 3–6
-   (19 recipes) are still outline-only in
-   `content/ebook/the-pacific-plate.md`.
+6. ~~Finish ebook content.~~ **Done** — full manuscript drafted (intro + 30
+   recipes) in `content/ebook/the-pacific-plate.md`. Remaining: lay it out as
+   the designed PDF and upload it (item 5).
 7. ~~Sample-chapter page and SEO plumbing (sitemap/robots).~~ **Done** —
    `/sample` route + `sitemap.ts` + `robots.ts`.
 8. **At launch:** remove the `robots` line in `app/layout.tsx` *and* flip
