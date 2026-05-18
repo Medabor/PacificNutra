@@ -1,5 +1,5 @@
 import Link from "next/link";
-import WaveMark from "@/components/WaveMark";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-12 sm:grid-cols-4">
           <div className="sm:col-span-2">
             <div className="flex items-center gap-3">
-              <WaveMark size={36} />
+              <Logo size={36} />
               <p className="font-serif text-2xl text-cream-50">
                 Pacific <span className="italic">Nutra</span>
               </p>
