@@ -17,6 +17,11 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
   branch below — no manual deploy step. App runs behind a reverse proxy, so
   `NEXT_PUBLIC_SITE_URL` must be set explicitly (the request origin resolves
   to an internal `localhost` address otherwise).
+- **Deploy model:** the Hostinger Node.js Selector runs the custom server at
+  `server.js` (`npm start` → `node server.js`). This needs a normal `next
+  build` — do **not** set `output: "standalone"` in `next.config.mjs`;
+  standalone output is incompatible with a custom server and breaks serving
+  of `/_next/static` (CSS/JS), leaving the site unstyled.
 - **Repo:** `medabor/pacificnutra`
 - **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — the single
   source of truth. Develop, commit, and push here.
