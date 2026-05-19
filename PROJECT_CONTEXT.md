@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-05-17.
+Snapshot for resuming work in a new session. Last updated: 2026-05-18.
 
 ## What this is
 
@@ -13,15 +13,24 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 - **Database / auth / storage:** Supabase
 - **Payments:** Stripe (Checkout + webhook), in **Live mode**
 - **Email:** Beehiiv (newsletter, optional) and Resend (transactional, optional)
-- **Hosting:** Hostinger Node.js app. **Auto-deploys on every push** to the
-  branch below — no manual deploy step. App runs behind a reverse proxy, so
-  `NEXT_PUBLIC_SITE_URL` must be set explicitly (the request origin resolves
-  to an internal `localhost` address otherwise).
-- **Deploy model:** the Hostinger Node.js Selector runs the custom server at
-  `server.js` (`npm start` → `node server.js`). This needs a normal `next
-  build` — do **not** set `output: "standalone"` in `next.config.mjs`;
-  standalone output is incompatible with a custom server and breaks serving
-  of `/_next/static` (CSS/JS), leaving the site unstyled.
+- **Hosting:** Hostinger, via its **GitHub-connected auto-deployment** for
+  Next.js (Node 22.x). Every push to the deploy branch is pulled, built
+  (`next build`), and released automatically — no manual step. App runs
+  behind a reverse proxy, so `NEXT_PUBLIC_SITE_URL` must be set explicitly
+  (the request origin otherwise resolves to an internal `localhost`).
+- **Deploy gotchas (hard-won this session — do not regress):**
+  - **No `output: "standalone"`** in `next.config.mjs`. It stops
+    `/_next/static` (the CSS/JS bundles) from being served and renders the
+    whole site unstyled.
+  - **Build tools live in `dependencies`,** not `devDependencies` (Tailwind,
+    PostCSS, TypeScript, `@types/*`). A production-mode install otherwise
+    skips them and the build ships with no CSS.
+  - **The Hostinger CDN is currently OFF.** While building, it cached stale
+    mixed old/new pages — causing intermittently unstyled pages and the old
+    logo. Re-enable at launch; when it is on, purge its cache after each
+    deploy.
+  - Hostinger's integration runs the app itself; the repo's `server.js` is
+    not used by it.
 - **Repo:** `medabor/pacificnutra`
 - **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — the single
   source of truth. Develop, commit, and push here.
@@ -68,13 +77,27 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 - Defined in `lib/products.ts`.
 - Ebook PDF expected in Supabase Storage at `ebooks/the-pacific-plate-v1.pdf`.
 - Manuscript: `content/ebook/the-pacific-plate.md` — **complete draft**: intro
-  + all 30 recipes across 6 sections. Not yet laid out as the final PDF.
-  The `/sample` route renders the intro + Section 1 from this file.
+  + all 30 recipes across 6 sections. The `/sample` route renders the intro +
+  Section 1 from this file.
 - **Content rule — no pork, no alcohol** anywhere on the site (recipes, blog,
-  copy). Section 5 was re-outlined accordingly: kalua pork → Shoyu chicken,
-  Spam musubi → Furikake salmon musubi. Keep Sections 3–6 pork- and
-  alcohol-free when drafting (watch for rum in desserts, mirin/wine in
-  braises).
+  copy). The manuscript already follows this; keep any future edits the same.
+- **Ebook production plan:** manuscript → DOCX (a styled `.docx` export was
+  generated this session and handed to the owner) → import into **Designrr**
+  (the owner has a designrr.io account) for interior layout → export the
+  final PDF → upload to Supabase (see Outstanding). Designrr is the chosen
+  tool because Canva's auto-layout was unreliable for a 30-recipe interior.
+
+## Brand & logo
+
+- **Logo:** `public/brand/pacific-nutra-logo.svg` — a circular emblem (a taro
+  leaf over Pacific waves) in the brand palette. Rendered in-app by
+  `components/Logo.tsx` (Nav + Footer); the favicon `app/icon.svg` is a
+  simplified version. The old `WaveMark` component was removed.
+- **Palette** (Tailwind tokens): `kalo` deep brown, `cream`, `clay`
+  terracotta, `forest` green, `ocean-deep` (#1C3942).
+- **Book cover:** the owner is finalizing an AI-generated cover in Canva
+  ("The Pacific Plate" — dark teal, dish photos, a "30 recipes" badge). Not
+  yet final, and not yet wired into the site as the `/shop` product image.
 
 ## Database (Supabase)
 
@@ -132,6 +155,12 @@ for the launch toggle.
 **SEO plumbing — done.** `app/sitemap.ts` (lists all public routes, posts,
 and products) and `app/robots.ts` are in place.
 
+**Site styling / deploy — fixed.** The live site was rendering unstyled (no
+CSS). Three compounding causes, all now resolved: `output: "standalone"` in
+the next config (removed), build tools in `devDependencies` (moved to
+`dependencies`), and a stale Hostinger CDN (disabled + cache flushed). The
+site now renders correctly — see "Deploy gotchas" above.
+
 ## Outstanding / next steps
 
 1. ~~Connect `pacificnutra.com` in Hostinger/DNS.~~ **Done.**
@@ -142,17 +171,21 @@ and products) and `app/robots.ts` are in place.
 4. **Verify the test order recorded.** A real order was placed and shows in
    Stripe; confirm a `paid` row also appears in Supabase `orders` and on
    `/admin` (i.e. the webhook delivered successfully).
-5. **Upload the ebook PDF** to the Supabase `ebooks` bucket as
-   `the-pacific-plate-v1.pdf` (otherwise the library download 404s).
-   Blocked on item 6 — the manuscript must be finished first.
+5. **Produce and upload the ebook PDF.** The manuscript text is done; lay it
+   out as the designed PDF in Designrr (see "Ebook production plan"), then
+   upload it to the Supabase `ebooks` bucket as `the-pacific-plate-v1.pdf`
+   (otherwise the `/library` download 404s).
 6. ~~Finish ebook content.~~ **Done** — full manuscript drafted (intro + 30
    recipes) in `content/ebook/the-pacific-plate.md`. Remaining: lay it out as
    the designed PDF and upload it (item 5).
 7. ~~Sample-chapter page and SEO plumbing (sitemap/robots).~~ **Done** —
    `/sample` route + `sitemap.ts` + `robots.ts`.
-8. **At launch:** remove the `robots` line in `app/layout.tsx` *and* flip
+8. **At launch:** (a) remove the `robots` line in `app/layout.tsx` and flip
    `app/robots.ts` to the launch rule (both noted in-file) so the site
-   becomes indexable.
+   becomes indexable; (b) re-enable the Hostinger CDN (turned off during the
+   build phase) and purge its cache.
+9. **Finalize the book cover** and wire it into the site as the `/shop`
+   product image (currently a placeholder).
 
 ## Deployment
 
