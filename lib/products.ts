@@ -14,13 +14,12 @@ const products: Product[] = [
     slug: "the-pacific-plate",
     title: "The Pacific Plate",
     tagline:
-      "30 traditional Polynesian recipes, rebuilt for the modern kitchen. Print-ready PDF + 12 video walkthroughs.",
-    description: `A 90-page cookbook that takes you through thirty foundational Polynesian recipes — taro mash, breadfruit fries, poke bowls, shoyu chicken, lomi salmon, haupia, and more — each with a brief history, the cultural context, and a modern variation that works in any kitchen. Includes a printable shopping list, ingredient sourcing guide, and twelve short video walkthroughs.`,
+      "30 traditional Polynesian recipes, rebuilt for the modern kitchen.",
+    description: `A 90-page cookbook that takes you through thirty foundational Polynesian recipes — taro mash, breadfruit fries, poke bowls, shoyu chicken, lomi salmon, haupia, and more — each with a brief history, the cultural context, and a modern variation that works in any kitchen. Includes a printable shopping list and ingredient sourcing guide.`,
     priceCents: 2400,
     bullets: [
       "30 recipes, 90 pages, beautifully designed PDF",
       "Modern kitchen substitutions for hard-to-find ingredients",
-      "12 short video walkthroughs (streamed from your library)",
       "Sourcing guide for taro, breadfruit, ulu, and pantry staples",
       "Lifetime updates — every new edition included free",
     ],
