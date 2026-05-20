@@ -37,12 +37,32 @@
     background: #1c3942;
     color: #faf6ee;
     padding: 64px 48px;
-    margin: 60px -40px 48px;
+    margin: 0;
     text-align: center;
+    page-break-before: always;
+    break-before: page;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
   .section-opener .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #d2be93; margin-bottom: 16px; }
   .section-opener h2 { font-family: 'Fraunces', serif; font-size: 42px; font-weight: 600; color: #faf6ee; line-height: 1.2; }
   .section-opener blockquote { margin-top: 24px; font-style: italic; font-size: 15px; color: #d2be93; max-width: 540px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+  /* ── Recipe image ── */
+  .recipe-img { width: 100%; height: 260px; object-fit: cover; border-radius: 10px; margin-bottom: 24px; display: block; }
+
+  /* ── Table of contents ── */
+  .toc {
+    page-break-before: always;
+    break-before: page;
+    padding: 60px 0 40px;
+  }
+  .toc h2 { font-family: 'Fraunces', serif; font-size: 36px; color: #1c3942; margin-bottom: 32px; }
+  .toc-section { margin-bottom: 28px; }
+  .toc-section-title { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 600; color: #1c3942; padding-bottom: 6px; border-bottom: 1px solid #d2be93; margin-bottom: 10px; }
+  .toc-section-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #dd7e5c; margin-right: 10px; }
+  .toc-recipe { font-size: 14px; color: #5c4020; padding: 4px 0 4px 16px; line-height: 1.5; }
+  .toc-recipe-num { color: #d2be93; margin-right: 8px; font-size: 12px; }
 
   /* ── Intro sections ── */
   .intro h2 { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 600; color: #1c3942; margin: 48px 0 16px; }
@@ -126,7 +146,6 @@
   /* ── Print helper ── */
   @media print {
     body { max-width: 100%; padding: 0; background: white; }
-    .section-opener { margin: 0; }
   }
 </style>
 </head>
@@ -201,6 +220,67 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════
+     TABLE OF CONTENTS
+════════════════════════════════════════════════════ -->
+<div class="toc">
+  <h2>Table of Contents</h2>
+
+  <div class="toc-section">
+    <div class="toc-section-title"><span class="toc-section-label">Section 1</span>Roots &amp; Tubers</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">1.1</span>Roasted breadfruit wedges with ʻAlaea salt</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">1.2</span>Taro mash with brown butter and chives</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">1.3</span>Sweet potato and ginger soup</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">1.4</span>Cassava fries with garlic and lime</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">1.5</span>ʻUlu (breadfruit) "rice" with coconut and scallion</div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title"><span class="toc-section-label">Section 2</span>From the Sea</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">2.1</span>Ahi poke — the classic</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">2.2</span>Salmon poke — the modern version</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">2.3</span>Lomi salmon</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">2.4</span>Coconut-ginger shrimp</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">2.5</span>Whole grilled fish in banana leaf</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">2.6</span>Octopus with chili and lime</div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title"><span class="toc-section-label">Section 3</span>Greens</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">3.1</span>Coconut-creamed kalo leaves</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">3.2</span>Watercress and sesame</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">3.3</span>Pohole fern salad</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">3.4</span>Ginger-garlic bok choy</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">3.5</span>Taro leaf wraps</div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title"><span class="toc-section-label">Section 4</span>Coconut</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">4.1</span>Toasted coconut chips</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">4.2</span>Coconut rice</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">4.3</span>Haupia</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">4.4</span>Lower-sugar coconut macaroons</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">4.5</span>Coconut-poached white fish</div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title"><span class="toc-section-label">Section 5</span>One-Pot Meals</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">5.1</span>Shoyu chicken</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">5.2</span>Chicken adobo</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">5.3</span>Coconut curry with taro</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">5.4</span>Poke bowl, four ways</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">5.5</span>Furikake salmon musubi</div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title"><span class="toc-section-label">Section 6</span>Sweet</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">6.1</span>Haupia — modern variations</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">6.2</span>Banana lumpia</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">6.3</span>Pineapple-ginger shave ice</div>
+    <div class="toc-recipe"><span class="toc-recipe-num">6.4</span>Mochi — basic and variations</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
      SECTION 1 · ROOTS & TUBERS
 ════════════════════════════════════════════════════ -->
 <div class="section-opener">
@@ -213,6 +293,7 @@
   <div class="recipe-number">Recipe 1.1</div>
   <h3>Roasted breadfruit wedges with ʻAlaea salt</h3>
   <p class="recipe-intro">A breadfruit roasted in its skin is, structurally, the best potato you've ever had. The interior is fluffy, slightly sweet, and holds an aggressive seasoning the way few starches can.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=780&h=260&fit=crop&auto=format" alt="Roasted breadfruit wedges" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as a side, 2 as a main</span><span>Time: 50 minutes (10 active)</span></div>
 
   <h4>Ingredients</h4>
@@ -247,6 +328,7 @@
   <div class="recipe-number">Recipe 1.2</div>
   <h3>Taro mash with brown butter and chives</h3>
   <p class="recipe-intro">The Hawaiian word for taro is <em>kalo</em>. The cooked, mashed form is called <em>paʻiʻai</em> when thick, <em>poi</em> when thinned with water and fermented. This recipe sits in between — closer to mashed potato in spirit, but with the slightly nutty, mineral flavor of taro and the gentle gloss of brown butter on top.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=780&h=260&fit=crop&auto=format" alt="Taro mash with brown butter" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 45 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -283,6 +365,7 @@
   <div class="recipe-number">Recipe 1.3</div>
   <h3>Sweet potato and ginger soup</h3>
   <p class="recipe-intro">The sweet potato (<em>ʻuala</em> in Hawaiian, <em>kumara</em> in Maori) is the only one of the Pacific staple roots that's now widely available in any supermarket. This soup uses two pounds of it, plus a generous knob of fresh ginger, plus coconut milk, and is on the table in 30 minutes.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=780&h=260&fit=crop&auto=format" alt="Sweet potato and ginger soup" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4–6</span><span>Time: 30 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -322,6 +405,7 @@
   <div class="recipe-number">Recipe 1.4</div>
   <h3>Cassava fries with garlic and lime</h3>
   <p class="recipe-intro">Cassava (yuca) is one of the oldest cultivated foods in the world, grown across the tropics including the Pacific. As a fry, it's denser and chewier than potato — somewhere between a thick steak fry and a polenta chip. Forgiving to cook, aggressively friendly to bold seasoning.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=780&h=260&fit=crop&auto=format" alt="Cassava fries with garlic and lime" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 35 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -356,6 +440,7 @@
   <div class="recipe-number">Recipe 1.5</div>
   <h3>ʻUlu (breadfruit) "rice" with coconut and scallion</h3>
   <p class="recipe-intro">A way to use ripe-but-not-yet-soft breadfruit that lands closer to fried rice than to a roasted side. The texture is rough, fluffy, and absorbs sauce beautifully.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=780&h=260&fit=crop&auto=format" alt="Ulu breadfruit rice with coconut" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 35 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -402,6 +487,7 @@
   <div class="recipe-number">Recipe 2.1</div>
   <h3>Ahi poke — the classic</h3>
   <p class="recipe-intro"><em>Poke</em> (POH-kay) means simply "to cut crosswise into pieces" in Hawaiian. Before refrigerators, before soy sauce, before the mainland poke-bowl shop, poke was reef fish or tuna cut at the shoreline and seasoned with exactly what the shoreline offered: sea salt, a tear of seaweed, the crushed roasted nut of the kukui tree. This is that poke. It has four real ingredients and it is still, after everything, the best one.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=780&h=260&fit=crop&auto=format" alt="Ahi poke classic" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as appetizer, 2 as main</span><span>Time: 15 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -439,6 +525,7 @@
   <div class="recipe-number">Recipe 2.2</div>
   <h3>Salmon poke — the modern version</h3>
   <p class="recipe-intro">There is no traditional Polynesian salmon dish, because there is no salmon in the tropical Pacific. Salmon poke is a modern, mainland invention — and a genuinely good one. Salmon's higher fat content carries a soy-and-sesame dressing beautifully, and in much of the country it is easier to buy in reliable raw-quality condition than tuna. We include it honestly, as exactly what it is.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=780&h=260&fit=crop&auto=format" alt="Salmon poke modern" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as appetizer, 2 as main</span><span>Time: 20 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -475,6 +562,7 @@
   <div class="recipe-number">Recipe 2.3</div>
   <h3>Lomi salmon</h3>
   <p class="recipe-intro"><em>Lomi</em> means to massage, to knead, to work something gently with the hands — and lomi salmon is salted salmon worked together with tomato and onion until it becomes a cold, bright, almost salsa-like relish. Like shoyu poke, it is a post-contact dish: the salt salmon came off New England trading ships, the tomato arrived with the missionaries. Two centuries later it sits on every lūʻau table in Hawaiʻi, in a small scoop, served very cold.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=780&h=260&fit=crop&auto=format" alt="Lomi salmon" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 6 as a side</span><span>Time: 30 minutes active, plus 2 hours curing</span></div>
 
   <h4>Ingredients</h4>
@@ -509,6 +597,7 @@
   <div class="recipe-number">Recipe 2.4</div>
   <h3>Coconut-ginger shrimp</h3>
   <p class="recipe-intro">The shrimp trucks parked on Oʻahu's North Shore made garlic shrimp famous, but the older, gentler island treatment is this one: shrimp poached in coconut milk loosened with ginger, garlic, and chili. It comes together in one pan in under half an hour.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=780&h=260&fit=crop&auto=format" alt="Coconut-ginger shrimp" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 25 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -544,6 +633,7 @@
   <div class="recipe-number">Recipe 2.5</div>
   <h3>Whole grilled fish in banana leaf</h3>
   <p class="recipe-intro">A whole fish is the centerpiece the Pacific kitchen reaches for, and wrapping it in a banana or tī leaf before it meets the fire is the oldest trick there is: the leaf steams the fish in its own moisture, keeps it from sticking and tearing, and perfumes it faintly green. It looks like a great deal of work and is in fact very little. The hardest part is buying the fish.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=780&h=260&fit=crop&auto=format" alt="Whole grilled fish in banana leaf" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 50 minutes (20 active)</span></div>
 
   <h4>Ingredients</h4>
@@ -580,6 +670,7 @@
   <div class="recipe-number">Recipe 2.6</div>
   <h3>Octopus with chili-lime</h3>
   <p class="recipe-intro">Octopus — <em>heʻe</em> in Hawaiian, <em>tako</em> on the menu — is reef food, speared and gathered across the Pacific for as long as people have lived there. It has one rule: it is rubbery in a brief window of undercooking and tender on either side of that window, so you either keep it raw-soft or cook it well past the window into submission. This recipe does the second, then dresses it cold and bright.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1615361200141-f45040f367be?w=780&h=260&fit=crop&auto=format" alt="Octopus with chili-lime" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as an appetizer</span><span>Time: 1 hour 15 minutes (15 active)</span></div>
 
   <h4>Ingredients</h4>
@@ -624,6 +715,7 @@
   <div class="recipe-number">Recipe 3.1</div>
   <h3>Coconut-creamed kalo leaves (luʻau stew)</h3>
   <p class="recipe-intro"><em>Luʻau</em> is the word for the young taro leaf, and it gave its name to the feast. Slow-cooked for the better part of an hour, the leaf collapses into something dark, silky, and faintly mineral — the Pacific's answer to creamed spinach, but deeper.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=780&h=260&fit=crop&auto=format" alt="Coconut-creamed kalo leaves" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 to 6 as a side</span><span>Time: 1 hour (15 active)</span></div>
 
   <h4>Ingredients</h4>
@@ -659,6 +751,7 @@
   <div class="recipe-number">Recipe 3.2</div>
   <h3>Watercress and sesame</h3>
   <p class="recipe-intro">Watercress runs wild in the cold mountain streams of Hawaiʻi, and a quick sesame-dressed watercress salad — peppery, bright, barely cooked — is the standard fresh green on a heavy plate lunch. It takes about ten minutes, and it is the thing your plate is missing.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=780&h=260&fit=crop&auto=format" alt="Watercress and sesame salad" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as a side</span><span>Time: 10 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -692,6 +785,7 @@
   <div class="recipe-number">Recipe 3.3</div>
   <h3>Pohole fern salad</h3>
   <p class="recipe-intro"><em>Pohole</em> — the young, coiled fiddlehead of a Hawaiian fern — has a crisp snap and a faint green-bean flavor, and on the islands it is dressed with tomato and onion into a cool, crunchy salad. It is a genuine treat and nearly impossible to buy on the mainland, so the substitution below is the version most readers will actually cook.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=780&h=260&fit=crop&auto=format" alt="Pohole fern salad" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as a side</span><span>Time: 20 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -726,6 +820,7 @@
   <div class="recipe-number">Recipe 3.4</div>
   <h3>Ginger-garlic bok choy</h3>
   <p class="recipe-intro">Bok choy arrived with Chinese plantation labor in the 1800s, but it slid into the local kitchen so completely that no plate lunch feels right without a fast, glossy, ginger-garlic green beside the rice. This is that green, and it takes six minutes.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=780&h=260&fit=crop&auto=format" alt="Ginger-garlic bok choy" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 as a side</span><span>Time: 10 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -759,6 +854,7 @@
   <div class="recipe-number">Recipe 3.5</div>
   <h3>Taro leaf wraps (laulau)</h3>
   <p class="recipe-intro">Wrap a piece of fish in a few layers of taro leaf, steam the bundle slowly until everything inside is silk and the leaf is tender, and you have <em>laulau</em> — the great steamed parcel of the Hawaiian table. This is a fish laulau: simpler and faster than the all-day version, and built so the taro leaf gets the long, safe cook it requires.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=780&h=260&fit=crop&auto=format" alt="Taro leaf wraps laulau" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 1 hour 15 minutes (20 active)</span></div>
 
   <h4>Ingredients</h4>
@@ -805,6 +901,7 @@
   <div class="recipe-number">Recipe 4.1</div>
   <h3>Toasted coconut chips</h3>
   <p class="recipe-intro">Wide shavings of coconut, lightly salted and toasted until they curl and turn gold, are the Pacific kitchen's answer to the crouton — the crisp, sweet-savory finish scattered over soups, rice bowls, and desserts. They take ten minutes and they keep for two weeks.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1580005828226-2f8e2c1b0df8?w=780&h=260&fit=crop&auto=format" alt="Toasted coconut chips" onerror="this.style.display='none'">
   <div class="meta"><span>Makes about 2 cups</span><span>Time: 15 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -836,6 +933,7 @@
   <div class="recipe-number">Recipe 4.2</div>
   <h3>Coconut rice</h3>
   <p class="recipe-intro">If one recipe in this book quietly holds up the others, it is this one — the soft, faintly sweet, coconut-rich rice that goes under poke, beside grilled fish, and alongside every curry and braise. It is barely harder than cooking plain rice, and it is the difference between a plate and a meal.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1512058533999-b8a17f8b00e7?w=780&h=260&fit=crop&auto=format" alt="Coconut rice" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 to 6</span><span>Time: 30 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -869,6 +967,7 @@
   <div class="recipe-number">Recipe 4.3</div>
   <h3>Haupia (traditional)</h3>
   <p class="recipe-intro">Haupia is the coconut-milk pudding that ends a lūʻau — set firm enough to cut into glistening white squares, with a clean, pure coconut flavor and nothing else competing for attention. Four ingredients, fifteen minutes of work, and a couple of hours in the refrigerator.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=780&h=260&fit=crop&auto=format" alt="Haupia coconut pudding" onerror="this.style.display='none'">
   <div class="meta"><span>Makes 9 squares (an 8×8-inch pan)</span><span>Time: 20 min active, plus 2–3 hours to set</span></div>
 
   <h4>Ingredients</h4>
@@ -903,6 +1002,7 @@
   <div class="recipe-number">Recipe 4.4</div>
   <h3>Coconut macaroons (lower sugar)</h3>
   <p class="recipe-intro">A macaroon is, at heart, just coconut bound and baked — and most recipes drown that good coconut in far more sugar than it needs. This version pulls the sugar back hard and lets the coconut and a little vanilla do the work. The result is chewy inside, crisp and gold outside, and nothing like as sweet as the ones from the tin.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=780&h=260&fit=crop&auto=format" alt="Coconut macaroons" onerror="this.style.display='none'">
   <div class="meta"><span>Makes about 18</span><span>Time: 35 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -936,6 +1036,7 @@
   <div class="recipe-number">Recipe 4.5</div>
   <h3>Coconut-poached white fish</h3>
   <p class="recipe-intro">Poaching is the gentlest thing you can do to a fish, and poaching it in seasoned coconut milk is the gentlest thing the Pacific kitchen knows. The fish stays meltingly tender, the coconut milk becomes a light sauce, and the whole dish happens in one pan in under half an hour.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=780&h=260&fit=crop&auto=format" alt="Coconut-poached white fish" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 25 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -980,6 +1081,7 @@
   <div class="recipe-number">Recipe 5.1</div>
   <h3>Shoyu chicken</h3>
   <p class="recipe-intro"><em>Shoyu</em> is soy sauce, and shoyu chicken — chicken thighs simmered down in a sweet-salty soy braise sharp with ginger and garlic — is the plate-lunch standard of Hawaiʻi, the dish every island family makes a little differently. It is almost entirely hands-off: the pot does the work while you cook the rice.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1598103442097-8b74394b95c1?w=780&h=260&fit=crop&auto=format" alt="Shoyu chicken" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 to 6</span><span>Time: 50 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -1015,6 +1117,7 @@
   <div class="recipe-number">Recipe 5.2</div>
   <h3>Chicken adobo (Filipino-Pacific crossover)</h3>
   <p class="recipe-intro">Adobo — meat simmered in vinegar, soy, garlic, and bay until the sauce turns deep and glossy — is the national dish of the Philippines, and Filipino plantation workers carried it into the Hawaiian kitchen, where it settled in for good. This is the chicken version: sharp, savory, and even better the day after you make it.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=780&h=260&fit=crop&auto=format" alt="Chicken adobo" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 1 hour, plus marinating</span></div>
 
   <h4>Ingredients</h4>
@@ -1051,6 +1154,7 @@
   <div class="recipe-number">Recipe 5.3</div>
   <h3>Coconut curry with taro</h3>
   <p class="recipe-intro">Taro does in this curry what potato does in others — it goes soft and creamy at the edges and holds its shape at the center, thickening the sauce as it cooks. The result is a mild, fragrant coconut curry that leans Thai in technique and Pacific in its bones.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=780&h=260&fit=crop&auto=format" alt="Coconut curry with taro" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4 to 6</span><span>Time: 45 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -1088,6 +1192,7 @@
   <div class="recipe-number">Recipe 5.4</div>
   <h3>Poke bowl, four ways</h3>
   <p class="recipe-intro">The poke bowl — poke and its companions arranged over a bowl of rice — is less a recipe than a system. Section 2 taught you the poke; this is the assembly, with four combinations that work. Build one and you will not need a recipe for the next.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=780&h=260&fit=crop&auto=format" alt="Poke bowl four ways" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 20 minutes (with poke and rice already made)</span></div>
 
   <h4>The Four Layers</h4>
@@ -1128,6 +1233,7 @@
   <div class="recipe-number">Recipe 5.5</div>
   <h3>Furikake salmon musubi</h3>
   <p class="recipe-intro">Musubi is a hand-sized block of rice with a savory topping, wrapped in a band of nori — Hawaiʻi's most beloved snack, usually built around a slab of fried canned meat. This is the rebuild: a piece of teriyaki-glazed salmon and a heavy shower of <em>furikake</em> in its place. It travels well, it keeps for a few hours, and it disappears fast.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=780&h=260&fit=crop&auto=format" alt="Furikake salmon musubi" onerror="this.style.display='none'">
   <div class="meta"><span>Makes 6 musubi</span><span>Time: 40 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -1173,6 +1279,7 @@
   <div class="recipe-number">Recipe 6.1</div>
   <h3>Haupia, modern variations</h3>
   <p class="recipe-intro"><strong>4.3 haupia</strong> gave you the pure, traditional coconut pudding. This recipe is what to do with it next. The base technique is identical; what changes is one addition, stirred in at the right moment — and each variation turns the same humble pudding into a different dessert.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=780&h=260&fit=crop&auto=format" alt="Haupia modern variations" onerror="this.style.display='none'">
   <div class="meta"><span>Makes 9 squares (an 8×8-inch pan)</span><span>Time: 20 min active, plus 2–3 hours to set</span></div>
 
   <h4>The Variations</h4>
@@ -1206,6 +1313,7 @@
   <div class="recipe-number">Recipe 6.2</div>
   <h3>Banana lumpia (turon)</h3>
   <p class="recipe-intro">Filipino <em>turon</em> — a whole banana rolled in a thin wrapper with a little brown sugar and fried until the sugar caramelizes into a brittle, glassy shell — is one of the most popular sweets on any Hawaiian plate-lunch counter. It is fast, it uses fruit most people already have, and it is genuinely hard to stop eating.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?w=780&h=260&fit=crop&auto=format" alt="Banana lumpia" onerror="this.style.display='none'">
   <div class="meta"><span>Makes 8</span><span>Time: 30 minutes</span></div>
 
   <h4>Ingredients</h4>
@@ -1241,6 +1349,7 @@
   <div class="recipe-number">Recipe 6.3</div>
   <h3>Pineapple-ginger shave ice</h3>
   <p class="recipe-intro">Hawaiian shave ice is not a snow cone — the ice is shaved into a fine, soft powder that drinks in syrup like fresh snow. Without the specialized machine you cannot get true shave-ice texture, but a good blender comes remarkably close, and this fresh pineapple-ginger syrup is worlds better than the neon bottled stuff.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=780&h=260&fit=crop&auto=format" alt="Pineapple-ginger shave ice" onerror="this.style.display='none'">
   <div class="meta"><span>Serves 4</span><span>Time: 20 minutes, plus freezing time</span></div>
 
   <h4>Ingredients</h4>
@@ -1276,6 +1385,7 @@
   <div class="recipe-number">Recipe 6.4</div>
   <h3>Mochi, basic + variations</h3>
   <p class="recipe-intro"><em>Mochi</em> — the chewy, springy cake of pounded glutinous rice — came to Hawaiʻi with Japanese immigrants and never left, and "butter mochi," the islands' own baked version, is now a potluck institution. This recipe gives you the simple steamed mochi first, then the butter-mochi variation that Hawaiʻi made its own.</p>
+  <img class="recipe-img" src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=780&h=260&fit=crop&auto=format" alt="Mochi basic and variations" onerror="this.style.display='none'">
   <div class="meta"><span>Makes about 16 pieces</span><span>Time: 1 hour</span></div>
 
   <h4>Ingredients — Basic Steamed Mochi</h4>

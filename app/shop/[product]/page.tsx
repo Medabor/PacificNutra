@@ -66,7 +66,7 @@ const SECTIONS = [
 const FAQ = [
   {
     q: "What format is it?",
-    a: "A polished PDF (~90 pages, ~25 MB). It opens in any PDF reader on Mac, Windows, iOS, Android, and Kindle. Print as many copies as you want for your own kitchen.",
+    a: "A polished PDF (~80 pages, ~25 MB). It opens in any PDF reader on Mac, Windows, iOS, Android, and Kindle. Print as many copies as you want for your own kitchen.",
   },
   {
     q: "How do I get it after I pay?",

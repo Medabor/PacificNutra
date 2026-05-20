@@ -18,7 +18,7 @@ const products: Product[] = [
     description: `A 90-page cookbook that takes you through thirty foundational Polynesian recipes — taro mash, breadfruit fries, poke bowls, shoyu chicken, lomi salmon, haupia, and more — each with a brief history, the cultural context, and a modern variation that works in any kitchen. Includes a printable shopping list and ingredient sourcing guide.`,
     priceCents: 2400,
     bullets: [
-      "30 recipes, 90 pages, beautifully designed PDF",
+      "30 recipes, ~80 pages, beautifully designed PDF",
       "Modern kitchen substitutions for hard-to-find ingredients",
       "Sourcing guide for taro, breadfruit, ulu, and pantry staples",
       "Lifetime updates — every new edition included free",
