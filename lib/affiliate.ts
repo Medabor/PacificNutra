@@ -32,7 +32,7 @@ const products: AffiliateProduct[] = [
     why:
       "The skillet you see on our home page hero is this one. We've used it for four years and it's still the most-used pan in the kitchen.",
     // image: "/images/affiliate/...jpg",  // add real photo here
-    url: "https://www.amazon.com/dp/B0000CF66W?tag=TODO-affiliate-tag",
+    url: "https://www.amazon.com/dp/B0000CF66W?tag=mypacificnutr-20",
     priceHint: "~$35",
   },
   {
@@ -44,7 +44,7 @@ const products: AffiliateProduct[] = [
     why:
       "Pacific cooking leans hard on steaming over boiling — better texture, no leaching of minerals into water. A bamboo steamer beats a metal one by a mile.",
     // image: "/images/affiliate/...jpg",  // add real photo here
-    url: "https://www.amazon.com/s?k=bamboo+steamer+10+inch&tag=TODO-affiliate-tag",
+    url: "https://www.amazon.com/s?k=bamboo+steamer+10+inch&tag=mypacificnutr-20",
     priceHint: "~$20",
   },
   {
@@ -56,7 +56,7 @@ const products: AffiliateProduct[] = [
     why:
       "We use it as the finishing salt on roasted breadfruit, poke, and lomi salmon. Any of our roots/tubers recipes call for it specifically.",
     // image: "/images/affiliate/...jpg",  // add real photo here
-    url: "https://www.amazon.com/s?k=alaea+hawaiian+sea+salt&tag=TODO-affiliate-tag",
+    url: "https://www.amazon.com/s?k=alaea+hawaiian+sea+salt&tag=mypacificnutr-20",
     priceHint: "~$12",
   },
   {
@@ -68,7 +68,7 @@ const products: AffiliateProduct[] = [
     why:
       "Pacific cuisine pre-contact had no soy. Coconut aminos give the same umami without the soy-sauce overcorrection that most modern poke shops lean on.",
     // image: "/images/affiliate/...jpg",  // add real photo here
-    url: "https://www.amazon.com/s?k=coconut+secret+coconut+aminos&tag=TODO-affiliate-tag",
+    url: "https://www.amazon.com/s?k=coconut+secret+coconut+aminos&tag=mypacificnutr-20",
     priceHint: "~$10",
   },
   {
@@ -80,7 +80,7 @@ const products: AffiliateProduct[] = [
     why:
       "If you're going to make poke bowls at home, furikake is the difference between fine and very good. The Eden brand is the cleanest version on Amazon.",
     // image: "/images/affiliate/...jpg",  // add real photo here
-    url: "https://www.amazon.com/s?k=eden+furikake&tag=TODO-affiliate-tag",
+    url: "https://www.amazon.com/s?k=eden+furikake&tag=mypacificnutr-20",
     priceHint: "~$8",
   },
   {
@@ -92,7 +92,7 @@ const products: AffiliateProduct[] = [
     why:
       "A good companion to our Pacific Plate cookbook — Roy's book leans restaurant-style and chef-y; ours leans home-kitchen and ancestral. Together they cover the spectrum.",
     // image: "/images/affiliate/...jpg",  // add real photo here
-    url: "https://www.amazon.com/s?k=hawaii+cooks+roy+yamaguchi&tag=TODO-affiliate-tag",
+    url: "https://www.amazon.com/s?k=hawaii+cooks+roy+yamaguchi&tag=mypacificnutr-20",
     priceHint: "~$28",
   },
 ];
