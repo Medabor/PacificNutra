@@ -1,11 +1,12 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-05-18.
+Snapshot for resuming work in a new session. Last updated: 2026-05-21.
 
 ## What this is
 
 Pacific Nutra is a content + commerce site that sells digital ebooks. The
-first (and currently only) product is **The Pacific Plate**, a $24 ebook.
+first (and currently only) product is **The Pacific Plate**, a $24 ebook
+(30 Polynesian recipes rebuilt for the modern kitchen).
 
 ## Stack & hosting
 
@@ -18,17 +19,15 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
   (`next build`), and released automatically — no manual step. App runs
   behind a reverse proxy, so `NEXT_PUBLIC_SITE_URL` must be set explicitly
   (the request origin otherwise resolves to an internal `localhost`).
-- **Deploy gotchas (hard-won this session — do not regress):**
+- **Deploy gotchas (hard-won — do not regress):**
   - **No `output: "standalone"`** in `next.config.mjs`. It stops
     `/_next/static` (the CSS/JS bundles) from being served and renders the
     whole site unstyled.
   - **Build tools live in `dependencies`,** not `devDependencies` (Tailwind,
     PostCSS, TypeScript, `@types/*`). A production-mode install otherwise
     skips them and the build ships with no CSS.
-  - **The Hostinger CDN is currently OFF.** While building, it cached stale
-    mixed old/new pages — causing intermittently unstyled pages and the old
-    logo. Re-enable at launch; when it is on, purge its cache after each
-    deploy.
+  - **The Hostinger CDN is currently OFF.** Re-enable at launch; when it is
+    on, purge its cache after each deploy.
   - Hostinger's integration runs the app itself; the repo's `server.js` is
     not used by it.
 - **Repo:** `medabor/pacificnutra`
@@ -39,22 +38,14 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 > `claude/pacificnutra-business-ideas-V3L9L`. A session may be assigned a
 > different per-session branch name (e.g. `claude/resume-...`) — **ignore it**
 > and commit/push to `claude/pacificnutra-business-ideas-V3L9L`, or the work
-> won't deploy. Each session runs in its own git sandbox, so a freshly
-> created session branch can look "ahead" of a stale local copy of the deploy
-> branch; that is not real divergence. On session start, run `git fetch origin`
-> and work on `claude/pacificnutra-business-ideas-V3L9L` (it fast-forwards).
-> The GitHub repo should only ever have this one branch.
+> won't deploy. On session start, run `git fetch origin` and work on
+> `claude/pacificnutra-business-ideas-V3L9L` (it fast-forwards).
 
-## Domain plan
+## Domain
 
-- Real domain: **`pacificnutra.com`** — the decision is to connect this domain
-  now and keep building on it (zero traffic, so low risk), rather than ship on
-  staging and cut over later.
-- Staging domain `https://staging.pacificnutra.com` exists but is **not** the
-  target — all config (env var, Supabase, Stripe) should point at
-  `pacificnutra.com`.
-- The whole site is **`noindex`** while building (see below). The site must
-  not be shared/marketed until the ebook is finished and uploaded.
+- **`pacificnutra.com`** — live, connected to Hostinger. All config
+  (env vars, Supabase, Stripe) points here.
+- The whole site is **`noindex`** until launch (see Outstanding).
 
 ## Routes
 
@@ -64,54 +55,71 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook.
 | `/about`, `/affiliate`, `/privacy`, `/refund`, `/terms` | Static pages |
 | `/blog`, `/blog/[slug]` | Blog |
 | `/shop`, `/shop/[product]` | Product listing + detail |
-| `/sample` | Free sample — renders the intro + Section 1 of the ebook manuscript in-browser, with a buy CTA |
+| `/sample` | Free sample — renders intro + Section 1 in-browser, with buy CTA |
 | `/library` | Customer ebook library — Supabase magic-link auth |
-| `/admin` | Subscribers/orders/revenue dashboard — magic-link auth, gated to `ADMIN_EMAIL`, `noindex`, unlinked from nav/footer |
+| `/admin` | Orders/revenue dashboard — magic-link auth, gated to `ADMIN_EMAIL` |
 | `/api/checkout` | Creates a Stripe Checkout session |
 | `/api/stripe-webhook` | Handles `checkout.session.completed`; writes the order |
 | `/api/subscribe` | Newsletter signup |
 
 ## Product
 
-- **The Pacific Plate** — slug `the-pacific-plate`, price $24.00 (`2400` cents).
-- Defined in `lib/products.ts`.
-- Ebook PDF expected in Supabase Storage at `ebooks/the-pacific-plate-v1.pdf`.
-- Manuscript: `content/ebook/the-pacific-plate.md` — **complete draft**: intro
-  + all 30 recipes across 6 sections. The `/sample` route renders the intro +
-  Section 1 from this file.
-- **Content rule — no pork, no alcohol** anywhere on the site (recipes, blog,
-  copy). The manuscript already follows this; keep any future edits the same.
-- **Ebook production plan:** manuscript → DOCX (a styled `.docx` export was
-  generated this session and handed to the owner) → import into **Designrr**
-  (the owner has a designrr.io account) for interior layout → export the
-  final PDF → upload to Supabase (see Outstanding). Designrr is the chosen
-  tool because Canva's auto-layout was unreliable for a 30-recipe interior.
+- **The Pacific Plate** — slug `the-pacific-plate`, price **$24.00** (2400 cents).
+- Defined in `lib/products.ts`. Bullets: 30 recipes, ~80 pages, PDF.
+- **Content rule — no pork, no alcohol** anywhere on site (recipes, blog, copy).
+- **Ebook PDF:** uploaded to Supabase Storage as `ebooks/the-pacific-plate-v1.pdf`. ✅
+- **Ebook source HTML:** `the-pacific-plate-ebook.html` in repo root — the full
+  30-recipe manuscript styled for browser/print. Contains:
+  - Cover image embedded as base64 (extracted from the approved Canva design)
+  - Table of contents
+  - 30 recipes across 6 sections with Unsplash photo URLs (visible in browser;
+    hidden in CSS `@media print` to avoid blank boxes)
+  - Teal section openers with `print-color-adjust: exact` so they keep colour
+  - Print CSS: `@page { size: Letter portrait }`, no headers/footers
+  - To produce a new PDF: open in Chrome → ⌘P → Portrait, Margins: None,
+    uncheck Headers & footers, check Background graphics → Save as PDF
+- **Manuscript markdown:** `content/ebook/the-pacific-plate.md` — the `/sample`
+  route renders the intro + Section 1 from this file.
+- **Book cover:** V3 approved (dark teal, dish photos, "30 recipes" badge,
+  Pacific Nutra logo). Embedded in `the-pacific-plate-ebook.html`.
+  **Still to do:** wire it into the site as the `/shop` product image
+  (currently `polyneian-img2.jpg` placeholder). Export the cover from Canva
+  as JPG → upload to `public/images/` → update `lib/photos.ts`
+  `productPacificPlate` slot.
 
 ## Brand & logo
 
-- **Logo:** `public/brand/pacific-nutra-logo.svg` — a circular emblem (a taro
-  leaf over Pacific waves) in the brand palette. Rendered in-app by
-  `components/Logo.tsx` (Nav + Footer); the favicon `app/icon.svg` is a
-  simplified version. The old `WaveMark` component was removed.
-- **Palette** (Tailwind tokens): `kalo` deep brown, `cream`, `clay`
-  terracotta, `forest` green, `ocean-deep` (#1C3942).
-- **Book cover:** the owner is finalizing an AI-generated cover in Canva
-  ("The Pacific Plate" — dark teal, dish photos, a "30 recipes" badge). Not
-  yet final, and not yet wired into the site as the `/shop` product image.
+- **Logo:** `public/brand/pacific-nutra-logo.svg` — circular emblem (taro leaf
+  over Pacific waves). Rendered by `components/Logo.tsx` and `app/icon.svg`.
+- **Palette:** `#1C3942` ocean-deep teal · `#FAF6EE` cream · `#DD7E5C` clay/
+  terracotta · `#D2BE93` warm gold · `#2F4F3A` forest green
+- **Fonts:** Fraunces (serif, headings) · Manrope (sans, body)
+- **Nav wordmark:** "Pacific" Fraunces regular upright `#1C1209` ·
+  "Nutra" Fraunces medium italic `#DD7E5C` · text-xl tracking-tight
 
 ## Database (Supabase)
 
 Schema in `supabase/migrations/0001_init.sql`:
 - `subscribers` — `id, email, source, created_at`
 - `orders` — `id, email, product_slug, stripe_session_id, status, amount_cents, created_at`
-- Private storage bucket `ebooks` (signed URLs handed out for downloads).
-- RLS is on; server code uses the service-role key, which bypasses RLS.
+- Private storage bucket `ebooks` — signed URLs for downloads.
+- RLS is on; server code uses the service-role key (bypasses RLS).
+- Supabase Auth → URL Configuration must use `https://pacificnutra.com`
+  for Site URL and `/library` + `/admin` redirect URLs.
+
+## Stripe
+
+- Live mode. Webhook: `https://pacificnutra.com/api/stripe-webhook`,
+  event `checkout.session.completed`, API version `2026-04-22.dahlia`.
+- Webhook handler (`app/api/stripe-webhook/route.ts`) uses `upsert` on
+  `stripe_session_id` (idempotent). Re-fetches session via SDK for reliable
+  email. Solid — no changes needed.
 
 ## Environment variables (Hostinger → Node.js → Environment variables)
 
 ```
 NEXT_PUBLIC_SITE_URL=https://pacificnutra.com
-ADMIN_EMAIL=                              # the email allowed into /admin
+ADMIN_EMAIL=                              # email allowed into /admin
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
@@ -124,68 +132,42 @@ BEEHIIV_PUBLICATION_ID=                   # optional
 RESEND_API_KEY=                           # optional
 ```
 
-Var names are read literally by the code — they must match exactly,
-including the `NEXT_PUBLIC_` prefix where shown. Changing env vars requires
-an app restart in Hostinger.
+## Launch checklist — what's left
 
-## Setup status
+### Must-do before going live
 
-**Supabase — done.** Project created, migration run, env vars in Hostinger.
-Auth → URL Configuration: Site URL and `/library` + `/admin` redirect URLs
-should all use `https://pacificnutra.com`.
+1. **Verify test order in Supabase.** A live test purchase was made (100%-off
+   promo code) and shows in Stripe, but the webhook may not have delivered
+   (site was unreachable at the time). Check Supabase `orders` table and
+   `/admin`. If no row: go to Stripe Dashboard → Webhooks → your endpoint →
+   resend the `checkout.session.completed` event. Confirm a `paid` row appears.
 
-**Stripe — done, pending live verification.** Live mode. Webhook destination
-"PacificNutra" → endpoint `https://pacificnutra.com/api/stripe-webhook`,
-API version `2026-04-22.dahlia`, event `checkout.session.completed`. Live
-keys + webhook signing secret added to Hostinger. The webhook route
-re-fetches the Checkout Session via the SDK so the buyer email is reliable
-regardless of the endpoint's API version.
+2. **Confirm Stripe payouts bank account.** Stripe → Settings → Payouts —
+   make sure a bank account is linked so funds can pay out.
 
-**Test purchase — partial.** A live test purchase was completed using a
-100%-off promo code; the payment shows in Stripe. But the webhook delivery
-failed (the site/domain wasn't reachable at the time), so the order was
-**not** recorded in Supabase. Needs a resend / re-test once the domain and
-`NEXT_PUBLIC_SITE_URL` are correct.
+3. **Flip noindex → live.** Two places:
+   - `app/layout.tsx` — remove the `robots: { index: false, follow: false }`
+     metadata line (marked with a comment).
+   - `app/robots.ts` — swap the `Disallow: /` rule for the launch rule
+     (also marked with a comment).
 
-**noindex — active.** Two coordinated crawl blocks while building:
-`app/layout.tsx` has a site-wide `robots: { index: false, follow: false }`,
-and `app/robots.ts` serves `Disallow: /`. Both carry a comment marking them
-for the launch toggle.
+4. **Re-enable Hostinger CDN** (was turned off during build to avoid stale
+   cache). Go to Hostinger → your site → CDN → enable. Purge cache after
+   first post-launch deploy.
 
-**SEO plumbing — done.** `app/sitemap.ts` (lists all public routes, posts,
-and products) and `app/robots.ts` are in place.
+### Nice-to-do soon (not blocking launch)
 
-**Site styling / deploy — fixed.** The live site was rendering unstyled (no
-CSS). Three compounding causes, all now resolved: `output: "standalone"` in
-the next config (removed), build tools in `devDependencies` (moved to
-`dependencies`), and a stale Hostinger CDN (disabled + cache flushed). The
-site now renders correctly — see "Deploy gotchas" above.
+5. **Wire book cover into the shop page.** Currently shows a generic food photo.
+   Export the approved Canva cover as JPG → upload to `public/images/` →
+   update `lib/photos.ts` `productPacificPlate` slot to the new filename.
 
-## Outstanding / next steps
+6. **Ebook v1.1 with recipe photos.** Ship v1 (text only, cover) first.
+   For v1.1 add 30 recipe photos — either shoot them, license from a stock
+   site, or use a paid PDF service (WeasyPrint / DocRaptor) that can embed
+   remote images. Existing buyers get the update free (already promised in copy).
 
-1. ~~Connect `pacificnutra.com` in Hostinger/DNS.~~ **Done.**
-2. ~~Add `NEXT_PUBLIC_SITE_URL=https://pacificnutra.com` in Hostinger.~~
-   **Done.**
-3. **Confirm Stripe payouts** — verify a bank account is linked
-   (Stripe → Settings → Payouts) for funds to pay out. Still to check.
-4. **Verify the test order recorded.** A real order was placed and shows in
-   Stripe; confirm a `paid` row also appears in Supabase `orders` and on
-   `/admin` (i.e. the webhook delivered successfully).
-5. **Produce and upload the ebook PDF.** The manuscript text is done; lay it
-   out as the designed PDF in Designrr (see "Ebook production plan"), then
-   upload it to the Supabase `ebooks` bucket as `the-pacific-plate-v1.pdf`
-   (otherwise the `/library` download 404s).
-6. ~~Finish ebook content.~~ **Done** — full manuscript drafted (intro + 30
-   recipes) in `content/ebook/the-pacific-plate.md`. Remaining: lay it out as
-   the designed PDF and upload it (item 5).
-7. ~~Sample-chapter page and SEO plumbing (sitemap/robots).~~ **Done** —
-   `/sample` route + `sitemap.ts` + `robots.ts`.
-8. **At launch:** (a) remove the `robots` line in `app/layout.tsx` and flip
-   `app/robots.ts` to the launch rule (both noted in-file) so the site
-   becomes indexable; (b) re-enable the Hostinger CDN (turned off during the
-   build phase) and purge its cache.
-9. **Finalize the book cover** and wire it into the site as the `/shop`
-   product image (currently a placeholder).
+7. **Blog content.** At least 2–3 posts around launch to give the site
+   something for SEO and to share socially.
 
 ## Deployment
 
