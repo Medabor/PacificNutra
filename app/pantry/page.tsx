@@ -1,4 +1,3 @@
-import Image from "next/image";
 import LeafDivider from "@/components/LeafDivider";
 import { getAffiliatesByCategory, type AffiliateProduct } from "@/lib/affiliate";
 
@@ -8,26 +7,31 @@ export const metadata = {
     "A short list of kitchen tools, pantry staples, and books we use to cook from the Pacific. Curated, not exhaustive.",
 };
 
-export default function AffiliatePage() {
+const CATEGORY_COLOR: Record<AffiliateProduct["category"], string> = {
+  Tools: "bg-kalo-900 text-cream-50",
+  Pantry: "bg-clay-500 text-cream-50",
+  Books: "bg-forest-700 text-cream-50",
+};
+
+export default function PantryPage() {
   const byCategory = getAffiliatesByCategory();
   const categories: Array<keyof typeof byCategory> = ["Tools", "Pantry", "Books"];
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-20">
+    <div className="mx-auto max-w-4xl px-6 py-20">
       <p className="eyebrow">The Pacific Pantry</p>
       <h1 className="mt-2 font-serif text-5xl text-kalo-950 leading-[1.05]">
         Curated for the Pacific kitchen.
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-kalo-800">
         A short list of kitchen tools, pantry staples, and books we actually
-        use. No supplements, no protein powders, no "ancient secret"
+        use. No supplements, no protein powders, no &ldquo;ancient secret&rdquo;
         anything. If we wouldn&apos;t buy it ourselves, it isn&apos;t here.
       </p>
-
-      <p className="mt-6 max-w-2xl text-sm text-kalo-400">
+      <p className="mt-4 max-w-2xl text-sm text-kalo-400">
         Some of these links are affiliate links — if you buy through them, we
-        may earn a small commission at no extra cost to you. It helps keep
-        the recipes free. We don&apos;t accept paid placements; commission
+        may earn a small commission at no extra cost to you. It helps keep the
+        recipes free. We don&apos;t accept paid placements; commission
         doesn&apos;t affect which products make this page.
       </p>
 
@@ -42,31 +46,44 @@ export default function AffiliatePage() {
                 {items.length} {items.length === 1 ? "pick" : "picks"}
               </p>
             </div>
-            <div className="mt-10 grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-2 flex flex-col divide-y divide-cream-200">
               {items.map((p) => (
                 <a
                   key={p.slug}
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className="group block"
+                  className="group grid gap-4 py-8 sm:grid-cols-[120px_1fr] sm:gap-10"
                 >
-                  <ProductImage product={p} />
-                  <h3 className="mt-5 font-serif text-2xl text-kalo-950 group-hover:text-clay-600">
-                    {p.name}
-                  </h3>
-                  {p.priceHint && (
-                    <p className="mt-1 text-sm text-kalo-400">{p.priceHint}</p>
-                  )}
-                  <p className="mt-3 text-sm leading-relaxed text-kalo-800">
-                    {p.blurb}
-                  </p>
-                  <p className="mt-3 text-sm italic text-kalo-800/85 border-l-2 border-clay-400 pl-3">
-                    {p.why}
-                  </p>
-                  <p className="mt-4 text-xs uppercase tracking-[0.18em] text-clay-600 group-hover:text-clay-700">
-                    View on Amazon →
-                  </p>
+                  <div>
+                    <span
+                      className={`inline-block rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] ${CATEGORY_COLOR[p.category]}`}
+                    >
+                      {p.category}
+                    </span>
+                    {p.priceHint && (
+                      <p className="mt-3 hidden sm:block font-serif text-2xl text-kalo-950">
+                        {p.priceHint}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-2xl text-kalo-950 group-hover:text-clay-600 transition-colors">
+                      {p.name}
+                    </h3>
+                    {p.priceHint && (
+                      <p className="mt-1 font-serif text-xl text-kalo-950 sm:hidden">
+                        {p.priceHint}
+                      </p>
+                    )}
+                    <p className="mt-3 leading-relaxed text-kalo-800">{p.blurb}</p>
+                    <p className="mt-3 border-l-2 border-clay-400 pl-4 text-sm italic text-kalo-800/85">
+                      {p.why}
+                    </p>
+                    <p className="mt-4 text-xs font-medium uppercase tracking-[0.18em] text-clay-600 group-hover:text-clay-700">
+                      View on Amazon →
+                    </p>
+                  </div>
                 </a>
               ))}
             </div>
@@ -93,34 +110,6 @@ export default function AffiliatePage() {
           .
         </p>
       </section>
-    </div>
-  );
-}
-
-function ProductImage({ product }: { product: AffiliateProduct }) {
-  if (product.image) {
-    return (
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-cream-100">
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          sizes="(max-width: 768px) 100vw, 400px"
-          style={{ objectFit: "cover" }}
-        />
-      </div>
-    );
-  }
-  const palette: Record<AffiliateProduct["category"], string> = {
-    Tools: "from-kalo-800 via-kalo-900 to-kalo-950 text-cream-100",
-    Pantry: "from-clay-400 via-clay-500 to-clay-700 text-cream-50",
-    Books: "from-forest-500 via-forest-700 to-forest-800 text-cream-50",
-  };
-  return (
-    <div
-      className={`flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-to-br p-6 text-center ${palette[product.category]}`}
-    >
-      <span className="font-serif text-2xl leading-tight">{product.name}</span>
     </div>
   );
 }

@@ -4,6 +4,18 @@ import LeafDivider from "@/components/LeafDivider";
 import Photo from "@/components/Photo";
 import { getAllProducts } from "@/lib/products";
 import { getAllPosts } from "@/lib/posts";
+import type { PhotoSlotKey } from "@/lib/photos";
+
+const POST_PHOTO: Record<string, PhotoSlotKey> = {
+  "the-polynesian-diet-why-pacific-islanders-live-longer": "postPolynesianDiet",
+  "breadfruit-the-superfood-hawaiians-have-eaten-for-3000-years": "postBreadfruit",
+  "what-is-poi-a-complete-guide-to-hawaiis-original-superfood": "postPoi",
+  "what-is-taro-the-root-vegetable-of-polynesia": "postTaro",
+  "poke-bowl-history-and-how-to-make-it-at-home": "postPoke",
+  "what-is-haupia-hawaiian-coconut-pudding": "postHaupia",
+  "traditional-hawaiian-luau-food-guide": "postLuau",
+  "coconut-milk-coconut-oil-coconut-aminos-guide": "postCoconut",
+};
 
 export default function HomePage() {
   const featured = getAllProducts()[0];
@@ -150,15 +162,14 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="grid gap-8 sm:grid-cols-3">
-          {recentPosts.map((post, idx) => {
-            const slots = ["postPolynesianDiet", "postBreadfruit", "postPoi"] as const;
+          {recentPosts.map((post) => {
             return (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="group block overflow-hidden rounded-2xl bg-cream-100 transition hover:-translate-y-1"
               >
-                <Photo slot={slots[idx] ?? "postPolynesianDiet"} ratio="4/3" rounded={false} />
+                <Photo slot={POST_PHOTO[post.slug] ?? "postPolynesianDiet"} ratio="4/3" rounded={false} />
                 <div className="p-6">
                   <p className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
                     {post.category}

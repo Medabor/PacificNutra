@@ -62,6 +62,41 @@ const slots = {
     width: 1170,
     height: 2080,
   },
+  postTaro: {
+    kind: "image",
+    src: "/images/Polynesian-img9.jpg",
+    alt: "Two Hawaiian nēnē geese stand in a taro field with the Kauai mountains rising in the background",
+    width: 2000,
+    height: 1335,
+  },
+  postPoke: {
+    kind: "image",
+    src: "/images/Polynian-img3.jpg",
+    alt: "Overhead view of a Pacific-style rice bowl with egg and fresh vegetables on a woven placemat",
+    width: 2909,
+    height: 2195,
+  },
+  postHaupia: {
+    kind: "image",
+    src: "/images/Polynesian-img5.jpg",
+    alt: "Pineapple fried rice with vegetables and herbs served in a Pacific-style presentation",
+    width: 6000,
+    height: 4000,
+  },
+  postLuau: {
+    kind: "image",
+    src: "/images/Polynian-img4.jpg",
+    alt: "A carved pineapple table centerpiece with pandanus leaves, surrounded by plates of food in soft warm light",
+    width: 2000,
+    height: 1335,
+  },
+  postCoconut: {
+    kind: "image",
+    src: "/images/Polynesian-img7.jpg",
+    alt: "Traditional Pacific seafood wrapped in banana leaf — squid and greens dressed in a herb sauce",
+    width: 2000,
+    height: 905,
+  },
 } as const satisfies Record<string, PhotoSlot>;
 
 export type PhotoSlotKey = keyof typeof slots;

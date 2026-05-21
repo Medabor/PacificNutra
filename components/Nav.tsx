@@ -7,7 +7,7 @@ import Logo from "@/components/Logo";
 const links = [
   { href: "/blog", label: "Field Notes" },
   { href: "/shop", label: "Shop" },
-  { href: "/affiliate", label: "Pantry" },
+  { href: "/pantry", label: "Pantry" },
   { href: "/about", label: "About" },
 ];
 
