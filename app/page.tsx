@@ -104,7 +104,7 @@ export default function HomePage() {
         <section className="mx-auto max-w-6xl px-6 pt-12">
           <div className="grid items-center gap-12 rounded-3xl bg-cream-100 p-8 sm:grid-cols-5 sm:p-14">
             <div className="sm:col-span-3">
-              <p className="eyebrow">New · Pre-launch</p>
+              <p className="eyebrow">Cookbook · Out now</p>
               <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-kalo-950">
                 {featured.title}
               </h2>

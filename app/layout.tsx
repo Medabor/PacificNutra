@@ -4,6 +4,35 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pacificnutra.com";
+
+const LD_SCHEMA = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Pacific Nutra",
+    url: SITE,
+    logo: `${SITE}/brand/pacific-nutra-logo.svg`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "hello@pacificnutra.com",
+      contactType: "customer support",
+    },
+    sameAs: [
+      "https://instagram.com/pacificnutra",
+      "https://tiktok.com/@pacificnutra",
+      "https://pinterest.com/pacificnutra",
+      "https://youtube.com/@pacificnutra",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Pacific Nutra",
+    url: SITE,
+  },
+]);
+
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
@@ -49,6 +78,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: LD_SCHEMA }}
+        />
       </body>
     </html>
   );
