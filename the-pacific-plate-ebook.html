@@ -145,11 +145,11 @@
   .backmatter li { margin-bottom: 8px; }
 
   /* ── Print helper ── */
-  @page { margin: 1.2cm 1.4cm; }
+  @page { size: Letter portrait; margin: 1.8cm 2cm; }
   @page :first { margin: 0; }
 
   @media print {
-    /* Force ALL background colours and images to print */
+    /* Force ALL background colours to print */
     * {
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -157,13 +157,12 @@
 
     body { max-width: 100%; padding: 0; background: #faf6ee; }
 
-    /* Cover: full page, no margins, one page exactly */
+    /* Cover: lock to exactly one Letter page */
     .cover-page {
       margin: 0 !important;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      max-height: 100vh;
+      padding: 0 !important;
+      width: 8.5in;
+      height: 11in;
       overflow: hidden;
       page-break-after: always;
       break-after: page;
@@ -174,6 +173,16 @@
       object-fit: cover;
       display: block;
     }
+
+    /* Hide recipe photos in print — they cause blank boxes when
+       Unsplash images don't re-fetch at print time */
+    .recipe-img { display: none !important; }
+
+    /* Tighten spacing so pages aren't mostly whitespace */
+    .toc { padding: 20px 0 10px; }
+    .section-opener { padding: 40px 48px; }
+    .recipe { margin: 0 0 32px; padding-bottom: 32px; }
+    .intro h2 { margin: 28px 0 12px; }
   }
 </style>
 </head>
