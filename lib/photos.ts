@@ -83,13 +83,6 @@ const slots = {
     width: 6000,
     height: 4000,
   },
-  postLuau: {
-    kind: "image",
-    src: "/images/Polynian-img4.jpg",
-    alt: "A carved pineapple table centerpiece with pandanus leaves, surrounded by plates of food in soft warm light",
-    width: 2000,
-    height: 1335,
-  },
   postCoconut: {
     kind: "image",
     src: "/images/Polynesian-img7.jpg",

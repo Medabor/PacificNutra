@@ -14,7 +14,6 @@ const POST_PHOTO: Record<string, PhotoSlotKey> = {
   "what-is-taro-the-root-vegetable-of-polynesia": "postTaro",
   "poke-bowl-history-and-how-to-make-it-at-home": "postPoke",
   "what-is-haupia-hawaiian-coconut-pudding": "postHaupia",
-  "traditional-hawaiian-luau-food-guide": "postLuau",
   "coconut-milk-coconut-oil-coconut-aminos-guide": "postCoconut",
 };
 
