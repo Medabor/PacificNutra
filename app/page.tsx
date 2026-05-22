@@ -141,7 +141,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="sm:col-span-2">
-              <Photo slot="productPacificPlate" ratio="3/4" />
+              <Photo slot="productPacificPlate" ratio="2/3" fit="contain" />
             </div>
           </div>
         </section>

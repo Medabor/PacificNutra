@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: Props) {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-14 sm:grid-cols-5">
           <div className="sm:col-span-2">
-            <Photo slot="productPacificPlate" ratio="3/4" priority />
+            <Photo slot="productPacificPlate" ratio="2/3" fit="contain" priority />
             <ul className="mt-4 grid grid-cols-3 gap-2 text-center text-xs text-kalo-800">
               <li className="rounded-lg bg-cream-100 py-2">
                 <span className="block font-serif text-lg text-kalo-950">{totalRecipes}</span>
@@ -280,7 +280,7 @@ export default async function ProductPage({ params }: Props) {
           we keep coming back to.
         </p>
         <Link
-          href="/affiliate"
+          href="/pantry"
           className="mt-6 inline-block text-sm font-medium text-clay-600 underline-offset-4 hover:underline"
         >
           See the Pacific Pantry →

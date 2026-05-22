@@ -4,10 +4,11 @@ import { getPhoto, type PhotoSlotKey } from "@/lib/photos";
 
 type Props = {
   slot: PhotoSlotKey;
-  ratio?: "16/9" | "3/4" | "4/3" | "1/1" | "21/9";
+  ratio?: "16/9" | "3/4" | "4/3" | "1/1" | "21/9" | "2/3";
   className?: string;
   rounded?: boolean;
   priority?: boolean;
+  fit?: "cover" | "contain";
   /**
    * When true, the photo fills its closest positioned ancestor (caller
    * provides `position: relative | absolute`). Aspect ratio is ignored.
@@ -22,6 +23,7 @@ export default function Photo({
   className,
   rounded = true,
   priority,
+  fit = "cover",
   fill,
 }: Props) {
   const photo = getPhoto(slot);
@@ -66,6 +68,7 @@ export default function Photo({
         aspectRatio: ratio.replace("/", " / "),
         overflow: "hidden",
         borderRadius: rounded ? "1rem" : undefined,
+        background: fit === "contain" ? "var(--color-kalo-950, #0e1a11)" : undefined,
       }}
     >
       <Image
@@ -73,7 +76,7 @@ export default function Photo({
         alt={photo.alt}
         fill
         sizes="(max-width: 768px) 100vw, 1200px"
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: fit }}
         priority={priority}
       />
     </div>

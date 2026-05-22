@@ -3,15 +3,22 @@ import Photo from "@/components/Photo";
 import LeafDivider from "@/components/LeafDivider";
 import EmailCapture from "@/components/EmailCapture";
 import { getAllProducts } from "@/lib/products";
+import type { PhotoSlotKey } from "@/lib/photos";
 
 export const metadata = { title: "Shop" };
 
-const UPCOMING = [
+const UPCOMING: Array<{
+  title: string;
+  teaser: string;
+  eta: string;
+  coverSlot?: PhotoSlotKey;
+}> = [
   {
     title: "30-Day Pacific Meal Plan",
     teaser:
       "A four-week schedule built from the recipes in The Pacific Plate, with shopping lists and a Sunday prep routine. Releases summer 2026.",
     eta: "Summer 2026",
+    coverSlot: "productMealPlan",
   },
   {
     title: "From the Sea",
@@ -43,7 +50,7 @@ export default function ShopPage() {
               href={`/shop/${p.slug}`}
               className="group block overflow-hidden rounded-2xl bg-cream-100 transition hover:-translate-y-1"
             >
-              <Photo slot="productPacificPlate" ratio="3/4" rounded={false} />
+              <Photo slot="productPacificPlate" ratio="2/3" fit="contain" rounded={false} />
               <div className="p-7">
                 <p className="eyebrow text-forest-500">Cookbook · Out now</p>
                 <h2 className="mt-2 font-serif text-3xl text-kalo-950 group-hover:text-clay-600">
@@ -62,11 +69,15 @@ export default function ShopPage() {
               key={u.title}
               className="overflow-hidden rounded-2xl border border-dashed border-cream-200 bg-cream-50 p-8"
             >
-              <div className="flex aspect-[3/4] items-center justify-center rounded-xl bg-gradient-to-br from-forest-700 via-forest-800 to-kalo-950 p-6 text-center text-cream-50">
-                <span className="font-serif text-2xl leading-tight">
-                  {u.title}
-                </span>
-              </div>
+              {u.coverSlot ? (
+                <Photo slot={u.coverSlot} ratio="2/3" fit="contain" rounded />
+              ) : (
+                <div className="flex aspect-[2/3] items-center justify-center rounded-xl bg-gradient-to-br from-forest-700 via-forest-800 to-kalo-950 p-6 text-center text-cream-50">
+                  <span className="font-serif text-2xl leading-tight">
+                    {u.title}
+                  </span>
+                </div>
+              )}
               <p className="mt-6 eyebrow text-forest-500">Coming · {u.eta}</p>
               <h3 className="mt-2 font-serif text-2xl text-kalo-950">
                 {u.title}

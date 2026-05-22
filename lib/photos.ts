@@ -85,6 +85,13 @@ const slots = {
     width: 5632,
     height: 3072,
   },
+  productMealPlan: {
+    kind: "image",
+    src: "/images/30-day-meal-plan-cover.png",
+    alt: "30-Day Pacific Meal Plan cover — a four-week eating schedule built from traditional Polynesian recipes",
+    width: 1024,
+    height: 1536,
+  },
 } as const satisfies Record<string, PhotoSlot>;
 
 export type PhotoSlotKey = keyof typeof slots;

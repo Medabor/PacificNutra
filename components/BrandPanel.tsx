@@ -12,7 +12,7 @@ type Props = {
   variant: Variant;
   className?: string;
   rounded?: boolean;
-  ratio?: "16/9" | "3/4" | "4/3" | "1/1" | "21/9";
+  ratio?: "16/9" | "3/4" | "4/3" | "1/1" | "21/9" | "2/3";
 };
 
 export default function BrandPanel({
@@ -27,6 +27,7 @@ export default function BrandPanel({
     "4/3": "75%",
     "1/1": "100%",
     "21/9": "42.85%",
+    "2/3": "150%",
   };
   const wrapperStyle: CSSProperties = {
     paddingBottom: ratioMap[ratio],
