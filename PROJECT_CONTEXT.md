@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-05-21.
+Snapshot for resuming work in a new session. Last updated: 2026-05-22.
 
 ## What this is
 
@@ -136,14 +136,9 @@ RESEND_API_KEY=                           # optional
 
 ### Must-do before going live
 
-1. **Verify test order in Supabase.** A live test purchase was made (100%-off
-   promo code) and shows in Stripe, but the webhook may not have delivered
-   (site was unreachable at the time). Check Supabase `orders` table and
-   `/admin`. If no row: go to Stripe Dashboard → Webhooks → your endpoint →
-   resend the `checkout.session.completed` event. Confirm a `paid` row appears.
+1. **Verify test order in Supabase.** ✅ Done.
 
-2. **Confirm Stripe payouts bank account.** Stripe → Settings → Payouts —
-   make sure a bank account is linked so funds can pay out.
+2. **Confirm Stripe payouts bank account.** ✅ Done (Stripe Identity verified 2026-05-22).
 
 3. **Flip noindex → live.** Two places:
    - `app/layout.tsx` — remove the `robots: { index: false, follow: false }`
@@ -155,19 +150,18 @@ RESEND_API_KEY=                           # optional
    cache). Go to Hostinger → your site → CDN → enable. Purge cache after
    first post-launch deploy.
 
-### Nice-to-do soon (not blocking launch)
+5. **Wire book cover into the shop page.** ✅ Done.
 
-5. **Wire book cover into the shop page.** Currently shows a generic food photo.
-   Export the approved Canva cover as JPG → upload to `public/images/` →
-   update `lib/photos.ts` `productPacificPlate` slot to the new filename.
+6. **Ebook v1.1 with recipe photos.** ✅ Done.
 
-6. **Ebook v1.1 with recipe photos.** Ship v1 (text only, cover) first.
-   For v1.1 add 30 recipe photos — either shoot them, license from a stock
-   site, or use a paid PDF service (WeasyPrint / DocRaptor) that can embed
-   remote images. Existing buyers get the update free (already promised in copy).
+7. **Blog content.** ✅ Done.
 
-7. **Blog content.** At least 2–3 posts around launch to give the site
-   something for SEO and to share socially.
+8. **Beehiiv newsletter integration.** 🔄 In progress (2026-05-22).
+   - Need: `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID` (starts with `pub_`)
+     from Beehiiv → Settings → API.
+   - Set both in Hostinger environment variables.
+   - The `/api/subscribe` route already consumes these — no code changes needed
+     once the env vars are set.
 
 ## Deployment
 
