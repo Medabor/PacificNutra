@@ -53,8 +53,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://pacificnutra.com",
   ),
-  // Site-wide noindex while building. Remove this line at launch.
-  robots: { index: false, follow: false },
   title: {
     default: "Pacific Nutra — Ancestral Polynesian Food for the Modern Kitchen",
     template: "%s · Pacific Nutra",

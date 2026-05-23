@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-05-22.
+Snapshot for resuming work in a new session. Last updated: 2026-05-23 (launch day).
 
 ## What this is
 
@@ -45,7 +45,8 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
 
 - **`pacificnutra.com`** — live, connected to Hostinger. All config
   (env vars, Supabase, Stripe) points here.
-- The whole site is **`noindex`** until launch (see Outstanding).
+- Site is **indexable** as of 2026-05-23 (launched). `/admin`, `/library`,
+  and `/api/*` are disallowed in `robots.ts`.
 
 ## Routes
 
@@ -140,11 +141,7 @@ RESEND_API_KEY=                           # optional
 
 2. **Confirm Stripe payouts bank account.** ✅ Done (Stripe Identity verified 2026-05-22).
 
-3. **Flip noindex → live.** Two places:
-   - `app/layout.tsx` — remove the `robots: { index: false, follow: false }`
-     metadata line (marked with a comment).
-   - `app/robots.ts` — swap the `Disallow: /` rule for the launch rule
-     (also marked with a comment).
+3. **Flip noindex → live.** ✅ Done 2026-05-23.
 
 4. **Re-enable Hostinger CDN** (was turned off during build to avoid stale
    cache). Go to Hostinger → your site → CDN → enable. Purge cache after
@@ -156,12 +153,15 @@ RESEND_API_KEY=                           # optional
 
 7. **Blog content.** ✅ Done.
 
-8. **Beehiiv newsletter integration.** 🔄 In progress (2026-05-22).
-   - Need: `BEEHIIV_API_KEY` and `BEEHIIV_PUBLICATION_ID` (starts with `pub_`)
-     from Beehiiv → Settings → API.
-   - Set both in Hostinger environment variables.
-   - The `/api/subscribe` route already consumes these — no code changes needed
-     once the env vars are set.
+8. **Beehiiv newsletter integration.** ✅ Done 2026-05-23.
+   - Env vars `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID` set in Hostinger
+   - Sending domain `mail.pacificnutra.com` verified
+   - Reply-to: `hello@pacificnutra.com`
+   - Author: "Simo from Pacific Nutra"
+   - Welcome automation publishes the Sweet Potato + Ginger Soup recipe
+     (`email-templates/welcome.html`)
+   - 29 Sunday newsletter templates pre-generated at `email-templates/sunday/`
+     — regenerate with `node scripts/generate-sunday-emails.mjs`
 
 ## Deployment
 
