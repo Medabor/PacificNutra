@@ -1,6 +1,6 @@
 import LeafDivider from "@/components/LeafDivider";
 
-export const metadata = { title: "Privacy" };
+export const metadata = { title: "Privacy", alternates: { canonical: "/privacy" } };
 
 export default function PrivacyPage() {
   return (

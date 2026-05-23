@@ -5,7 +5,7 @@ import EmailCapture from "@/components/EmailCapture";
 import { getAllProducts } from "@/lib/products";
 import type { PhotoSlotKey } from "@/lib/photos";
 
-export const metadata = { title: "Shop" };
+export const metadata = { title: "Shop", alternates: { canonical: "/shop" } };
 
 const UPCOMING: Array<{
   title: string;

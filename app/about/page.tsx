@@ -3,7 +3,7 @@ import EmailCapture from "@/components/EmailCapture";
 import LeafDivider from "@/components/LeafDivider";
 import Photo from "@/components/Photo";
 
-export const metadata = { title: "About" };
+export const metadata = { title: "About", alternates: { canonical: "/about" } };
 
 const PROMISES = [
   {

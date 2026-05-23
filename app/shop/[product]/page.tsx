@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const { product } = await params;
   const p = getProductBySlug(product);
   if (!p) return {};
-  return { title: p.title, description: p.tagline };
+  return { title: p.title, description: p.tagline, alternates: { canonical: `/shop/${product}` } };
 }
 
 const SECTIONS = [

@@ -1,6 +1,6 @@
 import LeafDivider from "@/components/LeafDivider";
 
-export const metadata = { title: "Refunds" };
+export const metadata = { title: "Refunds", alternates: { canonical: "/refund" } };
 
 export default function RefundPage() {
   return (

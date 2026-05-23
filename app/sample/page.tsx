@@ -9,6 +9,7 @@ export const metadata = {
   title: "Read a Sample",
   description:
     "Read the introduction and all five Roots & Tubers recipes from The Pacific Plate — the full first chapter, free.",
+  alternates: { canonical: "/sample" },
 };
 
 export default function SamplePage() {

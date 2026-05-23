@@ -6,6 +6,8 @@ import { getAllProducts } from "@/lib/products";
 import { getAllPosts } from "@/lib/posts";
 import type { PhotoSlotKey } from "@/lib/photos";
 
+export const metadata = { alternates: { canonical: "/" } };
+
 const POST_PHOTO: Record<string, PhotoSlotKey> = {
   "the-polynesian-diet-why-pacific-islanders-live-longer": "postPolynesianDiet",
   "breadfruit-the-superfood-hawaiians-have-eaten-for-3000-years": "postBreadfruit",

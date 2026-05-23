@@ -5,6 +5,7 @@ export const metadata = {
   title: "The Pacific Pantry",
   description:
     "A short list of kitchen tools, pantry staples, and books we use to cook from the Pacific. Curated, not exhaustive.",
+  alternates: { canonical: "/pantry" },
 };
 
 const CATEGORY_COLOR: Record<AffiliateProduct["category"], string> = {

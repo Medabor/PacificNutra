@@ -7,6 +7,7 @@ export const metadata = {
   title: "Field Notes",
   description:
     "Articles and recipes rooted in the ancestral diets of the Pacific Islands.",
+  alternates: { canonical: "/blog" },
 };
 
 // Map post slugs to photo slots. New posts default to a panel until you
