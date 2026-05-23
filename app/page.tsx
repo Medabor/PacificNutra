@@ -197,7 +197,7 @@ export default function HomePage() {
           the story of where it came from. Nothing else.
         </p>
         <div className="mt-8">
-          <EmailCapture inline source="bottom" cta="Subscribe" />
+          <EmailCapture inline source="bottom" cta="Subscribe" successMessage="You're in — see you next Sunday." />
         </div>
       </section>
     </>

@@ -7,6 +7,7 @@ type Props = {
   cta?: string;
   placeholder?: string;
   inline?: boolean;
+  successMessage?: string;
 };
 
 export default function EmailCapture({
@@ -14,6 +15,7 @@ export default function EmailCapture({
   cta = "Send the first recipe",
   placeholder = "you@example.com",
   inline = false,
+  successMessage = "Check your inbox — the first recipe is on its way.",
 }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "err">("idle");
@@ -32,7 +34,7 @@ export default function EmailCapture({
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong");
       setStatus("ok");
-      setMessage("Check your inbox — the first recipe is on its way.");
+      setMessage(successMessage);
       setEmail("");
     } catch (err) {
       setStatus("err");

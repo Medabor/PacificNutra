@@ -103,7 +103,7 @@ export default function ShopPage() {
           chapter before publication.
         </p>
         <div className="mt-8">
-          <EmailCapture inline source="shop" cta="Notify me" />
+          <EmailCapture inline source="shop" cta="Notify me" successMessage="You're on the list — we'll keep you posted." />
         </div>
       </section>
     </>
