@@ -1,68 +1,60 @@
 # Pacific Nutra — image library
 
-The site ships with **hand-built SVG art panels** rather than stock
-photos. They're more distinctive on-brand than the generic poke-bowl
-images every wellness site uses. If you want to swap in real photos
-later, here's the curated shopping list and the workflow.
+All photos currently wired on the site live in `public/images/` with
+descriptive filenames. The registry is in `lib/photos.ts` — each slot
+key maps to one image file.
 
-## Workflow to add real photos
+## Workflow to add a new photo
 
-1. Open the Unsplash search link for the slot you want to fill.
-2. Pick a photo that passes our photography style filter (natural
-   daylight, raw ingredients on wood/stone/linen, no smiling-model
-   stock cliché).
-3. Click **Download free** on Unsplash.
-4. Resize to the width listed below and save into `public/images/`
-   using the filename listed.
-5. Edit `lib/photos.ts` and change the slot from
-   `{ kind: "panel", variant: "..." }` to
-   `{ kind: "image", src: "/images/<file>.jpg", alt: "...", width: ..., height: ... }`.
-6. Commit and push — site updates automatically.
+1. Source a photo (Unsplash, Pexels, or a real shoot).
+2. Pick one that passes our photography style filter: natural daylight,
+   raw ingredients on wood/stone/linen, no smiling-model stock cliché.
+3. Compress (target under 500 KB, ideally ~200 KB at 1600×900) and save
+   into `public/images/` using a descriptive filename like
+   `breadfruit.jpeg` — not `IMG_1234.jpg`.
+4. Edit `lib/photos.ts` and add or update the slot:
+   ```ts
+   newSlot: {
+     kind: "image",
+     src: "/images/your-file.jpg",
+     alt: "Descriptive alt text for accessibility and SEO",
+     width: 1600,
+     height: 900,
+   },
+   ```
+5. Reference the slot in a page via `<Photo slot="newSlot" .../>`.
+6. Commit and push — Hostinger auto-deploys.
 
-Add the photographer's name + the Unsplash URL for each photo below as
-a courtesy.
+## Currently wired slots
 
-## Slot shopping list
+See `lib/photos.ts` for the live registry. As of launch (2026-05-23):
 
-| Slot key | Filename | Size | Suggested Unsplash search |
-|---|---|---|---|
-| `homeHero` | `home-hero.jpg` | 1600×900 | [hawaiian food overhead](https://unsplash.com/s/photos/hawaiian-food) / [polynesian food](https://unsplash.com/s/photos/polynesian-food) |
-| `aboutHero` | `about-hero.jpg` | 1600×900 | [hawaii coast](https://unsplash.com/s/photos/hawaii-coast) / [pacific ocean](https://unsplash.com/s/photos/pacific-ocean) |
-| `productPacificPlate` | `product-pacific-plate.jpg` | 1000×1333 | [cookbook flatlay](https://unsplash.com/s/photos/cookbook-flatlay) / [pacific cuisine board](https://unsplash.com/s/photos/pacific-cuisine) |
-| `postPolynesianDiet` | `post-polynesian-diet.jpg` | 1200×675 | [traditional polynesian food](https://unsplash.com/s/photos/polynesian-food) |
-| `postBreadfruit` | `post-breadfruit.jpg` | 1200×675 | [breadfruit](https://unsplash.com/s/photos/breadfruit) / [ulu hawaii](https://unsplash.com/s/photos/ulu) |
-| `postPoi` | `post-poi.jpg` | 1200×675 | [taro root](https://unsplash.com/s/photos/taro-root) / [poi hawaii](https://unsplash.com/s/photos/poi) |
+| Slot | File |
+|---|---|
+| `homeHero` | `hero-section.jpeg` |
+| `aboutHero` | `about-page.jpeg` |
+| `productPacificPlate` | `pacific-plate-cover.png` |
+| `productMealPlan` | `30-day-meal-plan-cover.png` |
+| `postPolynesianDiet` | `polynesian-diet.jpeg` |
+| `postBreadfruit` | `breadfruit.jpeg` |
+| `postPoi` | `hawaiian-poi.jpeg` |
+| `postTaro` | `taro-mash.jpeg` |
+| `postPoke` | `poke.jpeg` |
+| `postHaupia` | `haupia.jpeg` |
+| `postCoconut` | `coconut.jpeg` |
 
-## Currently wired
+Plus `Polynian-img4.jpg` — used directly as the mid-page break on the
+About page (not via the photo registry).
 
-| Slot | File | Source |
-|---|---|---|
-| `homeHero` | `Polynesian-img9.jpg` | User upload — nēnē in taro field |
-| `aboutHero` | `Polynesian-img8.jpg` | User upload — sunflower field + Koʻolau |
-| `productPacificPlate` | `polyneian-img2.jpg` | User upload — plated Polynesian dish |
-| `postPolynesianDiet` | `polynesian-img1.jpg` | User upload — overhead spread |
-| `postBreadfruit` | `Polynesian-img7.jpg` | User upload — banana-leaf wrapped seafood |
-| `postPoi` | `Polynesian-img6.jpg` | User upload — offerings with kalo leaves |
+## Photo credits
 
-## Available for future posts (in `public/images/`, not wired)
-
-- `Polynian-img3.jpg` — rice + egg + salad bowl
-- `Polynian-img4.jpg` — carved pineapple centerpiece
-- `Polynesian-img5.jpg` — pineapple shrimp fried rice
-
-## Photo credits (fill in as you add Unsplash images)
-
-<!--
-Format:
-- `home-hero.jpg` — Photo by [Photographer Name](https://unsplash.com/@handle) on Unsplash. [Photo page](https://unsplash.com/photos/...)
--->
-
-_None yet — site is using SVG art panels._
+_None yet — add Photographer + Unsplash URL here as photos get sourced
+externally._
 
 ## License notes
 
-Unsplash photos are free for commercial use, no attribution required.
-We credit photographers as a courtesy. Pexels and Pixabay are also
+Unsplash photos are free for commercial use, no attribution required;
+we credit photographers as a courtesy. Pexels and Pixabay are also
 acceptable sources with the same effective license. **Do not** use
 photos from Google Image Search, Pinterest, or other social platforms
 without verifying their license.

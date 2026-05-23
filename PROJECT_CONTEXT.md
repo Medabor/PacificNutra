@@ -82,11 +82,8 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
 - **Manuscript markdown:** `content/ebook/the-pacific-plate.md` — the `/sample`
   route renders the intro + Section 1 from this file.
 - **Book cover:** V3 approved (dark teal, dish photos, "30 recipes" badge,
-  Pacific Nutra logo). Embedded in `the-pacific-plate-ebook.html`.
-  **Still to do:** wire it into the site as the `/shop` product image
-  (currently `polyneian-img2.jpg` placeholder). Export the cover from Canva
-  as JPG → upload to `public/images/` → update `lib/photos.ts`
-  `productPacificPlate` slot.
+  Pacific Nutra logo). Embedded in `the-pacific-plate-ebook.html` and
+  wired on the site as `productPacificPlate` → `pacific-plate-cover.png`.
 
 ## Brand & logo
 
