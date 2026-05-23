@@ -6,6 +6,14 @@ const nextConfig = {
   // incompatible with a custom server and stops `/_next/static` assets
   // (the CSS and JS bundles) from being served, which renders the site
   // unstyled.
+
+  // Limit build parallelism to reduce peak RAM on constrained hosting.
+  // Without this, webpack spawns as many workers as CPU cores, which
+  // can push memory usage over the limit mid-build.
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
 };
 
 export default nextConfig;
