@@ -66,8 +66,19 @@ export const metadata: Metadata = {
       "Ancestral Polynesian food, translated for the modern kitchen. Recipes, field notes, and the occasional cookbook.",
     siteName: "Pacific Nutra",
     type: "website",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Pacific Nutra — ancestral Polynesian food for the modern kitchen",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-default.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

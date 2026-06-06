@@ -90,6 +90,8 @@ const FAQ = [
   },
 ];
 
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://pacificnutra.com";
+
 export default async function ProductPage({ params }: Props) {
   const { product } = await params;
   const p = getProductBySlug(product);
@@ -97,8 +99,29 @@ export default async function ProductPage({ params }: Props) {
 
   const totalRecipes = SECTIONS.reduce((s, x) => s + x.count, 0);
 
+  const productLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: p.title,
+    description: p.description,
+    image: `${SITE}/og-default.png`,
+    brand: { "@type": "Brand", name: "Pacific Nutra" },
+    offers: {
+      "@type": "Offer",
+      url: `${SITE}/shop/${p.slug}`,
+      price: (p.priceCents / 100).toFixed(2),
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
+    },
+  });
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: productLd }}
+      />
       {/* Hero / above-the-fold */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="grid gap-14 sm:grid-cols-5">

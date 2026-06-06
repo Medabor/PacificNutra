@@ -43,22 +43,23 @@ export default function EmailCapture({
   }
 
   return (
-    <form
-      onSubmit={onSubmit}
-      className={inline ? "flex flex-col gap-3 sm:flex-row" : "flex flex-col gap-3"}
-    >
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder={placeholder}
-        className="input-cream flex-1"
-        disabled={status === "loading"}
-      />
-      <button type="submit" disabled={status === "loading"} className="btn-clay">
-        {status === "loading" ? "Sending…" : cta}
-      </button>
+    <form onSubmit={onSubmit} className="flex flex-col gap-3">
+      <div
+        className={inline ? "flex flex-col gap-3 sm:flex-row" : "flex flex-col gap-3"}
+      >
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={placeholder}
+          className="input-cream flex-1"
+          disabled={status === "loading"}
+        />
+        <button type="submit" disabled={status === "loading"} className="btn-clay">
+          {status === "loading" ? "Sending…" : cta}
+        </button>
+      </div>
       {message && (
         <p
           className={`text-sm ${status === "ok" ? "text-forest-700" : "text-clay-700"}`}
