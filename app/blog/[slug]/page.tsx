@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props) {
       title: post.title,
       description: post.excerpt,
       type: "article",
+      url: `/blog/${slug}`,
       publishedTime: post.date || undefined,
       images: ["/og-default.png"],
     },

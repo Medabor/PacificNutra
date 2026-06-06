@@ -15,7 +15,12 @@ export async function generateMetadata({ params }: Props) {
   const { product } = await params;
   const p = getProductBySlug(product);
   if (!p) return {};
-  return { title: p.title, description: p.tagline, alternates: { canonical: `/shop/${product}` } };
+  return {
+    title: p.title,
+    description: p.tagline,
+    alternates: { canonical: `/shop/${product}` },
+    openGraph: { url: `/shop/${product}`, images: ["/og-default.png"] },
+  };
 }
 
 const SECTIONS = [
