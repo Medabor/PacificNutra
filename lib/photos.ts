@@ -85,6 +85,20 @@ const slots = {
     width: 1600,
     height: 873,
   },
+  postLimu: {
+    kind: "image",
+    src: "/images/limu-seaweed-salad.jpg",
+    alt: "A bowl of fresh limu seaweed salad — bright green ogo strands dressed with sesame seeds and chopsticks resting alongside",
+    width: 1200,
+    height: 800,
+  },
+  postUala: {
+    kind: "image",
+    src: "/images/uala-purple-sweet-potato.jpg",
+    alt: "Whole and halved ʻuala Hawaiian purple sweet potatoes on a dark slate surface, showing their vivid violet interior",
+    width: 1200,
+    height: 800,
+  },
   productMealPlan: {
     kind: "image",
     src: "/images/30-day-meal-plan-cover.png",

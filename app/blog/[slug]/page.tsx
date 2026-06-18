@@ -30,6 +30,8 @@ const POST_PHOTO: Record<string, PhotoSlotKey> = {
   "poke-bowl-history-and-how-to-make-it-at-home": "postPoke",
   "what-is-haupia-hawaiian-coconut-pudding": "postHaupia",
   "coconut-milk-coconut-oil-coconut-aminos-guide": "postCoconut",
+  "limu-the-seaweed-that-seasoned-the-pacific": "postLimu",
+  "uala-the-pacific-sweet-potato": "postUala",
 };
 
 export async function generateStaticParams() {
