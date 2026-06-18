@@ -113,3 +113,18 @@ export type PhotoSlotKey = keyof typeof slots;
 export function getPhoto(key: PhotoSlotKey): PhotoSlot {
   return slots[key];
 }
+
+// Single source of truth mapping blog post slugs to their hero photo slot.
+// Used by both the blog index and the post detail page. Posts without an
+// entry fall back to `postPolynesianDiet`.
+export const POST_PHOTO: Record<string, PhotoSlotKey> = {
+  "the-polynesian-diet-why-pacific-islanders-live-longer": "postPolynesianDiet",
+  "breadfruit-the-superfood-hawaiians-have-eaten-for-3000-years": "postBreadfruit",
+  "what-is-poi-a-complete-guide-to-hawaiis-original-superfood": "postPoi",
+  "what-is-taro-the-root-vegetable-of-polynesia": "postTaro",
+  "poke-bowl-history-and-how-to-make-it-at-home": "postPoke",
+  "what-is-haupia-hawaiian-coconut-pudding": "postHaupia",
+  "coconut-milk-coconut-oil-coconut-aminos-guide": "postCoconut",
+  "limu-the-seaweed-that-seasoned-the-pacific": "postLimu",
+  "uala-the-pacific-sweet-potato": "postUala",
+};

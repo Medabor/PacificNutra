@@ -3,7 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import LeafDivider from "@/components/LeafDivider";
 import Photo from "@/components/Photo";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
-import type { PhotoSlotKey } from "@/lib/photos";
+import { POST_PHOTO } from "@/lib/photos";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -21,18 +21,6 @@ function formatDate(iso: string): string {
     timeZone: "UTC",
   });
 }
-
-const POST_PHOTO: Record<string, PhotoSlotKey> = {
-  "the-polynesian-diet-why-pacific-islanders-live-longer": "postPolynesianDiet",
-  "breadfruit-the-superfood-hawaiians-have-eaten-for-3000-years": "postBreadfruit",
-  "what-is-poi-a-complete-guide-to-hawaiis-original-superfood": "postPoi",
-  "what-is-taro-the-root-vegetable-of-polynesia": "postTaro",
-  "poke-bowl-history-and-how-to-make-it-at-home": "postPoke",
-  "what-is-haupia-hawaiian-coconut-pudding": "postHaupia",
-  "coconut-milk-coconut-oil-coconut-aminos-guide": "postCoconut",
-  "limu-the-seaweed-that-seasoned-the-pacific": "postLimu",
-  "uala-the-pacific-sweet-potato": "postUala",
-};
 
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
