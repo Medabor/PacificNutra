@@ -99,6 +99,20 @@ const slots = {
     width: 1200,
     height: 800,
   },
+  postInamona: {
+    kind: "image",
+    src: "/images/kukui-nuts.jpeg",
+    alt: "Roasted kukui (candlenut) cracked open to show their cream-colored kernels, with coarse Hawaiian sea salt — the two ingredients in traditional ʻinamona",
+    width: 1600,
+    height: 670,
+  },
+  postKapisiPulu: {
+    kind: "image",
+    src: "/images/kapisi-pulu.jpg",
+    alt: "A bowl of kapisi pulu — Tongan corned beef and cabbage braised in coconut cream — served with white rice",
+    width: 1600,
+    height: 800,
+  },
   productMealPlan: {
     kind: "image",
     src: "/images/30-day-meal-plan-cover.jpg",
@@ -127,4 +141,6 @@ export const POST_PHOTO: Record<string, PhotoSlotKey> = {
   "coconut-milk-coconut-oil-coconut-aminos-guide": "postCoconut",
   "limu-the-seaweed-that-seasoned-the-pacific": "postLimu",
   "uala-the-pacific-sweet-potato": "postUala",
+  "inamona-the-hawaiian-kukui-nut-relish": "postInamona",
+  "kapisi-pulu-tongan-cabbage-and-corned-beef": "postKapisiPulu",
 };
