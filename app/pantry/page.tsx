@@ -4,7 +4,7 @@ import { getAffiliatesByCategory, type AffiliateProduct } from "@/lib/affiliate"
 export const metadata = {
   title: "The Pacific Pantry",
   description:
-    "A short list of kitchen tools, pantry staples, and books we use to cook from the Pacific. Curated, not exhaustive.",
+    "The Pacific pantry — kitchen tools, pantry staples, and cookbooks we use to cook traditional Polynesian and Hawaiian food at home. Curated, not exhaustive.",
   alternates: { canonical: "/pantry" },
 };
 

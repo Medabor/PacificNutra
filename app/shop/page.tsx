@@ -5,7 +5,19 @@ import EmailCapture from "@/components/EmailCapture";
 import { getAllProducts } from "@/lib/products";
 import type { PhotoSlotKey } from "@/lib/photos";
 
-export const metadata = { title: "Shop", alternates: { canonical: "/shop" } };
+export const metadata = {
+  title: "Polynesian Cookbooks & Pacific Island Recipe Guides",
+  description:
+    "Digital Polynesian cookbooks and Pacific Island recipe guides — instant-download PDFs of traditional taro, breadfruit, poke, and coconut recipes rebuilt for the modern kitchen.",
+  alternates: { canonical: "/shop" },
+  openGraph: {
+    title: "Polynesian Cookbooks & Pacific Island Recipe Guides",
+    description:
+      "Instant-download Polynesian cookbooks — traditional taro, breadfruit, and poke recipes rebuilt for the modern kitchen.",
+    url: "/shop",
+    type: "website",
+  },
+};
 
 const UPCOMING: Array<{
   title: string;
