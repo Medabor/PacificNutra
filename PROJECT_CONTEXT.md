@@ -127,6 +127,7 @@ STRIPE_WEBHOOK_SECRET=                    # whsec_...
 STRIPE_PRICE_THE_PACIFIC_PLATE=           # optional
 BEEHIIV_API_KEY=                          # optional
 BEEHIIV_PUBLICATION_ID=                   # optional
+BEEHIIV_AUTOMATION_ID=                    # optional — welcome automation (aut_...)
 RESEND_API_KEY=                           # optional
 ```
 
@@ -173,6 +174,13 @@ No PRs unless explicitly requested.
   bolts onto the existing ʻUala post. Pending: user to find a suitable image or
   confirm they want the text-only addition.
 
-- **Email deliverability** — welcome email not arriving after signup. Needs
-  diagnosis: check whether Beehiiv receives the subscriber at all (dashboard),
-  and whether the automation fires for API-sourced subscribers vs web-form only.
+- **Welcome email — root cause found + code fixed; needs Beehiiv setup.**
+  Subscribers reach Supabase and Beehiiv fine, but the "Sign up" automation
+  only ever enrolled 1 of 6. Beehiiv's "Signed up" trigger fires only for its
+  native forms, not API-created subscriptions. Fix shipped: `addToBeehiiv` now
+  passes `automation_ids: [BEEHIIV_AUTOMATION_ID]` on signup. **Remaining manual
+  steps (user):** (1) in Beehiiv, add an "Add by API" trigger to the "Sign up"
+  automation; (2) copy the automation ID (`aut_...`); (3) set
+  `BEEHIIV_AUTOMATION_ID` in Hostinger env vars; (4) restart. The 5 original +
+  June test subscribers won't enroll retroactively — manually add them in
+  Beehiiv if a welcome to them is wanted.
