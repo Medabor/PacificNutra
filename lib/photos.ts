@@ -101,7 +101,7 @@ const slots = {
   },
   productMealPlan: {
     kind: "image",
-    src: "/images/30-day-meal-plan-cover.png",
+    src: "/images/30-day-meal-plan-cover.jpg",
     alt: "30-Day Pacific Meal Plan cover — a four-week eating schedule built from traditional Polynesian recipes",
     width: 1024,
     height: 1536,
