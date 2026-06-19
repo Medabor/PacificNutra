@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { createSupabaseServiceClient } from "@/lib/supabase/server";
 import { addToBeehiiv } from "@/lib/beehiiv";
+import { sendWelcomeEmail } from "@/lib/resend";
 
 const Body = z.object({
   email: z.string().email(),
@@ -18,6 +19,14 @@ export async function POST(req: Request) {
   const { email, source = "unknown" } = parsed;
 
   const supabase = createSupabaseServiceClient();
+
+  // Check before upsert so we know whether to send the welcome email.
+  const { data: existing } = await supabase
+    .from("subscribers")
+    .select("id")
+    .eq("email", email)
+    .maybeSingle();
+
   const { error } = await supabase
     .from("subscribers")
     .upsert({ email, source }, { onConflict: "email" });
@@ -26,9 +35,15 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Could not subscribe right now." }, { status: 500 });
   }
 
-  // Best-effort sync to Beehiiv. We don't fail the request if this errors —
-  // the row already lives in Supabase and we can re-sync later.
-  await addToBeehiiv(email, source);
+  const isNew = !existing;
+
+  // Sync to Beehiiv — best-effort, never blocks the response.
+  addToBeehiiv(email, source);
+
+  // Send the welcome email via Resend for new subscribers only.
+  if (isNew) {
+    sendWelcomeEmail(email);
+  }
 
   return NextResponse.json({ ok: true });
 }
