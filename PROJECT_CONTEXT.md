@@ -164,3 +164,15 @@ RESEND_API_KEY=                           # optional
 
 Push to `claude/pacificnutra-business-ideas-V3L9L` → Hostinger auto-deploys.
 No PRs unless explicitly requested.
+
+## Open to-dos
+
+- **Koele palau section in ʻUala post** — add a short recipe/explainer section to
+  `content/posts/uala-the-pacific-sweet-potato.mdx` targeting the "koele palau"
+  query (Hawaiian sweet potato + coconut pudding). No new image needed — it
+  bolts onto the existing ʻUala post. Pending: user to find a suitable image or
+  confirm they want the text-only addition.
+
+- **Email deliverability** — welcome email not arriving after signup. Needs
+  diagnosis: check whether Beehiiv receives the subscriber at all (dashboard),
+  and whether the automation fires for API-sourced subscribers vs web-form only.
