@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-05-23 (launch day).
+Snapshot for resuming work in a new session. Last updated: 2026-06-20.
 
 ## What this is
 
@@ -13,7 +13,7 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
 - **Framework:** Next.js (App Router) + TypeScript + Tailwind CSS
 - **Database / auth / storage:** Supabase
 - **Payments:** Stripe (Checkout + webhook), in **Live mode**
-- **Email:** Beehiiv (newsletter, optional) and Resend (transactional, optional)
+- **Email:** Resend (welcome email) + Beehiiv (newsletter list + manual Sunday sends)
 - **Hosting:** Hostinger, via its **GitHub-connected auto-deployment** for
   Next.js (Node 22.x). Every push to the deploy branch is pulled, built
   (`next build`), and released automatically — no manual step. App runs
@@ -113,6 +113,34 @@ Schema in `supabase/migrations/0001_init.sql`:
   `stripe_session_id` (idempotent). Re-fetches session via SDK for reliable
   email. Solid — no changes needed.
 
+## Email architecture
+
+Three separate jobs, three separate tools:
+
+| Job | Tool | Status |
+|---|---|---|
+| Welcome email on signup | **Resend** (`lib/resend.ts`) | ✅ Live |
+| Subscriber list / newsletter list | **Beehiiv** (API sync on signup) | ✅ Live |
+| Weekly Sunday newsletter | **Beehiiv** (manual send) | ⏳ Not started — see below |
+
+### Welcome email (Resend)
+- `lib/resend.ts` → `sendWelcomeEmail(email)` — reads `email-templates/welcome.html`
+  and sends via Resend API from `hello@pacificnutra.com`.
+- Called in `/api/subscribe` for **new subscribers only** (pre-upsert check).
+- Domain `pacificnutra.com` verified in Resend. `RESEND_API_KEY` set in Hostinger. ✅
+- Beehiiv's automation feature was NOT used — it required a $49/mo upgrade to
+  republish a paused automation, so we bypassed it entirely with Resend.
+- `BEEHIIV_AUTOMATION_ID` is NOT needed and NOT set.
+
+### Newsletter (Beehiiv)
+- New subscribers are synced to Beehiiv via `addToBeehiiv()` in `lib/beehiiv.ts`
+  (soft-fail if keys missing). They appear in Beehiiv's subscriber list.
+- 29 Sunday newsletter HTML templates are pre-generated in `email-templates/sunday/`
+  (one per recipe, skipping 1.3 which is the welcome email recipe).
+- **No newsletter has ever been sent.** To send: log into Beehiiv → New Post →
+  paste the HTML from `email-templates/sunday/` → send. Do this manually each
+  Sunday. Regenerate templates with `node scripts/generate-sunday-emails.mjs`.
+
 ## Environment variables (Hostinger → Node.js → Environment variables)
 
 ```
@@ -125,41 +153,44 @@ STRIPE_SECRET_KEY=                        # sk_live_...
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=       # pk_live_...
 STRIPE_WEBHOOK_SECRET=                    # whsec_...
 STRIPE_PRICE_THE_PACIFIC_PLATE=           # optional
-BEEHIIV_API_KEY=                          # optional
-BEEHIIV_PUBLICATION_ID=                   # optional
-BEEHIIV_AUTOMATION_ID=                    # optional — welcome automation (aut_...)
-RESEND_API_KEY=                           # optional
+BEEHIIV_API_KEY=                          # set — syncs subscribers to Beehiiv list
+BEEHIIV_PUBLICATION_ID=                   # set — syncs subscribers to Beehiiv list
+RESEND_API_KEY=                           # set — sends welcome email on signup
 ```
 
-## Launch checklist — what's left
+## Blog posts
 
-### Must-do before going live
+| Slug | Category | Date | Image |
+|---|---|---|---|
+| `the-polynesian-diet-why-pacific-islanders-live-longer` | Nutrition | 2026-05-01 | `postPolynesianDiet` |
+| `breadfruit-the-superfood-hawaiians-have-eaten-for-3000-years` | Ingredients | 2026-05-08 | `postBreadfruit` |
+| `what-is-poi-a-complete-guide-to-hawaiis-original-superfood` | Ingredients | 2026-05-15 | `postPoi` |
+| `what-is-taro-the-root-vegetable-of-polynesia` | Ingredients | 2026-05-22 | `postTaro` |
+| `poke-bowl-history-and-how-to-make-it-at-home` | Recipes | 2026-05-29 | `postPoke` |
+| `what-is-haupia-hawaiian-coconut-pudding` | Recipes | 2026-06-05 | `postHaupia` |
+| `coconut-milk-coconut-oil-coconut-aminos-guide` | Ingredients | 2026-06-12 | `postCoconut` |
+| `limu-the-seaweed-that-seasoned-the-pacific` | Ingredients | 2026-06-10 | `postLimu` |
+| `uala-the-pacific-sweet-potato` | Ingredients | 2026-06-17 | `postUala` |
+| `inamona-the-hawaiian-kukui-nut-relish` | Ingredients | 2026-06-18 | `postInamona` |
+| `kapisi-pulu-tongan-cabbage-and-corned-beef` | Recipes | 2026-06-18 | `postKapisiPulu` |
+
+All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` — both
+`app/blog/page.tsx` and `app/blog/[slug]/page.tsx` import from there. Do not
+define a local POST_PHOTO map in either page file.
+
+## Launch checklist
 
 1. **Verify test order in Supabase.** ✅ Done.
-
 2. **Confirm Stripe payouts bank account.** ✅ Done (Stripe Identity verified 2026-05-22).
-
 3. **Flip noindex → live.** ✅ Done 2026-05-23.
-
 4. **Re-enable Hostinger CDN** (was turned off during build to avoid stale
    cache). Go to Hostinger → your site → CDN → enable. Purge cache after
    first post-launch deploy.
-
 5. **Wire book cover into the shop page.** ✅ Done.
-
 6. **Ebook v1.1 with recipe photos.** ✅ Done.
-
-7. **Blog content.** ✅ Done.
-
+7. **Blog content.** ✅ Done (11 posts live).
 8. **Beehiiv newsletter integration.** ✅ Done 2026-05-23.
-   - Env vars `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID` set in Hostinger
-   - Sending domain `mail.pacificnutra.com` verified
-   - Reply-to: `hello@pacificnutra.com`
-   - Author: "Simo from Pacific Nutra"
-   - Welcome automation publishes the Sweet Potato + Ginger Soup recipe
-     (`email-templates/welcome.html`)
-   - 29 Sunday newsletter templates pre-generated at `email-templates/sunday/`
-     — regenerate with `node scripts/generate-sunday-emails.mjs`
+9. **Welcome email via Resend.** ✅ Done 2026-06-20.
 
 ## Deployment
 
@@ -174,13 +205,7 @@ No PRs unless explicitly requested.
   bolts onto the existing ʻUala post. Pending: user to find a suitable image or
   confirm they want the text-only addition.
 
-- **Welcome email — root cause found + code fixed; needs Beehiiv setup.**
-  Subscribers reach Supabase and Beehiiv fine, but the "Sign up" automation
-  only ever enrolled 1 of 6. Beehiiv's "Signed up" trigger fires only for its
-  native forms, not API-created subscriptions. Fix shipped: `addToBeehiiv` now
-  passes `automation_ids: [BEEHIIV_AUTOMATION_ID]` on signup. **Remaining manual
-  steps (user):** (1) in Beehiiv, add an "Add by API" trigger to the "Sign up"
-  automation; (2) copy the automation ID (`aut_...`); (3) set
-  `BEEHIIV_AUTOMATION_ID` in Hostinger env vars; (4) restart. The 5 original +
-  June test subscribers won't enroll retroactively — manually add them in
-  Beehiiv if a welcome to them is wanted.
+- **Start sending Sunday newsletters** — 29 HTML templates sit in
+  `email-templates/sunday/` ready to go. Log into Beehiiv, create a new post,
+  paste the HTML, and send. Nothing automated — it's a weekly manual step.
+  Start with `1-1-roasted-breadfruit-wedges-with-alaea-salt.html`.
