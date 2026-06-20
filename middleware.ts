@@ -23,6 +23,11 @@ export async function middleware(request: NextRequest) {
   return response;
 }
 
+// Only run the Supabase session refresh on the routes that actually use a
+// logged-in session (`/library`, `/admin`). The rest of the site is public
+// and static, so running `auth.getUser()` there was an outbound Supabase
+// call on every page view (and every crawler hit) for no benefit — a major
+// source of CPU/process resource burn on constrained hosting.
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|api/stripe-webhook).*)"],
+  matcher: ["/library/:path*", "/admin/:path*"],
 };
