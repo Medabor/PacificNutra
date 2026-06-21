@@ -76,7 +76,11 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
 - **The Pacific Plate** — slug `the-pacific-plate`, price **$24.00** (2400 cents).
 - Defined in `lib/products.ts`. Bullets: 30 recipes, ~80 pages, PDF.
 - **Content rule — no pork, no alcohol** anywhere on site (recipes, blog, copy).
-- **Ebook PDF:** uploaded to Supabase Storage as `ebooks/the-pacific-plate-v1.pdf`. ✅
+- **Ebook PDF:** in Supabase Storage — bucket `ebooks`, object key
+  `the-pacific-plate-v1.pdf` (bucket root). ✅ `lib/products.ts` `filePath`
+  is the **bucket-relative key only** — never prefix it with `ebooks/`, or
+  `.from("ebooks").createSignedUrl()` looks for `ebooks/ebooks/...` and
+  returns "Object not found" (this bug bit the library download once).
 - **Ebook source HTML:** `the-pacific-plate-ebook.html` in repo root — the full
   30-recipe manuscript styled for browser/print. Contains:
   - Cover image embedded as base64 (extracted from the approved Canva design)
