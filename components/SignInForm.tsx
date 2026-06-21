@@ -28,7 +28,7 @@ export default function SignInForm({
         options: {
           emailRedirectTo:
             typeof window !== "undefined"
-              ? `${window.location.origin}${redirectPath}`
+              ? `${window.location.origin}/auth/callback?next=${encodeURIComponent(redirectPath)}`
               : undefined,
         },
       });
