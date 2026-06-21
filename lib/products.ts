@@ -23,7 +23,10 @@ const products: Product[] = [
       "Sourcing guide for taro, breadfruit, ulu, and pantry staples",
       "Lifetime updates — every new edition included free",
     ],
-    filePath: "ebooks/the-pacific-plate-v1.pdf",
+    // Object key WITHIN the `ebooks` bucket — do NOT prefix with the bucket
+    // name. The library page calls `.from("ebooks").createSignedUrl(filePath)`,
+    // so a leading `ebooks/` here produces `ebooks/ebooks/...` → "Object not found".
+    filePath: "the-pacific-plate-v1.pdf",
     stripePriceEnv: "STRIPE_PRICE_THE_PACIFIC_PLATE",
   },
 ];
