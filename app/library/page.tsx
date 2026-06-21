@@ -84,9 +84,17 @@ async function DownloadCard({
   filePath: string;
 }) {
   const service = createSupabaseServiceClient();
+  // Defensive: the value must be the object key relative to the bucket. If a
+  // stray `ebooks/` prefix sneaks back in, strip it so we don't ask Storage
+  // for `ebooks/ebooks/...`.
+  const objectKey = filePath.replace(/^ebooks\//, "");
   const { data, error } = await service.storage
     .from("ebooks")
-    .createSignedUrl(filePath, 60 * 10);
+    .createSignedUrl(objectKey, 60 * 10);
+
+  if (error) {
+    console.error(`[library] signed URL failed for "${objectKey}":`, error.message);
+  }
 
   return (
     <div className="flex items-center justify-between rounded-2xl bg-cream-100 p-6">
@@ -102,7 +110,7 @@ async function DownloadCard({
         </a>
       ) : (
         <span className="text-sm text-clay-700">
-          {error?.message ?? "File not available yet"}
+          Download temporarily unavailable — email hello@pacificnutra.com.
         </span>
       )}
     </div>
