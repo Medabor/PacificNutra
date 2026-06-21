@@ -27,14 +27,14 @@ key maps to one image file.
 
 ## Currently wired slots
 
-See `lib/photos.ts` for the live registry. As of launch (2026-05-23):
+See `lib/photos.ts` for the live registry. Updated 2026-06-21:
 
 | Slot | File |
 |---|---|
 | `homeHero` | `hero-section.jpeg` |
 | `aboutHero` | `about-page.jpeg` |
 | `productPacificPlate` | `pacific-plate-cover.png` |
-| `productMealPlan` | `30-day-meal-plan-cover.png` |
+| `productMealPlan` | `30-day-meal-plan-cover.jpg` |
 | `postPolynesianDiet` | `polynesian-diet.jpeg` |
 | `postBreadfruit` | `breadfruit.jpeg` |
 | `postPoi` | `hawaiian-poi.jpeg` |
@@ -42,19 +42,31 @@ See `lib/photos.ts` for the live registry. As of launch (2026-05-23):
 | `postPoke` | `poke.jpeg` |
 | `postHaupia` | `haupia.jpeg` |
 | `postCoconut` | `coconut.jpeg` |
+| `postLimu` | `limu-seaweed-salad.jpg` |
+| `postUala` | `uala-purple-sweet-potato.jpg` |
+| `postInamona` | `kukui-nuts.jpeg` |
+| `postKapisiPulu` | `kapisi-pulu.jpg` |
+| `postLomiSalmon` | `lomi-lomi-salmon.jpg` |
+| `postFishBananaLeaf` | `fish-in-banana-leaf.jpg` |
+| `postShoyuChicken` | `shoyu-chicken.jpg` |
+| `postShaveIce` | `hawaiian-shave-ice.jpg` |
 
 Plus `Polynian-img4.jpg` — used directly as the mid-page break on the
 About page (not via the photo registry).
 
 ## Photo credits
 
-_None yet — add Photographer + Unsplash URL here as photos get sourced
-externally._
+- `lomi-lomi-salmon.jpg`, `fish-in-banana-leaf.jpg`, `shoyu-chicken.jpg`,
+  `hawaiian-shave-ice.jpg` — licensed via **Adobe Stock** (standard
+  license, 2026-06-21). Originals were full-resolution; resized to
+  1600px wide and recompressed (mozjpeg q80) before committing.
 
 ## License notes
 
 Unsplash photos are free for commercial use, no attribution required;
 we credit photographers as a courtesy. Pexels and Pixabay are also
-acceptable sources with the same effective license. **Do not** use
+acceptable sources with the same effective license. **Adobe Stock**
+images are covered by their standard license (royalty-free, commercial
+use) — keep the receipt/asset IDs in the Adobe account. **Do not** use
 photos from Google Image Search, Pinterest, or other social platforms
 without verifying their license.

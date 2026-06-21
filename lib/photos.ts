@@ -113,6 +113,34 @@ const slots = {
     width: 1600,
     height: 800,
   },
+  postLomiSalmon: {
+    kind: "image",
+    src: "/images/lomi-lomi-salmon.jpg",
+    alt: "A bowl of lomi salmon — cured salmon worked together with diced tomato, sweet onion, and scallion, served cold",
+    width: 1600,
+    height: 1067,
+  },
+  postFishBananaLeaf: {
+    kind: "image",
+    src: "/images/fish-in-banana-leaf.jpg",
+    alt: "A whole fish grilled in a banana leaf parcel, opened to show the flesh with ginger, scallion, and lime",
+    width: 1600,
+    height: 1067,
+  },
+  postShoyuChicken: {
+    kind: "image",
+    src: "/images/shoyu-chicken.jpg",
+    alt: "Shoyu chicken — bone-in thighs braised in a glossy sweet-salty soy, ginger, and garlic glaze, scattered with scallions over rice",
+    width: 1600,
+    height: 1067,
+  },
+  postShaveIce: {
+    kind: "image",
+    src: "/images/hawaiian-shave-ice.jpg",
+    alt: "A loaded Hawaiian shave ice — fine snowy ice with mochi, haupia coconut cream, and a lilikoi passion-fruit drizzle",
+    width: 1600,
+    height: 1067,
+  },
   productMealPlan: {
     kind: "image",
     src: "/images/30-day-meal-plan-cover.jpg",
@@ -143,4 +171,8 @@ export const POST_PHOTO: Record<string, PhotoSlotKey> = {
   "uala-the-pacific-sweet-potato": "postUala",
   "inamona-the-hawaiian-kukui-nut-relish": "postInamona",
   "kapisi-pulu-tongan-cabbage-and-corned-beef": "postKapisiPulu",
+  "lomi-salmon-hawaiian-cured-salmon-and-tomato": "postLomiSalmon",
+  "whole-fish-in-banana-leaf-the-pacific-way": "postFishBananaLeaf",
+  "shoyu-chicken-the-hawaiian-plate-lunch-classic": "postShoyuChicken",
+  "hawaiian-shave-ice-and-mochi-pacific-desserts": "postShaveIce",
 };
