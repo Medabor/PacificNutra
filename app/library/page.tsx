@@ -6,7 +6,10 @@ import SignInForm from "@/components/SignInForm";
 export const metadata = { title: "Library" };
 export const dynamic = "force-dynamic";
 
-export default async function LibraryPage() {
+type Props = { searchParams: Promise<{ error?: string }> };
+
+export default async function LibraryPage({ searchParams }: Props) {
+  const { error } = await searchParams;
   const supabase = await createSupabaseServerClient();
   const { data: { user } } = await supabase.auth.getUser();
 
@@ -19,6 +22,13 @@ export default async function LibraryPage() {
           Use the email you used at checkout. We&apos;ll send you a one-time
           magic link.
         </p>
+        {error === "link" && (
+          <p className="mt-4 rounded-lg bg-clay-200 px-4 py-3 text-sm text-clay-700">
+            That sign-in link didn&apos;t work — it may have expired or already
+            been used. Magic links work best opened on the same device you
+            requested them from. Request a fresh one below.
+          </p>
+        )}
         <div className="mt-8">
           <SignInForm redirectPath="/library" />
         </div>
