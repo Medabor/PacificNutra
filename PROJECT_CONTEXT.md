@@ -159,11 +159,14 @@ Three separate jobs, three separate tools:
   and sends via Resend API from `hello@pacificnutra.com`.
 - Called in `/api/subscribe` for **new subscribers only** (pre-upsert check).
 - Domain `pacificnutra.com` verified in Resend. `RESEND_API_KEY` set in Hostinger. ✅
-- **Deliverability (2026-06-21):** the send now includes a plain-text part,
-  `List-Unsubscribe` + one-click `List-Unsubscribe-Post` headers, and a footer
-  unsubscribe link. Send failures are now logged (`[welcome-email] …`) instead
-  of silently swallowed.
-- **Unsubscribe flow:** footer link + headers point to `/api/unsubscribe`, which
+- **Deliverability (2026-06-21):** the send includes a plain-text part and a
+  footer unsubscribe link. **`List-Unsubscribe` / `List-Unsubscribe-Post`
+  headers are intentionally absent** — they signal "bulk mailing list" to Gmail
+  and route transactional welcome emails into the Promotions tab. Beehiiv adds
+  them automatically on newsletter sends (correct there). The welcome email HTML
+  + plain-text now include a drag-to-Primary nudge for users who do see it in
+  Promotions. Send failures are logged (`[welcome-email] …`).
+- **Unsubscribe flow:** footer link points to `/api/unsubscribe`, which
   verifies an HMAC token (signed with the service-role key — no new env var),
   deletes the row from Supabase `subscribers`, and best-effort removes the
   address from Beehiiv (`removeFromBeehiiv` in `lib/beehiiv.ts`) so future
