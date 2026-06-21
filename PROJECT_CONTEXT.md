@@ -111,7 +111,26 @@ Schema in `supabase/migrations/0001_init.sql`:
 - Private storage bucket `ebooks` — signed URLs for downloads.
 - RLS is on; server code uses the service-role key (bypasses RLS).
 - Supabase Auth → URL Configuration must use `https://pacificnutra.com`
-  for Site URL and `/library` + `/admin` redirect URLs.
+  for Site URL. **Redirect URLs allow-list must include
+  `https://pacificnutra.com/auth/callback`** (or a wildcard like
+  `https://pacificnutra.com/**`). Without it Supabase ignores the magic
+  link's `redirect_to` and the sign-in silently fails.
+
+### Magic-link sign-in flow (how it works)
+1. `SignInForm` (`components/SignInForm.tsx`) calls `signInWithOtp` with
+   `emailRedirectTo = <origin>/auth/callback?next=/library` (or `/admin`).
+2. Supabase emails the link; clicking it hits Supabase's verify endpoint,
+   which redirects to `/auth/callback?next=…&code=…` (PKCE).
+3. `app/auth/callback/route.ts` calls `exchangeCodeForSession(code)`, sets
+   the auth cookies, and redirects to the sanitized `next` target.
+4. Middleware (scoped to `/library` + `/admin`) refreshes the session on
+   subsequent requests.
+- **Do not** point `emailRedirectTo` straight at `/library` again — that
+  was the bug (the `?code=` was never exchanged, so sign-in looped back to
+  the email form). On failure the callback redirects to
+  `/library?error=link`, which shows a "request a fresh link" notice.
+- PKCE stores the code verifier in a browser cookie, so magic links work
+  best opened on the **same device/browser** that requested them.
 
 ## Stripe
 
