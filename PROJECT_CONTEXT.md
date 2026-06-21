@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-06-20.
+Snapshot for resuming work in a new session. Last updated: 2026-06-21.
 
 ## What this is
 
@@ -30,6 +30,12 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
     on, purge its cache after each deploy.
   - Hostinger's integration runs the app itself; the repo's `server.js` is
     not used by it.
+  - **Auth middleware is scoped to `/library` + `/admin` only**
+    (`middleware.ts` matcher). It previously ran `supabase.auth.getUser()` on
+    *every* request — an outbound Supabase call per page view and per crawler
+    hit — which burned Hostinger's rolling 24h resource allowance and caused
+    503 throttling (2026-06-21). Do **not** widen the matcher back to the whole
+    site; the public pages are static and need no session.
 - **Repo:** `medabor/pacificnutra`
 - **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — the single
   source of truth. Develop, commit, and push here.
@@ -62,13 +68,19 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
 | `/api/checkout` | Creates a Stripe Checkout session |
 | `/api/stripe-webhook` | Handles `checkout.session.completed`; writes the order |
 | `/api/subscribe` | Newsletter signup |
+| `/unsubscribe` | Unsubscribe confirmation page (noindex) |
+| `/api/unsubscribe` | One-click + link unsubscribe — removes from Supabase + Beehiiv |
 
 ## Product
 
 - **The Pacific Plate** — slug `the-pacific-plate`, price **$24.00** (2400 cents).
 - Defined in `lib/products.ts`. Bullets: 30 recipes, ~80 pages, PDF.
 - **Content rule — no pork, no alcohol** anywhere on site (recipes, blog, copy).
-- **Ebook PDF:** uploaded to Supabase Storage as `ebooks/the-pacific-plate-v1.pdf`. ✅
+- **Ebook PDF:** in Supabase Storage — bucket `ebooks`, object key
+  `the-pacific-plate-v1.pdf` (bucket root). ✅ `lib/products.ts` `filePath`
+  is the **bucket-relative key only** — never prefix it with `ebooks/`, or
+  `.from("ebooks").createSignedUrl()` looks for `ebooks/ebooks/...` and
+  returns "Object not found" (this bug bit the library download once).
 - **Ebook source HTML:** `the-pacific-plate-ebook.html` in repo root — the full
   30-recipe manuscript styled for browser/print. Contains:
   - Cover image embedded as base64 (extracted from the approved Canva design)
@@ -103,7 +115,26 @@ Schema in `supabase/migrations/0001_init.sql`:
 - Private storage bucket `ebooks` — signed URLs for downloads.
 - RLS is on; server code uses the service-role key (bypasses RLS).
 - Supabase Auth → URL Configuration must use `https://pacificnutra.com`
-  for Site URL and `/library` + `/admin` redirect URLs.
+  for Site URL. **Redirect URLs allow-list must include
+  `https://pacificnutra.com/auth/callback`** (or a wildcard like
+  `https://pacificnutra.com/**`). Without it Supabase ignores the magic
+  link's `redirect_to` and the sign-in silently fails.
+
+### Magic-link sign-in flow (how it works)
+1. `SignInForm` (`components/SignInForm.tsx`) calls `signInWithOtp` with
+   `emailRedirectTo = <origin>/auth/callback?next=/library` (or `/admin`).
+2. Supabase emails the link; clicking it hits Supabase's verify endpoint,
+   which redirects to `/auth/callback?next=…&code=…` (PKCE).
+3. `app/auth/callback/route.ts` calls `exchangeCodeForSession(code)`, sets
+   the auth cookies, and redirects to the sanitized `next` target.
+4. Middleware (scoped to `/library` + `/admin`) refreshes the session on
+   subsequent requests.
+- **Do not** point `emailRedirectTo` straight at `/library` again — that
+  was the bug (the `?code=` was never exchanged, so sign-in looped back to
+  the email form). On failure the callback redirects to
+  `/library?error=link`, which shows a "request a fresh link" notice.
+- PKCE stores the code verifier in a browser cookie, so magic links work
+  best opened on the **same device/browser** that requested them.
 
 ## Stripe
 
@@ -128,6 +159,19 @@ Three separate jobs, three separate tools:
   and sends via Resend API from `hello@pacificnutra.com`.
 - Called in `/api/subscribe` for **new subscribers only** (pre-upsert check).
 - Domain `pacificnutra.com` verified in Resend. `RESEND_API_KEY` set in Hostinger. ✅
+- **Deliverability (2026-06-21):** the send includes a plain-text part and a
+  footer unsubscribe link. **`List-Unsubscribe` / `List-Unsubscribe-Post`
+  headers are intentionally absent** — they signal "bulk mailing list" to Gmail
+  and route transactional welcome emails into the Promotions tab. Beehiiv adds
+  them automatically on newsletter sends (correct there). The welcome email HTML
+  + plain-text now include a drag-to-Primary nudge for users who do see it in
+  Promotions. Send failures are logged (`[welcome-email] …`).
+- **Unsubscribe flow:** footer link points to `/api/unsubscribe`, which
+  verifies an HMAC token (signed with the service-role key — no new env var),
+  deletes the row from Supabase `subscribers`, and best-effort removes the
+  address from Beehiiv (`removeFromBeehiiv` in `lib/beehiiv.ts`) so future
+  Sunday sends stop too. `/unsubscribe` is the confirmation page; helpers live
+  in `lib/unsubscribe.ts`.
 - Beehiiv's automation feature was NOT used — it required a $49/mo upgrade to
   republish a paused automation, so we bypassed it entirely with Resend.
 - `BEEHIIV_AUTOMATION_ID` is NOT needed and NOT set.
@@ -173,10 +217,26 @@ RESEND_API_KEY=                           # set — sends welcome email on signu
 | `uala-the-pacific-sweet-potato` | Ingredients | 2026-06-17 | `postUala` |
 | `inamona-the-hawaiian-kukui-nut-relish` | Ingredients | 2026-06-18 | `postInamona` |
 | `kapisi-pulu-tongan-cabbage-and-corned-beef` | Recipes | 2026-06-18 | `postKapisiPulu` |
+| `lomi-salmon-hawaiian-cured-salmon-and-tomato` | Recipes | 2026-06-19 | `postLomiSalmon` |
+| `whole-fish-in-banana-leaf-the-pacific-way` | Recipes | 2026-06-20 | `postFishBananaLeaf` |
+| `shoyu-chicken-the-hawaiian-plate-lunch-classic` | Recipes | 2026-06-21 | `postShoyuChicken` |
+| `hawaiian-shave-ice-and-mochi-pacific-desserts` | Recipes | 2026-06-21 | `postShaveIce` |
 
-All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` — both
-`app/blog/page.tsx` and `app/blog/[slug]/page.tsx` import from there. Do not
-define a local POST_PHOTO map in either page file.
+The four 2026-06-19→21 recipe posts use **Adobe Stock** photos. The
+originals were uploaded to the deploy branch via the GitHub web UI at full
+resolution (3–10 MB each, with spaces/typos in the filenames). They were
+resized to 1600px wide / mozjpeg q80 (~90–240 KB), renamed to clean slugs,
+and the oversized originals were removed from the deploy branch. **Always
+compress + rename before wiring a photo** — never ship a multi-MB original,
+it burns the resource allowance. (Recipe content is grounded in the matching
+`email-templates/sunday/` templates: 2-3, 2-5, 5-1, 6-3/6-4.)
+
+All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` —
+`app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, and `app/page.tsx` (homepage
+"From the journal" cards) all import from there. Do **not** define a local
+POST_PHOTO map in any page file — the homepage had a stale copy that stopped at
+`postCoconut`, so all three homepage cards showed the same photo (fixed
+2026-06-21).
 
 ## Launch checklist
 
@@ -188,7 +248,7 @@ define a local POST_PHOTO map in either page file.
    first post-launch deploy.
 5. **Wire book cover into the shop page.** ✅ Done.
 6. **Ebook v1.1 with recipe photos.** ✅ Done.
-7. **Blog content.** ✅ Done (11 posts live).
+7. **Blog content.** ✅ Done (15 posts live).
 8. **Beehiiv newsletter integration.** ✅ Done 2026-05-23.
 9. **Welcome email via Resend.** ✅ Done 2026-06-20.
 
