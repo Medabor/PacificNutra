@@ -1,6 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import type { EmailOtpType } from "@supabase/supabase-js";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+
+type CookieToSet = { name: string; value: string; options?: CookieOptions };
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -11,28 +13,47 @@ function siteBase(fallbackOrigin: string): string {
   return process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || fallbackOrigin;
 }
 
-// Only allow same-site relative redirect targets — never an absolute URL —
-// so a crafted `next` param can't turn this into an open redirect.
+// Only allow same-site relative redirect targets to prevent open-redirect.
 function safeNext(next: string | null): string {
   if (next && next.startsWith("/") && !next.startsWith("//")) return next;
   return "/library";
 }
 
-// Magic-link / OAuth landing route. Supabase sends the recipient here with a
-// `?code=` (PKCE) — we exchange it for a session, set the auth cookies, and
-// forward them on to their destination. Without this step the code is never
-// redeemed and the sign-in page just re-renders (the bug this fixes).
-export async function GET(request: Request) {
+// Build a Supabase server client whose setAll writes directly onto the
+// given NextResponse, so the session cookies travel with the redirect.
+function makeClient(request: NextRequest, response: NextResponse) {
+  return createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll: () => request.cookies.getAll(),
+        setAll: (toSet: CookieToSet[]) => {
+          toSet.forEach(({ name, value, options }) =>
+            response.cookies.set(name, value, options),
+          );
+        },
+      },
+    },
+  );
+}
+
+// Magic-link / OAuth landing route.  Supabase sends the recipient here after
+// verifying the OTP — either as a PKCE ?code= or an older ?token_hash=.
+// We redeem it, write the session cookies onto the redirect response, and
+// forward to the requested destination.
+export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const base = siteBase(origin);
   const next = safeNext(searchParams.get("next"));
 
-  const supabase = await createSupabaseServerClient();
-
+  // PKCE flow (default for @supabase/ssr).
   const code = searchParams.get("code");
   if (code) {
+    const redirect = NextResponse.redirect(`${base}${next}`);
+    const supabase = makeClient(request, redirect);
     const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) return NextResponse.redirect(`${base}${next}`);
+    if (!error) return redirect;
     console.error("[auth-callback] exchangeCodeForSession failed:", error.message);
     return NextResponse.redirect(`${base}/library?error=link`);
   }
@@ -41,8 +62,10 @@ export async function GET(request: Request) {
   const tokenHash = searchParams.get("token_hash");
   const type = searchParams.get("type") as EmailOtpType | null;
   if (tokenHash && type) {
+    const redirect = NextResponse.redirect(`${base}${next}`);
+    const supabase = makeClient(request, redirect);
     const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type });
-    if (!error) return NextResponse.redirect(`${base}${next}`);
+    if (!error) return redirect;
     console.error("[auth-callback] verifyOtp failed:", error.message);
   }
 
