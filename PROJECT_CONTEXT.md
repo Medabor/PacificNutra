@@ -191,6 +191,19 @@ RESEND_API_KEY=                           # set — sends welcome email on signu
 | `uala-the-pacific-sweet-potato` | Ingredients | 2026-06-17 | `postUala` |
 | `inamona-the-hawaiian-kukui-nut-relish` | Ingredients | 2026-06-18 | `postInamona` |
 | `kapisi-pulu-tongan-cabbage-and-corned-beef` | Recipes | 2026-06-18 | `postKapisiPulu` |
+| `lomi-salmon-hawaiian-cured-salmon-and-tomato` | Recipes | 2026-06-19 | `postLomiSalmon` |
+| `whole-fish-in-banana-leaf-the-pacific-way` | Recipes | 2026-06-20 | `postFishBananaLeaf` |
+| `shoyu-chicken-the-hawaiian-plate-lunch-classic` | Recipes | 2026-06-21 | `postShoyuChicken` |
+| `hawaiian-shave-ice-and-mochi-pacific-desserts` | Recipes | 2026-06-21 | `postShaveIce` |
+
+The four 2026-06-19→21 recipe posts use **Adobe Stock** photos. The
+originals were uploaded to the deploy branch via the GitHub web UI at full
+resolution (3–10 MB each, with spaces/typos in the filenames). They were
+resized to 1600px wide / mozjpeg q80 (~90–240 KB), renamed to clean slugs,
+and the oversized originals were removed from the deploy branch. **Always
+compress + rename before wiring a photo** — never ship a multi-MB original,
+it burns the resource allowance. (Recipe content is grounded in the matching
+`email-templates/sunday/` templates: 2-3, 2-5, 5-1, 6-3/6-4.)
 
 All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` —
 `app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, and `app/page.tsx` (homepage
@@ -209,7 +222,7 @@ POST_PHOTO map in any page file — the homepage had a stale copy that stopped a
    first post-launch deploy.
 5. **Wire book cover into the shop page.** ✅ Done.
 6. **Ebook v1.1 with recipe photos.** ✅ Done.
-7. **Blog content.** ✅ Done (11 posts live).
+7. **Blog content.** ✅ Done (15 posts live).
 8. **Beehiiv newsletter integration.** ✅ Done 2026-05-23.
 9. **Welcome email via Resend.** ✅ Done 2026-06-20.
 
