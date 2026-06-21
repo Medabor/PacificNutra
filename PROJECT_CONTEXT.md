@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-06-20.
+Snapshot for resuming work in a new session. Last updated: 2026-06-21.
 
 ## What this is
 
@@ -30,6 +30,12 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
     on, purge its cache after each deploy.
   - Hostinger's integration runs the app itself; the repo's `server.js` is
     not used by it.
+  - **Auth middleware is scoped to `/library` + `/admin` only**
+    (`middleware.ts` matcher). It previously ran `supabase.auth.getUser()` on
+    *every* request — an outbound Supabase call per page view and per crawler
+    hit — which burned Hostinger's rolling 24h resource allowance and caused
+    503 throttling (2026-06-21). Do **not** widen the matcher back to the whole
+    site; the public pages are static and need no session.
 - **Repo:** `medabor/pacificnutra`
 - **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — the single
   source of truth. Develop, commit, and push here.
@@ -62,6 +68,8 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
 | `/api/checkout` | Creates a Stripe Checkout session |
 | `/api/stripe-webhook` | Handles `checkout.session.completed`; writes the order |
 | `/api/subscribe` | Newsletter signup |
+| `/unsubscribe` | Unsubscribe confirmation page (noindex) |
+| `/api/unsubscribe` | One-click + link unsubscribe — removes from Supabase + Beehiiv |
 
 ## Product
 
@@ -128,6 +136,16 @@ Three separate jobs, three separate tools:
   and sends via Resend API from `hello@pacificnutra.com`.
 - Called in `/api/subscribe` for **new subscribers only** (pre-upsert check).
 - Domain `pacificnutra.com` verified in Resend. `RESEND_API_KEY` set in Hostinger. ✅
+- **Deliverability (2026-06-21):** the send now includes a plain-text part,
+  `List-Unsubscribe` + one-click `List-Unsubscribe-Post` headers, and a footer
+  unsubscribe link. Send failures are now logged (`[welcome-email] …`) instead
+  of silently swallowed.
+- **Unsubscribe flow:** footer link + headers point to `/api/unsubscribe`, which
+  verifies an HMAC token (signed with the service-role key — no new env var),
+  deletes the row from Supabase `subscribers`, and best-effort removes the
+  address from Beehiiv (`removeFromBeehiiv` in `lib/beehiiv.ts`) so future
+  Sunday sends stop too. `/unsubscribe` is the confirmation page; helpers live
+  in `lib/unsubscribe.ts`.
 - Beehiiv's automation feature was NOT used — it required a $49/mo upgrade to
   republish a paused automation, so we bypassed it entirely with Resend.
 - `BEEHIIV_AUTOMATION_ID` is NOT needed and NOT set.
@@ -174,9 +192,12 @@ RESEND_API_KEY=                           # set — sends welcome email on signu
 | `inamona-the-hawaiian-kukui-nut-relish` | Ingredients | 2026-06-18 | `postInamona` |
 | `kapisi-pulu-tongan-cabbage-and-corned-beef` | Recipes | 2026-06-18 | `postKapisiPulu` |
 
-All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` — both
-`app/blog/page.tsx` and `app/blog/[slug]/page.tsx` import from there. Do not
-define a local POST_PHOTO map in either page file.
+All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` —
+`app/blog/page.tsx`, `app/blog/[slug]/page.tsx`, and `app/page.tsx` (homepage
+"From the journal" cards) all import from there. Do **not** define a local
+POST_PHOTO map in any page file — the homepage had a stale copy that stopped at
+`postCoconut`, so all three homepage cards showed the same photo (fixed
+2026-06-21).
 
 ## Launch checklist
 
