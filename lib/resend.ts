@@ -16,6 +16,9 @@ Thanks for joining. Pacific Nutra is about bringing Polynesian food
 traditions into the modern kitchen — real ingredients, real flavor, and
 dishes that have fed islands for three thousand years.
 
+If this landed in Promotions, drag it to Primary — that tells Gmail
+these are letters worth keeping.
+
 Let's get straight to it.
 
 ------------------------------------------------------------
@@ -106,10 +109,6 @@ export async function sendWelcomeEmail(email: string): Promise<ResendResult> {
       subject: "Welcome — here's your first Pacific recipe",
       html,
       text: welcomeText(unsubUrl),
-      headers: {
-        "List-Unsubscribe": `<${unsubUrl}>, <mailto:hello@pacificnutra.com?subject=unsubscribe>`,
-        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
-      },
     });
     if (error) {
       console.error(`[welcome-email] Resend rejected send to ${email}:`, error.message);
