@@ -1,6 +1,6 @@
 # Pacific Nutra — Project Context
 
-Snapshot for resuming work in a new session. Last updated: 2026-06-21.
+Snapshot for resuming work in a new session. Last updated: 2026-09-28.
 
 ## What this is
 
@@ -36,6 +36,14 @@ first (and currently only) product is **The Pacific Plate**, a $24 ebook
     hit — which burned Hostinger's rolling 24h resource allowance and caused
     503 throttling (2026-06-21). Do **not** widen the matcher back to the whole
     site; the public pages are static and need no session.
+  - **Build memory is capped to survive Hostinger's RAM limit (2026-09-28).**
+    `next.config.mjs` sets `experimental.workerThreads: false` and
+    `experimental.cpus: 1` so webpack compiles sequentially instead of one
+    worker per core, and `package.json`'s build script runs with
+    `NODE_OPTIONS=--max-old-space-size=512`. Peak RAM during a deploy was
+    hitting the ceiling and 503-looping; these cap it. Do not remove them.
+    (The free monthly Hostinger resource boost was spent once during this
+    work — don't count on it being available again.)
 - **Repo:** `medabor/pacificnutra`
 - **Working branch:** `claude/pacificnutra-business-ideas-V3L9L` — the single
   source of truth. Develop, commit, and push here.
@@ -221,6 +229,14 @@ RESEND_API_KEY=                           # set — sends welcome email on signu
 | `whole-fish-in-banana-leaf-the-pacific-way` | Recipes | 2026-06-20 | `postFishBananaLeaf` |
 | `shoyu-chicken-the-hawaiian-plate-lunch-classic` | Recipes | 2026-06-21 | `postShoyuChicken` |
 | `hawaiian-shave-ice-and-mochi-pacific-desserts` | Recipes | 2026-06-21 | `postShaveIce` |
+| `why-pacific-nutra-a-letter-on-launch-day` | Notes | 2026-05-05 | (fallback `postPolynesianDiet`) |
+
+Posts are sorted newest-first by their `date` frontmatter (`getAllPosts()` in
+`lib/posts.ts`). The launch-day letter is intentionally back-dated to
+**2026-05-05** so it sits near the bottom as the founding piece rather than at
+the top — changing its date is what moves it in the list (fixed 2026-09-28).
+Dates render human-readable (e.g. "May 5, 2026") inside a semantic `<time>`
+element on the post page.
 
 The four 2026-06-19→21 recipe posts use **Adobe Stock** photos. The
 originals were uploaded to the deploy branch via the GitHub web UI at full
@@ -237,6 +253,42 @@ All blog images use the shared `POST_PHOTO` map in `lib/photos.ts` —
 POST_PHOTO map in any page file — the homepage had a stale copy that stopped at
 `postCoconut`, so all three homepage cards showed the same photo (fixed
 2026-06-21).
+
+## SEO, metadata & social (added 2026-09-28)
+
+- **Canonical URLs** on every page via `alternates.canonical` — the home page
+  (`app/page.tsx`), each static page, blog posts (`/blog/[slug]`), and the
+  product page (`/shop/[product]`). Fixes GSC "Duplicate without user-selected
+  canonical".
+- **Structured data (JSON-LD):**
+  - `Organization` + `WebSite` — site-wide in `app/layout.tsx`.
+  - `BlogPosting` — per post in `app/blog/[slug]/page.tsx` (headline, dates,
+    author, publisher, image).
+  - `Product` + `Offer` — on `app/shop/[product]/page.tsx` (price, USD,
+    InStock) so the shop page is eligible for price rich snippets.
+- **Social share image:** `public/og-default.png` — a branded 1200×630 card
+  (teal background, logo, wordmark, tagline). Wired as the default
+  `openGraph.images` + `twitter.images` in `app/layout.tsx`, and per-page on
+  blog/product. Regenerate with `node scripts/generate-og-image.mjs` (renders
+  an SVG → PNG via sharp; uses DejaVu Serif since Fraunces isn't installed
+  server-side). `og:url` is set explicitly on blog + product pages (Next does
+  not auto-populate it from `metadataBase`) — this cleared the Facebook Sharing
+  Debugger warning. `fb:app_id` is intentionally absent (only needed with a
+  Facebook Business app).
+- **`metadataBase`** is set in `app/layout.tsx`, so all relative metadata URLs
+  resolve against `NEXT_PUBLIC_SITE_URL`.
+
+## Site-wide UI
+
+- **Cookie consent banner** — `components/CookieConsent.tsx`, mounted in
+  `app/layout.tsx`. Slides up from the bottom ~400ms after first load, stores
+  the choice in `localStorage` under `pn-cookie-consent` (never reappears after
+  a click), links to `/privacy`. Honest copy: essential cookies only, no
+  tracking/ads. Covers the Stripe/Supabase session cookies.
+- **`EmailCapture`** (`components/EmailCapture.tsx`) — the success/error message
+  renders *below* the input+button row in inline mode (previously it was a
+  flex-row sibling squished beside the button). Takes a `successMessage` prop so
+  each form can show context-appropriate confirmation copy.
 
 ## Launch checklist
 

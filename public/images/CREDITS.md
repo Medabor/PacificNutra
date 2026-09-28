@@ -54,6 +54,10 @@ See `lib/photos.ts` for the live registry. Updated 2026-06-21:
 Plus `Polynian-img4.jpg` — used directly as the mid-page break on the
 About page (not via the photo registry).
 
+`public/og-default.png` (one level up, not in this folder) is the 1200×630
+social share card — a **generated** brand asset, not a sourced photo.
+Regenerate it with `node scripts/generate-og-image.mjs`; do not hand-edit.
+
 ## Photo credits
 
 - `lomi-lomi-salmon.jpg`, `fish-in-banana-leaf.jpg`, `shoyu-chicken.jpg`,
